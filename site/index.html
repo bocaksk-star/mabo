@@ -76,9 +76,18 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem)
 .sec > p{max-width:65ch;margin:0;color:var(--muted)}
 .registry{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
 .registry li{border-bottom:1px solid var(--line)}
-.registry a{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) auto;gap:8px 24px;align-items:baseline;padding:16px 4px;text-decoration:none;color:var(--ink)}
-.registry a:hover{background:var(--surface)}
-.registry a:hover .dom{color:var(--accent)}
+.registry li{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px}
+.registry a.row{display:grid;grid-template-columns:40px minmax(0,1.1fr) minmax(0,1.6fr) auto;gap:8px 20px;align-items:center;padding:14px 4px;text-decoration:none;color:var(--ink)}
+.registry a.row:hover{background:var(--surface)}
+.registry a.row:hover .dom{color:var(--accent)}
+.logo{width:40px;height:40px;border-radius:10px;display:block;flex:none}
+.logo.sm{width:26px;height:26px;border-radius:7px}
+.visit{font-family:var(--mono);font-size:12.5px;font-weight:500;padding:9px 12px;border:1.5px solid var(--line);border-radius:6px;text-decoration:none;color:var(--ink);white-space:nowrap}
+.visit:hover{border-color:var(--accent);color:var(--accent)}
+.totop{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:0;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;cursor:pointer;z-index:5}
+.totop.l{left:8px}.totop.r{right:8px}
+@media (max-width:1119px){.totop.l{display:none}.totop.r{right:16px}}
+.totop:hover{transform:translateY(-2px)}
 .dom{font-family:var(--mono);font-weight:700;font-size:clamp(1rem,2.4vw,1.25rem);overflow-wrap:anywhere}
 .dom i{font-style:normal;color:var(--muted);font-weight:400}
 .what{color:var(--muted);font-size:15px;min-width:0}
@@ -158,12 +167,13 @@ figure{margin:0}
 
 @media (max-width:720px){
   .wrap{gap:64px}
-  .registry a{grid-template-columns:minmax(0,1fr) auto}
-  .registry .what{grid-column:1 / -1;grid-row:2}
+  .registry a.row{grid-template-columns:40px minmax(0,1fr) auto;gap:6px 12px}
+  .visit span{display:none}
+  .registry .what{grid-column:2 / -1;grid-row:2}
   .cols{grid-template-columns:minmax(0,1fr)}
   .skills{grid-template-columns:minmax(0,1fr)}
 }
-@media (prefers-reduced-motion:reduce){.btn:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.btn:hover,.totop:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -200,14 +210,14 @@ figure{margin:0}
   <section class="sec" id="sites">
     <h2 data-sk="Moje weby">The sites</h2>
     <ul class="registry">
-      <li><a href="#depesa"><span class="dom">depesa<i>.eu</i></span><span class="what" data-sk="Slovenské správy v krátkych zhrnutiach, v troch jazykoch">Slovak news in short summaries, in three languages</span><span class="status live" data-sk="Online">Live</span></a></li>
-      <li><a href="#animeslovakia"><span class="dom">animeslovakia<i>.sk</i></span><span class="what" data-sk="Portál o anime a mange pre slovenských a českých fanúšikov">Anime and manga portal for Slovak and Czech fans</span><span class="status live" data-sk="Online">Live</span></a></li>
-      <li><a href="#bocak"><span class="dom">bocak<i>.sk</i></span><span class="what" data-sk="Katalóg spôsobov, ako zarobiť krypto, s uvedenými nákladmi a rizikami">Catalogue of ways to earn crypto, with costs and risks stated</span><span class="status live" data-sk="Online">Live</span></a></li>
-      <li><a href="#cga"><span class="dom">cryptogaway<i>.com</i></span><span class="what" data-sk="Krypto faucety zadarmo, misie a denné súťaže">Free crypto faucets, missions and daily giveaways</span><span class="status live" data-sk="Online">Live</span></a></li>
-      <li><a href="#slangovnik"><span class="dom">slangovnik<i>.sk</i></span><span class="what" data-sk="Komunitný slovník slovenského slangu a nárečí">Community dictionary of Slovak slang and dialect</span><span class="status live" data-sk="Online">Live</span></a></li>
-      <li><a href="#gramabot"><span class="dom">gramabot<i>.sk</i></span><span class="what" data-sk="AI kontrola pravopisu a gramatiky pre slovenčinu">AI spelling and grammar checker for Slovak</span><span class="status live" data-sk="Online">Live</span></a></li>
-      <li><a href="#ionwell"><span class="dom">ionwell<i>.win</i></span><span class="what" data-sk="Dogecoin faucet s výplatou každých 10 minút">Dogecoin faucet that pays out every 10 minutes</span><span class="status live" data-sk="Online">Live</span></a></li>
-      <li><a href="#miner"><span class="dom">do:/main/miner</span><span class="what" data-sk="SEO nástroj na kľúčové slová pre slovenský a český Google">SEO and keyword tool for Slovak and Czech Google</span><span class="status wip" data-sk="Vo vývoji">In progress</span></a></li>
+      <li><a class="row" href="#depesa"><img class="logo" src="logos/depesa.png" alt="depeša logo" width="40" height="40"><span class="dom">depesa<i>.eu</i></span><span class="what" data-sk="Slovenské správy v krátkych zhrnutiach, v troch jazykoch">Slovak news in short summaries, in three languages</span><span class="status live" data-sk="Online">Live</span></a><a class="visit" href="https://depesa.eu" target="_blank" rel="noopener" aria-label="Open depeša"><span data-sk="Otvoriť">Open</span> ↗</a></li>
+      <li><a class="row" href="#animeslovakia"><img class="logo" src="logos/animeslovakia.png" alt="Anime Slovakia logo" width="40" height="40"><span class="dom">animeslovakia<i>.sk</i></span><span class="what" data-sk="Portál o anime a mange pre slovenských a českých fanúšikov">Anime and manga portal for Slovak and Czech fans</span><span class="status live" data-sk="Online">Live</span></a><a class="visit" href="https://animeslovakia.sk" target="_blank" rel="noopener" aria-label="Open Anime Slovakia"><span data-sk="Otvoriť">Open</span> ↗</a></li>
+      <li><a class="row" href="#bocak"><img class="logo" src="logos/bocak.png" alt="Bocak logo" width="40" height="40"><span class="dom">bocak<i>.sk</i></span><span class="what" data-sk="Katalóg spôsobov, ako zarobiť krypto, s uvedenými nákladmi a rizikami">Catalogue of ways to earn crypto, with costs and risks stated</span><span class="status live" data-sk="Online">Live</span></a><a class="visit" href="https://bocak.sk" target="_blank" rel="noopener" aria-label="Open Bocak"><span data-sk="Otvoriť">Open</span> ↗</a></li>
+      <li><a class="row" href="#cga"><img class="logo" src="logos/cryptogaway.png" alt="CGA logo" width="40" height="40"><span class="dom">cryptogaway<i>.com</i></span><span class="what" data-sk="Krypto faucety zadarmo, misie a denné súťaže">Free crypto faucets, missions and daily giveaways</span><span class="status live" data-sk="Online">Live</span></a><a class="visit" href="https://cryptogaway.com" target="_blank" rel="noopener" aria-label="Open CGA"><span data-sk="Otvoriť">Open</span> ↗</a></li>
+      <li><a class="row" href="#slangovnik"><img class="logo" src="logos/slangovnik.png" alt="Slangovník logo" width="40" height="40"><span class="dom">slangovnik<i>.sk</i></span><span class="what" data-sk="Komunitný slovník slovenského slangu a nárečí">Community dictionary of Slovak slang and dialect</span><span class="status live" data-sk="Online">Live</span></a><a class="visit" href="https://slangovnik.sk" target="_blank" rel="noopener" aria-label="Open Slangovník"><span data-sk="Otvoriť">Open</span> ↗</a></li>
+      <li><a class="row" href="#gramabot"><img class="logo" src="logos/gramabot.png" alt="GramaBot logo" width="40" height="40"><span class="dom">gramabot<i>.sk</i></span><span class="what" data-sk="AI kontrola pravopisu a gramatiky pre slovenčinu">AI spelling and grammar checker for Slovak</span><span class="status live" data-sk="Online">Live</span></a><a class="visit" href="https://gramabot.sk" target="_blank" rel="noopener" aria-label="Open GramaBot"><span data-sk="Otvoriť">Open</span> ↗</a></li>
+      <li><a class="row" href="#ionwell"><img class="logo" src="logos/ionwell.png" alt="Ionwell logo" width="40" height="40"><span class="dom">ionwell<i>.win</i></span><span class="what" data-sk="Dogecoin faucet s výplatou každých 10 minút">Dogecoin faucet that pays out every 10 minutes</span><span class="status live" data-sk="Online">Live</span></a><a class="visit" href="https://ionwell.win" target="_blank" rel="noopener" aria-label="Open Ionwell"><span data-sk="Otvoriť">Open</span> ↗</a></li>
+      <li><a class="row" href="#miner"><img class="logo" src="logos/domainer.png" alt="Doménový Miner logo" width="40" height="40"><span class="dom">do:/main/miner</span><span class="what" data-sk="SEO nástroj na kľúčové slová pre slovenský a český Google">SEO and keyword tool for Slovak and Czech Google</span><span class="status wip" data-sk="Vo vývoji">In progress</span></a><a class="visit" href="https://domainer.bocak-sk.workers.dev" target="_blank" rel="noopener" aria-label="Open Doménový Miner"><span data-sk="Otvoriť">Open</span> ↗</a></li>
     </ul>
   </section>
 
@@ -216,7 +226,7 @@ figure{margin:0}
     <div class="projects">
 
       <article class="project" id="depesa">
-        <div class="bar"><span class="url"><span>https://</span>depesa.eu</span><span class="status live" data-sk="Online">Live</span><a href="https://depesa.eu" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
+        <div class="bar"><img class="logo sm" src="logos/depesa.png" alt="" width="26" height="26"><span class="url"><span>https://</span>depesa.eu</span><span class="status live" data-sk="Online">Live</span><a href="https://depesa.eu" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
         <h3 data-sk="depeša: správy dňa, krátko a rýchlo">depeša: the day's news, short and fast</h3>
         <div class="cols">
           <p data-sk="Slovenský spravodajský web, ktorý zhŕňa správy dňa z domova a zo sveta do krátkych textov. Obsah počas dňa obnovuje automatizovaný proces, takže web je aktuálny aj bez redakcie.">A Slovak news service that condenses the day's stories from home and abroad into short summaries. An automated pipeline refreshes the site through the day, so it stays current without a newsroom.</p>
@@ -231,7 +241,7 @@ figure{margin:0}
       </article>
 
       <article class="project" id="animeslovakia">
-        <div class="bar"><span class="url"><span>https://</span>animeslovakia.sk</span><span class="status live" data-sk="Online">Live</span><a href="https://animeslovakia.sk" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
+        <div class="bar"><img class="logo sm" src="logos/animeslovakia.png" alt="" width="26" height="26"><span class="url"><span>https://</span>animeslovakia.sk</span><span class="status live" data-sk="Online">Live</span><a href="https://animeslovakia.sk" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
         <h3 data-sk="Anime Slovakia: domov pre fanúšikov v dvoch jazykoch">Anime Slovakia: a home for fans in two languages</h3>
         <div class="cols">
           <p data-sk="Slovensko-český portál o anime, mange a japonskej popkultúre. Spája redakčné novinky s databázou anime a hernými prvkami, vďaka ktorým sa fanúšikovia vracajú každý deň.">A Slovak and Czech portal for anime, manga and Japanese pop culture. It combines editorial news with a searchable anime database and a game layer that gives fans a reason to come back every day.</p>
@@ -246,7 +256,7 @@ figure{margin:0}
       </article>
 
       <article class="project" id="bocak">
-        <div class="bar"><span class="url"><span>https://</span>bocak.sk</span><span class="status live" data-sk="Online">Live</span><a href="https://bocak.sk" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
+        <div class="bar"><img class="logo sm" src="logos/bocak.png" alt="" width="26" height="26"><span class="url"><span>https://</span>bocak.sk</span><span class="status live" data-sk="Online">Live</span><a href="https://bocak.sk" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
         <h3 data-sk="Bocak: zarábanie krypta, zhodnotené bez hype">Bocak: crypto earning, reviewed without the hype</h3>
         <div class="cols">
           <p data-sk="Katalóg appiek, DePIN projektov, webov a hier, ktoré platia v krypte. Každý projekt je opísaný zrozumiteľne, vrátane toho, koľko stojí začať a kde je háčik.">A catalogue of apps, DePIN projects, websites and games that pay in crypto. Every entry is written up plainly, including what it costs to start and where the catch is.</p>
@@ -261,7 +271,7 @@ figure{margin:0}
       </article>
 
       <article class="project" id="cga">
-        <div class="bar"><span class="url"><span>https://</span>cryptogaway.com</span><span class="status live" data-sk="Online">Live</span><a href="https://cryptogaway.com" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
+        <div class="bar"><img class="logo sm" src="logos/cryptogaway.png" alt="" width="26" height="26"><span class="url"><span>https://</span>cryptogaway.com</span><span class="status live" data-sk="Online">Live</span><a href="https://cryptogaway.com" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
         <h3 data-sk="CGA, Crypto GiveAway: faucet platforma s hernou slučkou">CGA, Crypto GiveAway: a faucet platform with a game loop</h3>
         <div class="cols">
           <p data-sk="Platforma v angličtine pre používateľov z celého sveta. Používatelia si v pravidelných intervaloch vyberajú malé sumy krypta, ktoré im okamžite prídu do peňaženky FaucetPay. Misie a levely odmeňujú pravidelné používanie.">An English-language rewards platform for a global audience. Users claim small amounts of crypto on a timer and are paid instantly to their FaucetPay wallet, with missions and levels that reward regular use.</p>
@@ -276,7 +286,7 @@ figure{margin:0}
       </article>
 
       <article class="project" id="slangovnik">
-        <div class="bar"><span class="url"><span>https://</span>slangovnik.sk</span><span class="status live" data-sk="Online">Live</span><a href="https://slangovnik.sk" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
+        <div class="bar"><img class="logo sm" src="logos/slangovnik.png" alt="" width="26" height="26"><span class="url"><span>https://</span>slangovnik.sk</span><span class="status live" data-sk="Online">Live</span><a href="https://slangovnik.sk" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
         <h3 data-sk="Slangovník: slová, ktoré v Pravidlách nenájdete">Slangovník: the words you won't find in the official rules</h3>
         <div class="cols">
           <p data-sk="Komunitný slovník slovenského slangu a nárečových slov. Slovo môže pridať ktokoľvek bez registrácie, každý príspevok prejde automatickou kontrolou a moderátorom a o poradí významov rozhodujú hlasy.">A community dictionary of Slovak slang and dialect. Anyone can add a word without registering, each submission passes an automatic check and a moderator, and votes decide which meaning comes first.</p>
@@ -291,7 +301,7 @@ figure{margin:0}
       </article>
 
       <article class="project" id="gramabot">
-        <div class="bar"><span class="url"><span>https://</span>gramabot.sk</span><span class="status live" data-sk="Online">Live</span><a href="https://gramabot.sk" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
+        <div class="bar"><img class="logo sm" src="logos/gramabot.png" alt="" width="26" height="26"><span class="url"><span>https://</span>gramabot.sk</span><span class="status live" data-sk="Online">Live</span><a href="https://gramabot.sk" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
         <h3 data-sk="GramaBot: slovenčina bez chýb">GramaBot: Slovak without mistakes</h3>
         <div class="cols">
           <p data-sk="AI nástroj, ktorý opraví pravopis, gramatiku a diakritiku v slovenskom texte. Okolo opráv je postavená sada pomôcok na písanie a učenie, s bezplatným denným limitom a pripravenými platenými plánmi.">An AI tool that corrects spelling, grammar and diacritics in Slovak text. Around the corrector sits a set of writing and study tools, with a free daily allowance and paid plans in preparation.</p>
@@ -306,7 +316,7 @@ figure{margin:0}
       </article>
 
       <article class="project" id="ionwell">
-        <div class="bar"><span class="url"><span>https://</span>ionwell.win</span><span class="status live" data-sk="Online">Live</span><a href="https://ionwell.win" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
+        <div class="bar"><img class="logo sm" src="logos/ionwell.png" alt="" width="26" height="26"><span class="url"><span>https://</span>ionwell.win</span><span class="status live" data-sk="Online">Live</span><a href="https://ionwell.win" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
         <h3 data-sk="Ionwell: malé odmeny vo vlastnom rytme">Ionwell: small rewards at your own rhythm</h3>
         <div class="cols">
           <p data-sk="Dogecoin faucet v angličtine. Používatelia si každých 10 minút vyberú malú odmenu v DOGE, ktorá im príde priamo na účet FaucetPay, bez minima a bez vkladu.">An English-language Dogecoin faucet. Users claim a small DOGE reward every 10 minutes, paid straight to their FaucetPay account with no minimum and no deposit.</p>
@@ -321,7 +331,7 @@ figure{margin:0}
       </article>
 
       <article class="project" id="miner">
-        <div class="bar"><span class="url"><span>https://</span>domainer.bocak-sk.workers.dev</span><span class="status wip" data-sk="Vo vývoji">In progress</span><a href="https://domainer.bocak-sk.workers.dev" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
+        <div class="bar"><img class="logo sm" src="logos/domainer.png" alt="" width="26" height="26"><span class="url"><span>https://</span>domainer.bocak-sk.workers.dev</span><span class="status wip" data-sk="Vo vývoji">In progress</span><a href="https://domainer.bocak-sk.workers.dev" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
         <h3 data-sk="Doménový Miner: SEO dáta pre slovenský a český trh">Doménový Miner: SEO data for the Slovak and Czech market</h3>
         <div class="cols">
           <p data-sk="Softvérový produkt pre majiteľov webov a marketérov, ktorí pracujú so slovenským a českým Googlom. Spája analýzu kľúčových slov, sledovanie pozícií a technický audit do jedného nástroja s kreditovým modelom a plánom zadarmo.">A software product for site owners and marketers who work with Slovak and Czech Google. It brings keyword research, rank tracking and technical audits into one tool, on a credit model with a free tier.</p>
@@ -417,6 +427,8 @@ figure{margin:0}
 
 </div>
 
+<button class="totop l" type="button" aria-label="Back to top" hidden><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<button class="totop r" type="button" aria-label="Back to top" hidden><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <script>
 (function(){
   /* Search Console snapshot: data read on 7 Oct 2026, last reported day 4 Oct 2026 */
@@ -514,6 +526,14 @@ figure{margin:0}
     function select(){ var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); done('selected'); }
     try { navigator.clipboard.writeText(el.textContent).then(function(){ done('copied'); }, select); } catch(e){ select(); }
   });
+
+  /* back to top */
+  var tops = document.querySelectorAll('.totop');
+  function showTop(){ var on = (window.scrollY || document.documentElement.scrollTop) > 500; tops.forEach(function(b){ b.hidden = !on; }); }
+  window.addEventListener('scroll', showTop, {passive:true}); showTop();
+  tops.forEach(function(b){ b.addEventListener('click', function(){
+    var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({top:0, behavior: calm ? 'auto' : 'smooth'}); }); });
 
   /* service tabs */
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
