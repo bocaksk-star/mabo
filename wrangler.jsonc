@@ -1,0 +1,8 @@
+{
+  // Static site served by Cloudflare Workers. Everything in ./site is published as is.
+  "name": "mabo-digital",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": "./site"
+  }
+}
