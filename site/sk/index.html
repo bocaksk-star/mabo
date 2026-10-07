@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MaBo Digital | Tvorba webov a SEO na Slovensku</title>
+<meta name="description" content="MaBo Digital tvorí rýchle weby a robí SEO pre klientov zo Slovenska, Česka aj zahraničia. Pozrite si osem živých projektov a ich výsledky v Googli.">
+<link rel="canonical" href="https://mabodigital.dev/sk/">
+<link rel="alternate" hreflang="en" href="https://mabodigital.dev/">
+<link rel="alternate" hreflang="sk" href="https://mabodigital.dev/sk/">
+<link rel="alternate" hreflang="x-default" href="https://mabodigital.dev/">
+<meta name="author" content="Marian Boledovic">
+<meta name="theme-color" content="#1B3FD0">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MaBo Digital">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://mabodigital.dev/sk/">
+<meta property="og:title" content="MaBo Digital | Tvorba webov a SEO">
+<meta property="og:description" content="Weby a SEO, postavené a prevádzkované na Slovensku.">
+<meta property="og:image" content="https://mabodigital.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MaBo Digital logo and name">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mabodigital.dev/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: a registry of domains. Left-aligned single column, each project filed under its own address bar; the domain name in mono is the recurring signature. */
+:root{
+  --bg:#EDF0F5; --surface:#F8FAFC; --ink:#0F1828; --muted:#566178; --line:#CBD3E0;
+  --accent:#1B3FD0; --accent-ink:#FFFFFF; --live:#0B7A4B; --soon:#A45F00; --wip:#7A3FB8;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1220; --surface:#131B2D; --ink:#E7EBF4; --muted:#97A3BC; --line:#28334B;
+    --accent:#8CA6FF; --accent-ink:#0C1220; --live:#4FD39A; --soon:#F0B24A; --wip:#C79BF5;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1220; --surface:#131B2D; --ink:#E7EBF4; --muted:#97A3BC; --line:#28334B;
+  --accent:#8CA6FF; --accent-ink:#0C1220; --live:#4FD39A; --soon:#F0B24A; --wip:#C79BF5;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding-inline:20px}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin-inline:auto;display:flex;flex-direction:column;gap:88px;padding-block:28px 72px}
+
+/* top bar */
+.top{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:13px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--display);font-size:20px;letter-spacing:-.01em;line-height:1}
+.brand b{font-weight:800}
+.brand svg{display:block;flex:none}
+.top nav{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center}
+.top nav a{color:var(--muted);text-decoration:none}
+.top nav a:hover{color:var(--accent)}
+.lang{display:inline-flex;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden}
+.lang button{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:6px 11px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+/* hero */
+.hero{display:flex;flex-direction:column;gap:28px}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,8.5vw,5.6rem);line-height:.98;letter-spacing:-.03em;margin:0;text-wrap:balance}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:clamp(1.05rem,2.2vw,1.3rem);max-width:60ch;margin:0;color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{font-family:var(--mono);font-size:14px;font-weight:500;padding:12px 18px;border-radius:6px;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-1px)}
+
+/* registry table */
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:-.02em;line-height:1.1;margin:0;text-wrap:balance}
+.sec{display:flex;flex-direction:column;gap:28px}
+.sec > p{max-width:65ch;margin:0;color:var(--muted)}
+.registry{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.registry li{border-bottom:1px solid var(--line)}
+.registry li{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px}
+.registry a.row{display:grid;grid-template-columns:40px minmax(0,1.1fr) minmax(0,1.6fr) auto;gap:8px 20px;align-items:center;padding:14px 4px;text-decoration:none;color:var(--ink)}
+.registry a.row:hover{background:var(--surface)}
+.registry a.row:hover .dom{color:var(--accent)}
+.logo{width:40px;height:40px;border-radius:10px;display:block;flex:none}
+.logo.sm{width:26px;height:26px;border-radius:7px}
+.visit{font-family:var(--mono);font-size:12.5px;font-weight:500;padding:9px 12px;border:1.5px solid var(--line);border-radius:6px;text-decoration:none;color:var(--ink);white-space:nowrap}
+.visit:hover{border-color:var(--accent);color:var(--accent)}
+.totop{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:0;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;cursor:pointer;z-index:5}
+.totop.l{left:8px}.totop.r{right:8px}
+@media (max-width:1119px){.totop.l{display:none}.totop.r{right:16px}}
+.totop:hover{transform:translateY(-2px)}
+.dom{font-family:var(--mono);font-weight:700;font-size:clamp(1rem,2.4vw,1.25rem);overflow-wrap:anywhere}
+.dom i{font-style:normal;color:var(--muted);font-weight:400}
+.what{color:var(--muted);font-size:15px;min-width:0}
+.status{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;display:inline-flex;align-items:center;gap:7px}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.status.live{color:var(--live)} .status.soon{color:var(--soon)} .status.wip{color:var(--wip)}
+
+/* project entries */
+.projects{display:flex;flex-direction:column;gap:56px}
+.project{display:flex;flex-direction:column;gap:18px;scroll-margin-top:24px}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-family:var(--mono);font-size:14px}
+.bar .url{flex:1 1 200px;min-width:0;overflow-wrap:anywhere}
+.bar .url span{color:var(--muted)}
+.bar a{font-weight:500;white-space:nowrap}
+.project h3{font-family:var(--display);font-weight:600;font-size:clamp(1.35rem,3vw,1.8rem);line-height:1.2;letter-spacing:-.01em;margin:0;text-wrap:balance;max-width:26ch}
+.cols{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px 48px}
+.cols p{margin:0;max-width:62ch}
+.cols ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15.5px}
+.cols li{padding-left:18px;position:relative}
+.cols li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1.5px;background:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:0;padding:0;list-style:none}
+.tags li::before{content:"# ";color:var(--accent)}
+
+/* search console snapshot */
+.totals{display:flex;flex-wrap:wrap;gap:20px 56px}
+.totals div{display:flex;flex-direction:column}
+.totals b{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,6vw,3.4rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.totals span{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.seg{display:inline-flex;align-self:flex-start;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden}
+.seg button{font-family:var(--mono);font-size:13px;font-weight:700;padding:8px 14px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.gsc{display:flex;flex-direction:column;border-top:2px solid var(--ink)}
+.site{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr) minmax(0,1.1fr);gap:20px 32px;padding-block:28px;border-bottom:1px solid var(--line);align-items:start}
+.site header{display:flex;flex-direction:column;gap:4px;margin-bottom:16px}
+.period{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;margin:0}
+.nums dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.nums dd{margin:0;font-family:var(--display);font-weight:800;font-size:1.6rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.chart{position:relative;min-width:0}
+.chart figcaption{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible;touch-action:pan-y}
+.chart text{font-family:var(--mono);font-size:11px;fill:var(--muted);font-variant-numeric:tabular-nums}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .ln{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart .ar{fill:var(--accent);opacity:.13}
+.chart .dot{fill:var(--accent);stroke:var(--bg);stroke-width:2}
+.chart .cross{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3}
+.chart .cross[hidden]{display:none}
+.tip{position:absolute;top:0;left:0;pointer-events:none;background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:12px;line-height:1.45;padding:7px 10px;border-radius:6px;white-space:nowrap;z-index:2}
+.tip b{display:block;font-weight:700}
+figure{margin:0}
+.q{width:100%;border-collapse:collapse;font-size:14px}
+.q th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;text-align:left;padding:0 0 6px;border-bottom:1px solid var(--ink)}
+.q td{padding:7px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.q th:not(:first-child),.q td:not(:first-child){text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;padding-left:12px}
+.sec > p.src{font-family:var(--mono);font-size:12.5px;max-width:80ch}
+@media (max-width:860px){.site{grid-template-columns:minmax(0,1fr)}}
+
+/* services tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;border-bottom:2px solid var(--ink)}
+.tab{font-family:var(--mono);font-size:15px;font-weight:700;padding:12px 20px;border:1.5px solid var(--line);border-bottom:0;border-radius:8px 8px 0 0;background:transparent;color:var(--muted);cursor:pointer}
+.tab:hover{color:var(--accent)}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.panel{display:flex;flex-direction:column;gap:18px}
+.panel h3{font-family:var(--display);font-weight:600;font-size:clamp(1.35rem,3vw,1.8rem);line-height:1.2;letter-spacing:-.01em;margin:0;text-wrap:balance;max-width:28ch}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 40px}
+.skills h3{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px;color:var(--accent)}
+.skills p{margin:0;font-size:15.5px;color:var(--ink)}
+
+/* contact */
+.contact{border-top:2px solid var(--ink);padding-top:36px;display:flex;flex-direction:column;gap:22px}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.mail code{font-family:var(--mono);font-size:clamp(1.1rem,4.4vw,2rem);font-weight:700;overflow-wrap:anywhere;user-select:all}
+.foot{font-family:var(--mono);font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between}
+
+@media (max-width:720px){
+  .wrap{gap:64px}
+  .registry a.row{grid-template-columns:40px minmax(0,1fr) auto;gap:6px 12px}
+  .visit span{display:none}
+  .registry .what{grid-column:2 / -1;grid-row:2}
+  .cols{grid-template-columns:minmax(0,1fr)}
+  .skills{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){.btn:hover,.totop:hover{transform:none}}
+</style>
+<style>.lang a{display:inline-block;font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:6px 11px;color:var(--ink);text-decoration:none}.lang a[aria-current="page"]{background:var(--ink);color:var(--bg)}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://mabodigital.dev/#business", "name": "MaBo Digital", "url": "https://mabodigital.dev/", "logo": "https://mabodigital.dev/icon-512.png", "image": "https://mabodigital.dev/og-image.png", "description": "Website creation and SEO for businesses in Slovakia, Czechia and abroad.", "email": "bocak.sk@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Luka", "addressCountry": "SK"}, "areaServed": [{"@type": "Country", "name": "Slovakia"}, {"@type": "Country", "name": "Czechia"}], "founder": {"@id": "https://mabodigital.dev/#marian"}, "knowsLanguage": ["sk", "cs", "en", "de"], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Services", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website creation", "description": "Design, development, launch and support of websites."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO", "description": "Technical audits, keyword research, on-page fixes and rank tracking for Slovak and Czech Google."}}]}}, {"@type": "Person", "@id": "https://mabodigital.dev/#marian", "name": "Marian Boledovic", "jobTitle": "Web developer and SEO specialist", "worksFor": {"@id": "https://mabodigital.dev/#business"}, "sameAs": ["https://depesa.eu", "https://animeslovakia.sk", "https://bocak.sk", "https://slangovnik.sk", "https://gramabot.sk", "https://cryptogaway.com"]}, {"@type": "WebSite", "@id": "https://mabodigital.dev/#website", "url": "https://mabodigital.dev/", "name": "MaBo Digital", "publisher": {"@id": "https://mabodigital.dev/#business"}, "inLanguage": ["en", "sk"]}]}</script>
+</head>
+<body>
+
+<div class="wrap" id="top">
+<header class="top">
+<a aria-label="MaBo Digital" class="brand" href="#top"><svg aria-hidden="true" height="32" viewbox="0 0 64 64" width="32"><rect fill="#1B3FD0" height="64" rx="15" width="64"></rect><polyline fill="none" points="13,45 13,20 26,34 39,20 39,45" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"></polyline><circle cx="50" cy="44.5" fill="#FFB020" r="4"></circle></svg><span><b>MaBo</b> Digital</span></a>
+<nav aria-label="Sections">
+<a data-en="sites" data-sk="weby" href="#sites">weby</a>
+<a data-en="work" data-sk="práce" href="#work">práce</a>
+<a data-en="stats" data-sk="čísla" href="#stats">čísla</a>
+<a data-en="services" data-sk="služby" href="#services">služby</a>
+<a data-en="skills" data-sk="zručnosti" href="#skills">zručnosti</a>
+<a data-en="contact" data-sk="kontakt" href="#contact">kontakt</a>
+<span aria-label="Language / Jazyk" class="lang" role="group"><a aria-current="page" href="/sk/" hreflang="sk" id="lang-sk" lang="sk">SVK</a><a href="/" hreflang="en" id="lang-en" lang="en">ENG</a></span>
+</nav>
+</header>
+<section class="hero">
+<p class="eyebrow" data-en="MaBo Digital · web creation and SEO · Luka, Slovakia" data-sk="MaBo Digital · tvorba webov a SEO · Luka, Slovensko">MaBo Digital · tvorba webov a SEO · Luka, Slovensko</p>
+<h1 data-en="Eight web products, built and run by &lt;em&gt;one person&lt;/em&gt;." data-sk="Osem webových projektov, ktoré postavil a prevádzkuje &lt;em&gt;jeden človek&lt;/em&gt;.">Osem webových projektov, ktoré postavil a prevádzkuje <em>jeden človek</em>.</h1>
+<p class="lede" data-en="I'm Marian Boledovic, and MaBo Digital is my company. I design, build, launch and operate my own websites: a news service, an anime portal, a slang dictionary, an AI grammar assistant, three crypto earning platforms and an SEO tool. Most of them serve readers in Slovakia and Czechia." data-sk="Som Marian Boledovic a MaBo Digital je moja firma. Navrhujem, vytváram, spúšťam a prevádzkujem vlastné weby: spravodajský portál, anime portál, slovník slangu, AI pomocníka so slovenčinou, tri platformy na zarábanie krypta a SEO nástroj. Väčšina z nich je určená ľuďom na Slovensku a v Česku.">Som Marian Boledovic a MaBo Digital je moja firma. Navrhujem, vytváram, spúšťam a prevádzkujem vlastné weby: spravodajský portál, anime portál, slovník slangu, AI pomocníka so slovenčinou, tri platformy na zarábanie krypta a SEO nástroj. Väčšina z nich je určená ľuďom na Slovensku a v Česku.</p>
+<div class="actions">
+<a class="btn primary" data-en="See the work" data-sk="Pozrieť práce" href="#work">Pozrieť práce</a>
+<a class="btn" data-en="Web creation and SEO for you" data-sk="Tvorba webov a SEO pre vás" href="#services">Tvorba webov a SEO pre vás</a>
+</div>
+</section>
+<section class="sec" id="sites">
+<h2 data-en="The sites" data-sk="Moje weby">Moje weby</h2>
+<ul class="registry">
+<li><a class="row" href="#depesa"><img alt="depeša logo" class="logo" height="40" src="/logos/depesa.png" width="40"/><span class="dom">depesa<i>.eu</i></span><span class="what" data-en="Slovak news in short summaries, in three languages" data-sk="Slovenské správy v krátkych zhrnutiach, v troch jazykoch">Slovenské správy v krátkych zhrnutiach, v troch jazykoch</span><span class="status live" data-en="Live" data-sk="Online">Online</span></a><a aria-label="Open depeša" class="visit" href="https://depesa.eu" rel="noopener" target="_blank"><span data-en="Open" data-sk="Otvoriť">Otvoriť</span> ↗</a></li>
+<li><a class="row" href="#animeslovakia"><img alt="Anime Slovakia logo" class="logo" height="40" src="/logos/animeslovakia.png" width="40"/><span class="dom">animeslovakia<i>.sk</i></span><span class="what" data-en="Anime and manga portal for Slovak and Czech fans" data-sk="Portál o anime a mange pre slovenských a českých fanúšikov">Portál o anime a mange pre slovenských a českých fanúšikov</span><span class="status live" data-en="Live" data-sk="Online">Online</span></a><a aria-label="Open Anime Slovakia" class="visit" href="https://animeslovakia.sk" rel="noopener" target="_blank"><span data-en="Open" data-sk="Otvoriť">Otvoriť</span> ↗</a></li>
+<li><a class="row" href="#bocak"><img alt="Bocak logo" class="logo" height="40" src="/logos/bocak.png" width="40"/><span class="dom">bocak<i>.sk</i></span><span class="what" data-en="Catalogue of ways to earn crypto, with costs and risks stated" data-sk="Katalóg spôsobov, ako zarobiť krypto, s uvedenými nákladmi a rizikami">Katalóg spôsobov, ako zarobiť krypto, s uvedenými nákladmi a rizikami</span><span class="status live" data-en="Live" data-sk="Online">Online</span></a><a aria-label="Open Bocak" class="visit" href="https://bocak.sk" rel="noopener" target="_blank"><span data-en="Open" data-sk="Otvoriť">Otvoriť</span> ↗</a></li>
+<li><a class="row" href="#cga"><img alt="CGA logo" class="logo" height="40" src="/logos/cryptogaway.png" width="40"/><span class="dom">cryptogaway<i>.com</i></span><span class="what" data-en="Free crypto faucets, missions and daily giveaways" data-sk="Krypto faucety zadarmo, misie a denné súťaže">Krypto faucety zadarmo, misie a denné súťaže</span><span class="status live" data-en="Live" data-sk="Online">Online</span></a><a aria-label="Open CGA" class="visit" href="https://cryptogaway.com" rel="noopener" target="_blank"><span data-en="Open" data-sk="Otvoriť">Otvoriť</span> ↗</a></li>
+<li><a class="row" href="#slangovnik"><img alt="Slangovník logo" class="logo" height="40" src="/logos/slangovnik.png" width="40"/><span class="dom">slangovnik<i>.sk</i></span><span class="what" data-en="Community dictionary of Slovak slang and dialect" data-sk="Komunitný slovník slovenského slangu a nárečí">Komunitný slovník slovenského slangu a nárečí</span><span class="status live" data-en="Live" data-sk="Online">Online</span></a><a aria-label="Open Slangovník" class="visit" href="https://slangovnik.sk" rel="noopener" target="_blank"><span data-en="Open" data-sk="Otvoriť">Otvoriť</span> ↗</a></li>
+<li><a class="row" href="#gramabot"><img alt="GramaBot logo" class="logo" height="40" src="/logos/gramabot.png" width="40"/><span class="dom">gramabot<i>.sk</i></span><span class="what" data-en="AI spelling and grammar checker for Slovak" data-sk="AI kontrola pravopisu a gramatiky pre slovenčinu">AI kontrola pravopisu a gramatiky pre slovenčinu</span><span class="status live" data-en="Live" data-sk="Online">Online</span></a><a aria-label="Open GramaBot" class="visit" href="https://gramabot.sk" rel="noopener" target="_blank"><span data-en="Open" data-sk="Otvoriť">Otvoriť</span> ↗</a></li>
+<li><a class="row" href="#ionwell"><img alt="Ionwell logo" class="logo" height="40" src="/logos/ionwell.png" width="40"/><span class="dom">ionwell<i>.win</i></span><span class="what" data-en="Dogecoin faucet that pays out every 10 minutes" data-sk="Dogecoin faucet s výplatou každých 10 minút">Dogecoin faucet s výplatou každých 10 minút</span><span class="status live" data-en="Live" data-sk="Online">Online</span></a><a aria-label="Open Ionwell" class="visit" href="https://ionwell.win" rel="noopener" target="_blank"><span data-en="Open" data-sk="Otvoriť">Otvoriť</span> ↗</a></li>
+<li><a class="row" href="#miner"><img alt="Doménový Miner logo" class="logo" height="40" src="/logos/domainer.png" width="40"/><span class="dom">do:/main/miner</span><span class="what" data-en="SEO and keyword tool for Slovak and Czech Google" data-sk="SEO nástroj na kľúčové slová pre slovenský a český Google">SEO nástroj na kľúčové slová pre slovenský a český Google</span><span class="status wip" data-en="In progress" data-sk="Vo vývoji">Vo vývoji</span></a><a aria-label="Open Doménový Miner" class="visit" href="https://domainer.bocak-sk.workers.dev" rel="noopener" target="_blank"><span data-en="Open" data-sk="Otvoriť">Otvoriť</span> ↗</a></li>
+</ul>
+</section>
+<section class="sec" id="work">
+<h2 data-en="Selected work" data-sk="Vybrané práce">Vybrané práce</h2>
+<div class="projects">
+<article class="project" id="depesa">
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/depesa.png" width="26"/><span class="url"><span>https://</span>depesa.eu</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://depesa.eu" rel="noopener" target="_blank">Otvoriť web</a></div>
+<h3 data-en="depeša: the day's news, short and fast" data-sk="depeša: správy dňa, krátko a rýchlo">depeša: správy dňa, krátko a rýchlo</h3>
+<div class="cols">
+<p data-en="A Slovak news service that condenses the day's stories from home and abroad into short summaries. An automated pipeline refreshes the site through the day, so it stays current without a newsroom." data-sk="Slovenský spravodajský web, ktorý zhŕňa správy dňa z domova a zo sveta do krátkych textov. Obsah počas dňa obnovuje automatizovaný proces, takže web je aktuálny aj bez redakcie.">Slovenský spravodajský web, ktorý zhŕňa správy dňa z domova a zo sveta do krátkych textov. Obsah počas dňa obnovuje automatizovaný proces, takže web je aktuálny aj bez redakcie.</p>
+<ul>
+<li data-en="Seven sections, from domestic news and politics to tech and crypto" data-sk="Sedem rubrík, od domácich správ a politiky po technológie a krypto">Sedem rubrík, od domácich správ a politiky po technológie a krypto</li>
+<li data-en="Slovak, English and German editions" data-sk="Slovenská, anglická a nemecká verzia">Slovenská, anglická a nemecká verzia</li>
+<li data-en="Installable Android app, RSS feed and a full archive" data-sk="Aplikácia pre Android, RSS a kompletný archív">Aplikácia pre Android, RSS a kompletný archív</li>
+<li data-en="Evergreen pages for name days, Bitcoin price and running topics" data-sk="Stále stránky pre meniny, cenu bitcoinu a dlhodobé témy">Stále stránky pre meniny, cenu bitcoinu a dlhodobé témy</li>
+</ul>
+</div>
+<ul class="tags"><li data-en="news" data-sk="správy">správy</li><li data-en="automation" data-sk="automatizácia">automatizácia</li><li data-en="multilingual" data-sk="viac jazykov">viac jazykov</li><li>android</li></ul>
+</article>
+<article class="project" id="animeslovakia">
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/animeslovakia.png" width="26"/><span class="url"><span>https://</span>animeslovakia.sk</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://animeslovakia.sk" rel="noopener" target="_blank">Otvoriť web</a></div>
+<h3 data-en="Anime Slovakia: a home for fans in two languages" data-sk="Anime Slovakia: domov pre fanúšikov v dvoch jazykoch">Anime Slovakia: domov pre fanúšikov v dvoch jazykoch</h3>
+<div class="cols">
+<p data-en="A Slovak and Czech portal for anime, manga and Japanese pop culture. It combines editorial news with a searchable anime database and a game layer that gives fans a reason to come back every day." data-sk="Slovensko-český portál o anime, mange a japonskej popkultúre. Spája redakčné novinky s databázou anime a hernými prvkami, vďaka ktorým sa fanúšikovia vracajú každý deň.">Slovensko-český portál o anime, mange a japonskej popkultúre. Spája redakčné novinky s databázou anime a hernými prvkami, vďaka ktorým sa fanúšikovia vracajú každý deň.</p>
+<ul>
+<li data-en="News, seasonal line-ups and a countdown to each new episode" data-sk="Novinky, prehľad sezóny a odpočet do každej novej epizódy">Novinky, prehľad sezóny a odpočet do každej novej epizódy</li>
+<li data-en="Guide to where every title can be watched legally in SK and CZ" data-sk="Prehľad, kde sa dá každý titul legálne pozerať na Slovensku a v Česku">Prehľad, kde sa dá každý titul legálne pozerať na Slovensku a v Česku</li>
+<li data-en="Weekly quiz, a 100-character card collection, card exchange and leaderboard" data-sk="Kvíz týždňa, zbierka 100 kariet postáv, burza kariet a rebríček">Kvíz týždňa, zbierka 100 kariet postáv, burza kariet a rebríček</li>
+<li data-en="Events calendar, fan gallery, shop and wallpaper guides" data-sk="Kalendár akcií, galéria fanúšikov, prehľady obchodov a tapiet">Kalendár akcií, galéria fanúšikov, prehľady obchodov a tapiet</li>
+</ul>
+</div>
+<ul class="tags"><li data-en="community" data-sk="komunita">komunita</li><li data-en="gamification" data-sk="gamifikácia">gamifikácia</li><li data-en="database" data-sk="databáza">databáza</li><li>sk + cz</li></ul>
+</article>
+<article class="project" id="bocak">
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/bocak.png" width="26"/><span class="url"><span>https://</span>bocak.sk</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://bocak.sk" rel="noopener" target="_blank">Otvoriť web</a></div>
+<h3 data-en="Bocak: crypto earning, reviewed without the hype" data-sk="Bocak: zarábanie krypta, zhodnotené bez hype">Bocak: zarábanie krypta, zhodnotené bez hype</h3>
+<div class="cols">
+<p data-en="A catalogue of apps, DePIN projects, websites and games that pay in crypto. Every entry is written up plainly, including what it costs to start and where the catch is." data-sk="Katalóg appiek, DePIN projektov, webov a hier, ktoré platia v krypte. Každý projekt je opísaný zrozumiteľne, vrátane toho, koľko stojí začať a kde je háčik.">Katalóg appiek, DePIN projektov, webov a hier, ktoré platia v krypte. Každý projekt je opísaný zrozumiteľne, vrátane toho, koľko stojí začať a kde je háčik.</p>
+<ul>
+<li data-en="Around a hundred reviewed projects, filterable by type and entry cost" data-sk="Okolo sto zhodnotených projektov, filter podľa typu a vstupných nákladov">Okolo sto zhodnotených projektov, filter podľa typu a vstupných nákladov</li>
+<li data-en="Read &amp;amp; Earn section, faucet and survey offers" data-sk="Sekcia Čítaj a zarábaj, faucet a prieskumy">Sekcia Čítaj a zarábaj, faucet a prieskumy</li>
+<li data-en="Community area and user profiles" data-sk="Komunita a používateľské profily">Komunita a používateľské profily</li>
+<li data-en="Slovak and English versions" data-sk="Slovenská a anglická verzia">Slovenská a anglická verzia</li>
+</ul>
+</div>
+<ul class="tags"><li data-en="catalogue" data-sk="katalóg">katalóg</li><li data-en="reviews" data-sk="recenzie">recenzie</li><li data-en="crypto" data-sk="krypto">krypto</li><li>sk + en</li></ul>
+</article>
+<article class="project" id="cga">
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/cryptogaway.png" width="26"/><span class="url"><span>https://</span>cryptogaway.com</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://cryptogaway.com" rel="noopener" target="_blank">Otvoriť web</a></div>
+<h3 data-en="CGA, Crypto GiveAway: a faucet platform with a game loop" data-sk="CGA, Crypto GiveAway: faucet platforma s hernou slučkou">CGA, Crypto GiveAway: faucet platforma s hernou slučkou</h3>
+<div class="cols">
+<p data-en="An English-language rewards platform for a global audience. Users claim small amounts of crypto on a timer and are paid instantly to their FaucetPay wallet, with missions and levels that reward regular use." data-sk="Platforma v angličtine pre používateľov z celého sveta. Používatelia si v pravidelných intervaloch vyberajú malé sumy krypta, ktoré im okamžite prídu do peňaženky FaucetPay. Misie a levely odmeňujú pravidelné používanie.">Platforma v angličtine pre používateľov z celého sveta. Používatelia si v pravidelných intervaloch vyberajú malé sumy krypta, ktoré im okamžite prídu do peňaženky FaucetPay. Misie a levely odmeňujú pravidelné používanie.</p>
+<ul>
+<li data-en="Four faucets: USDT, DOGE, TRX and FEY" data-sk="Štyri faucety: USDT, DOGE, TRX a FEY">Štyri faucety: USDT, DOGE, TRX a FEY</li>
+<li data-en="Daily missions, a daily jackpot, levels, leaderboard and referrals" data-sk="Denné misie, denný jackpot, levely, rebríček a odporúčací program">Denné misie, denný jackpot, levely, rebríček a odporúčací program</li>
+<li data-en="Mining section with the Gem Caves digging game" data-sk="Sekcia Mining s hrou Gem Caves">Sekcia Mining s hrou Gem Caves</li>
+<li data-en="Android app and a self-serve advertising platform for other sites" data-sk="Aplikácia pre Android a samoobslužná reklamná platforma pre iné weby">Aplikácia pre Android a samoobslužná reklamná platforma pre iné weby</li>
+</ul>
+</div>
+<ul class="tags"><li data-en="rewards" data-sk="odmeny">odmeny</li><li data-en="payments" data-sk="platby">platby</li><li data-en="game design" data-sk="herný dizajn">herný dizajn</li><li data-en="ad platform" data-sk="reklamná platforma">reklamná platforma</li></ul>
+</article>
+<article class="project" id="slangovnik">
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/slangovnik.png" width="26"/><span class="url"><span>https://</span>slangovnik.sk</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://slangovnik.sk" rel="noopener" target="_blank">Otvoriť web</a></div>
+<h3 data-en="Slangovník: the words you won't find in the official rules" data-sk="Slangovník: slová, ktoré v Pravidlách nenájdete">Slangovník: slová, ktoré v Pravidlách nenájdete</h3>
+<div class="cols">
+<p data-en="A community dictionary of Slovak slang and dialect. Anyone can add a word without registering, each submission passes an automatic check and a moderator, and votes decide which meaning comes first." data-sk="Komunitný slovník slovenského slangu a nárečových slov. Slovo môže pridať ktokoľvek bez registrácie, každý príspevok prejde automatickou kontrolou a moderátorom a o poradí významov rozhodujú hlasy.">Komunitný slovník slovenského slangu a nárečových slov. Slovo môže pridať ktokoľvek bez registrácie, každý príspevok prejde automatickou kontrolou a moderátorom a o poradí významov rozhodujú hlasy.</p>
+<ul>
+<li data-en="Dialect map of Slovakia with Region Fights, where regions vote on rival words" data-sk="Nárečová mapa Slovenska a Region Fights, kde regióny hlasujú za svoje slová">Nárečová mapa Slovenska a Region Fights, kde regióny hlasujú za svoje slová</li>
+<li data-en="Translator that highlights slang in any pasted message" data-sk="Prekladač, ktorý vo vloženej správe zvýrazní slang">Prekladač, ktorý vo vloženej správe zvýrazní slang</li>
+<li data-en="Quiz, daily challenge and a word of the day calendar" data-sk="Kvíz, denná výzva a kalendár slova dňa">Kvíz, denná výzva a kalendár slova dňa</li>
+<li data-en="Print-on-demand shop that puts any word on a shirt, mug or sticker" data-sk="Obchod s tlačou na objednávku: slovo na tričku, hrnčeku či nálepke">Obchod s tlačou na objednávku: slovo na tričku, hrnčeku či nálepke</li>
+</ul>
+</div>
+<ul class="tags"><li data-en="user content" data-sk="obsah od ľudí">obsah od ľudí</li><li data-en="moderation" data-sk="moderovanie">moderovanie</li><li data-en="voting" data-sk="hlasovanie">hlasovanie</li><li data-en="e-commerce" data-sk="e-shop">e-shop</li></ul>
+</article>
+<article class="project" id="gramabot">
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/gramabot.png" width="26"/><span class="url"><span>https://</span>gramabot.sk</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://gramabot.sk" rel="noopener" target="_blank">Otvoriť web</a></div>
+<h3 data-en="GramaBot: Slovak without mistakes" data-sk="GramaBot: slovenčina bez chýb">GramaBot: slovenčina bez chýb</h3>
+<div class="cols">
+<p data-en="An AI tool that corrects spelling, grammar and diacritics in Slovak text. Around the corrector sits a set of writing and study tools, with a free daily allowance and paid plans in preparation." data-sk="AI nástroj, ktorý opraví pravopis, gramatiku a diakritiku v slovenskom texte. Okolo opráv je postavená sada pomôcok na písanie a učenie, s bezplatným denným limitom a pripravenými platenými plánmi.">AI nástroj, ktorý opraví pravopis, gramatiku a diakritiku v slovenskom texte. Okolo opráv je postavená sada pomôcok na písanie a učenie, s bezplatným denným limitom a pripravenými platenými plánmi.</p>
+<ul>
+<li data-en="Spelling and grammar correction, plus an AI chat in standard Slovak" data-sk="Oprava pravopisu a gramatiky a AI chat v spisovnej slovenčine">Oprava pravopisu a gramatiky a AI chat v spisovnej slovenčine</li>
+<li data-en="Checks whole Word and PDF documents" data-sk="Kontrola dokumentov vo Worde a PDF">Kontrola dokumentov vo Worde a PDF</li>
+<li data-en="Letter templates, CV and cover letter help, translation" data-sk="Vzory listov, pomoc so životopisom a motivačným listom, preklad">Vzory listov, pomoc so životopisom a motivačným listom, preklad</li>
+<li data-en="Study tools: spelling trainer, dictation and a word counter" data-sk="Učenie: tréning pravopisu, diktáty a počítadlo slov">Učenie: tréning pravopisu, diktáty a počítadlo slov</li>
+</ul>
+</div>
+<ul class="tags"><li>ai</li><li data-en="slovak language" data-sk="slovenčina">slovenčina</li><li data-en="writing tools" data-sk="nástroje na písanie">nástroje na písanie</li><li>freemium</li></ul>
+</article>
+<article class="project" id="ionwell">
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/ionwell.png" width="26"/><span class="url"><span>https://</span>ionwell.win</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://ionwell.win" rel="noopener" target="_blank">Otvoriť web</a></div>
+<h3 data-en="Ionwell: small rewards at your own rhythm" data-sk="Ionwell: malé odmeny vo vlastnom rytme">Ionwell: malé odmeny vo vlastnom rytme</h3>
+<div class="cols">
+<p data-en="An English-language Dogecoin faucet. Users claim a small DOGE reward every 10 minutes, paid straight to their FaucetPay account with no minimum and no deposit." data-sk="Dogecoin faucet v angličtine. Používatelia si každých 10 minút vyberú malú odmenu v DOGE, ktorá im príde priamo na účet FaucetPay, bez minima a bez vkladu.">Dogecoin faucet v angličtine. Používatelia si každých 10 minút vyberú malú odmenu v DOGE, ktorá im príde priamo na účet FaucetPay, bez minima a bez vkladu.</p>
+<ul>
+<li data-en="Bonuses for loyalty streaks, referrals, a mystery roll and a daily rain payout" data-sk="Bonusy za vernosť, odporúčania, mystery roll a denný „rain“">Bonusy za vernosť, odporúčania, mystery roll a denný „rain“</li>
+<li data-en="More ways to earn: shortlinks, PTC ads, surveys and offers" data-sk="Ďalší zárobok: shortlinky, PTC reklamy, prieskumy a ponuky">Ďalší zárobok: shortlinky, PTC reklamy, prieskumy a ponuky</li>
+<li data-en="Claim history with FaucetPay receipts and public payment proofs" data-sk="História výberov s potvrdeniami z FaucetPay a dôkazy o výplatách">História výberov s potvrdeniami z FaucetPay a dôkazy o výplatách</li>
+<li data-en="Live DOGE price and a referral panel" data-sk="Živá cena DOGE a panel odporúčaní">Živá cena DOGE a panel odporúčaní</li>
+</ul>
+</div>
+<ul class="tags"><li data-en="rewards" data-sk="odmeny">odmeny</li><li>dogecoin</li><li data-en="payments" data-sk="platby">platby</li><li data-en="referrals" data-sk="odporúčania">odporúčania</li></ul>
+</article>
+<article class="project" id="miner">
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/domainer.png" width="26"/><span class="url"><span>https://</span>domainer.bocak-sk.workers.dev</span><span class="status wip" data-en="In progress" data-sk="Vo vývoji">Vo vývoji</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://domainer.bocak-sk.workers.dev" rel="noopener" target="_blank">Otvoriť web</a></div>
+<h3 data-en="Doménový Miner: SEO data for the Slovak and Czech market" data-sk="Doménový Miner: SEO dáta pre slovenský a český trh">Doménový Miner: SEO dáta pre slovenský a český trh</h3>
+<div class="cols">
+<p data-en="A software product for site owners and marketers who work with Slovak and Czech Google. It brings keyword research, rank tracking and technical audits into one tool, on a credit model with a free tier." data-sk="Softvérový produkt pre majiteľov webov a marketérov, ktorí pracujú so slovenským a českým Googlom. Spája analýzu kľúčových slov, sledovanie pozícií a technický audit do jedného nástroja s kreditovým modelom a plánom zadarmo.">Softvérový produkt pre majiteľov webov a marketérov, ktorí pracujú so slovenským a českým Googlom. Spája analýzu kľúčových slov, sledovanie pozícií a technický audit do jedného nástroja s kreditovým modelom a plánom zadarmo.</p>
+<ul>
+<li data-en="Keyword analysis with search volume, trend, CPC and difficulty" data-sk="Analýza kľúčových slov s hľadanosťou, trendom, CPC a obtiažnosťou">Analýza kľúčových slov s hľadanosťou, trendom, CPC a obtiažnosťou</li>
+<li data-en="Rank tracking, competitor content gap and domain keyword reports" data-sk="Sledovanie pozícií, content gap konkurencie a kľúčové slová domény">Sledovanie pozícií, content gap konkurencie a kľúčové slová domény</li>
+<li data-en="Site audit crawler and 17 bulk reports" data-sk="Crawler na audit webu a 17 hromadných reportov">Crawler na audit webu a 17 hromadných reportov</li>
+<li data-en="Google Search Console integration and four plans, from free to Pro" data-sk="Prepojenie s Google Search Console a štyri plány, od Free po Pro">Prepojenie s Google Search Console a štyri plány, od Free po Pro</li>
+</ul>
+</div>
+<ul class="tags"><li>saas</li><li>seo</li><li>cloudflare workers</li><li data-en="subscriptions" data-sk="predplatné">predplatné</li></ul>
+</article>
+</div>
+</section>
+<section class="sec" id="stats">
+<h2 data-en="Results in Google Search" data-sk="Výsledky vo vyhľadávaní Google">Výsledky vo vyhľadávaní Google</h2>
+<p data-en="Daily figures from Google Search Console for five of my sites. All of them are new, so each chart starts on the first day Google reported data for that site. Snapshot as of 4 Oct 2026." data-sk="Denné čísla z Google Search Console pre päť mojich webov. Všetky sú nové, preto každý graf začína prvým dňom, za ktorý Google pre daný web eviduje dáta. Stav k 4. 10. 2026.">Denné čísla z Google Search Console pre päť mojich webov. Všetky sú nové, preto každý graf začína prvým dňom, za ktorý Google pre daný web eviduje dáta. Stav k 4. 10. 2026.</p>
+<div class="totals" id="totals"></div>
+<div aria-label="Metric" class="seg" role="group">
+<button aria-pressed="true" data-en="Impressions" data-metric="imp" data-sk="Zobrazenia" type="button">Zobrazenia</button>
+<button aria-pressed="false" data-en="Clicks" data-metric="clk" data-sk="Kliknutia" type="button">Kliknutia</button>
+</div>
+<div class="gsc" id="gsc"></div>
+<p class="src" data-en="Source: Google Search Console, search performance. Position is the average rank in Google results; 1 to 10 means page one." data-sk="Zdroj: Google Search Console, výkonnosť vo vyhľadávaní. Pozícia je priemerné umiestnenie vo výsledkoch Google; 1 až 10 znamená prvú stranu.">Zdroj: Google Search Console, výkonnosť vo vyhľadávaní. Pozícia je priemerné umiestnenie vo výsledkoch Google; 1 až 10 znamená prvú stranu.</p>
+</section>
+<section class="sec" id="services">
+<h2 data-en="What I can do for you" data-sk="Čo môžem urobiť pre vás">Čo môžem urobiť pre vás</h2>
+<p data-en="The same work I do on my own sites, done for yours. Pick a service to see what it covers." data-sk="To isté, čo robím na vlastných weboch, urobím aj pre ten váš. Vyberte si službu a pozrite, čo zahŕňa.">To isté, čo robím na vlastných weboch, urobím aj pre ten váš. Vyberte si službu a pozrite, čo zahŕňa.</p>
+<div aria-label="Services" class="tabs" role="tablist">
+<button aria-controls="panel-web" aria-selected="true" class="tab" data-en="Web creation" data-sk="Tvorba webov" id="tab-web" role="tab" type="button">Tvorba webov</button>
+<button aria-controls="panel-seo" aria-selected="false" class="tab" id="tab-seo" role="tab" tabindex="-1" type="button">SEO</button>
+</div>
+<div aria-labelledby="tab-web" class="panel" id="panel-web" role="tabpanel">
+<h3 data-en="A website built for your business, from first idea to launch" data-sk="Web pre váš biznis, od prvého nápadu po spustenie">Web pre váš biznis, od prvého nápadu po spustenie</h3>
+<div class="cols">
+<p data-en="I build the whole site: structure, design, development and launch. You get a fast, modern website that works on phones, is ready for search engines from day one and is easy to grow later." data-sk="Postavím celý web: štruktúru, dizajn, vývoj aj spustenie. Dostanete rýchly a moderný web, ktorý funguje na mobile, je od prvého dňa pripravený pre vyhľadávače a dá sa neskôr ľahko rozširovať.">Postavím celý web: štruktúru, dizajn, vývoj aj spustenie. Dostanete rýchly a moderný web, ktorý funguje na mobile, je od prvého dňa pripravený pre vyhľadávače a dá sa neskôr ľahko rozširovať.</p>
+<ul>
+<li data-en="Company sites, landing pages, blogs, magazines and portals" data-sk="Firemné weby, landing pages, blogy, magazíny a portály">Firemné weby, landing pages, blogy, magazíny a portály</li>
+<li data-en="Custom features: sign-in, forms, catalogues, quizzes, shops, payments" data-sk="Funkcie na mieru: prihlásenie, formuláre, katalógy, kvízy, e-shop, platby">Funkcie na mieru: prihlásenie, formuláre, katalógy, kvízy, e-shop, platby</li>
+<li data-en="Responsive design for phone, tablet and desktop" data-sk="Responzívny dizajn pre mobil, tablet aj počítač">Responzívny dizajn pre mobil, tablet aj počítač</li>
+<li data-en="More than one language where you need it" data-sk="Viac jazykových verzií, ak ich potrebujete">Viac jazykových verzií, ak ich potrebujete</li>
+<li data-en="Search-ready structure, speed and metadata built in" data-sk="Štruktúra, rýchlosť a meta údaje pripravené pre vyhľadávače">Štruktúra, rýchlosť a meta údaje pripravené pre vyhľadávače</li>
+<li data-en="Launch, hosting setup and support after go-live" data-sk="Spustenie, nastavenie hostingu a podpora po spustení">Spustenie, nastavenie hostingu a podpora po spustení</li>
+</ul>
+</div>
+<ul class="tags"><li data-en="design" data-sk="dizajn">dizajn</li><li data-en="development" data-sk="vývoj">vývoj</li><li data-en="launch" data-sk="spustenie">spustenie</li><li data-en="support" data-sk="podpora">podpora</li></ul>
+</div>
+<div aria-labelledby="tab-seo" class="panel" hidden="" id="panel-seo" role="tabpanel">
+<h3 data-en="SEO that gets your existing website found on Google" data-sk="SEO, vďaka ktorému váš web nájdu na Googli">SEO, vďaka ktorému váš web nájdu na Googli</h3>
+<div class="cols">
+<p data-en="I find out why your site is not ranking and fix it. I work with real search data for Slovak and Czech Google, using the keyword and audit tool I built myself." data-sk="Zistím, prečo sa váš web neumiestňuje, a opravím to. Pracujem so skutočnými dátami o vyhľadávaní na slovenskom a českom Googli a s vlastným nástrojom na kľúčové slová a audit.">Zistím, prečo sa váš web neumiestňuje, a opravím to. Pracujem so skutočnými dátami o vyhľadávaní na slovenskom a českom Googli a s vlastným nástrojom na kľúčové slová a audit.</p>
+<ul>
+<li data-en="Technical audit: indexing, speed, titles, descriptions, broken pages" data-sk="Technický audit: indexácia, rýchlosť, titulky, popisy, nefunkčné stránky">Technický audit: indexácia, rýchlosť, titulky, popisy, nefunkčné stránky</li>
+<li data-en="Keyword research with search volume and difficulty" data-sk="Analýza kľúčových slov s hľadanosťou a obtiažnosťou">Analýza kľúčových slov s hľadanosťou a obtiažnosťou</li>
+<li data-en="Competitor analysis: what they rank for and you don't" data-sk="Analýza konkurencie: na čo sa umiestňujú oni a vy nie">Analýza konkurencie: na čo sa umiestňujú oni a vy nie</li>
+<li data-en="On-page fixes and a content plan for new pages" data-sk="On-page úpravy a plán obsahu pre nové stránky">On-page úpravy a plán obsahu pre nové stránky</li>
+<li data-en="Google Search Console setup and review" data-sk="Nastavenie a kontrola Google Search Console">Nastavenie a kontrola Google Search Console</li>
+<li data-en="Position tracking and regular reports" data-sk="Sledovanie pozícií a pravidelné reporty">Sledovanie pozícií a pravidelné reporty</li>
+</ul>
+</div>
+<ul class="tags"><li>audit</li><li data-en="keywords" data-sk="kľúčové slová">kľúčové slová</li><li data-en="content" data-sk="obsah">obsah</li><li data-en="tracking" data-sk="sledovanie">sledovanie</li></ul>
+</div>
+<div class="actions"><a class="btn primary" data-en="Ask for a quote" data-sk="Vyžiadať cenovú ponuku" href="#contact">Vyžiadať cenovú ponuku</a></div>
+</section>
+<section class="sec" id="skills">
+<h2 data-en="What I bring" data-sk="Čo prinášam">Čo prinášam</h2>
+<div class="skills">
+<div><h3 data-en="Product, end to end" data-sk="Produkt od A po Z">Produkt od A po Z</h3><p data-en="I take an idea from concept to a running site: structure, design, build, launch and day-to-day operation." data-sk="Nápad dotiahnem až po fungujúci web: štruktúra, dizajn, vývoj, spustenie a každodenná prevádzka.">Nápad dotiahnem až po fungujúci web: štruktúra, dizajn, vývoj, spustenie a každodenná prevádzka.</p></div>
+<div><h3 data-en="Content and automation" data-sk="Obsah a automatizácia">Obsah a automatizácia</h3><p data-en="News and editorial sites that publish on a schedule, with automated pipelines doing the repetitive work." data-sk="Spravodajské a obsahové weby, ktoré publikujú podľa plánu, pričom opakovanú prácu robia automatizované procesy.">Spravodajské a obsahové weby, ktoré publikujú podľa plánu, pričom opakovanú prácu robia automatizované procesy.</p></div>
+<div><h3 data-en="Community features" data-sk="Komunitné funkcie">Komunitné funkcie</h3><p data-en="Sign-in, voting, moderation, quizzes, collections, leaderboards and other reasons for people to return." data-sk="Prihlásenie, hlasovanie, moderovanie, kvízy, zbierky, rebríčky a ďalšie dôvody, prečo sa ľudia vracajú.">Prihlásenie, hlasovanie, moderovanie, kvízy, zbierky, rebríčky a ďalšie dôvody, prečo sa ľudia vracajú.</p></div>
+<div><h3>SEO</h3><p data-en="Search-first site structure and landing pages, plus my own keyword and audit tool built for the local market." data-sk="Štruktúra webu a vstupné stránky stavané pre vyhľadávanie, plus vlastný nástroj na kľúčové slová a audit pre miestny trh.">Štruktúra webu a vstupné stránky stavané pre vyhľadávanie, plus vlastný nástroj na kľúčové slová a audit pre miestny trh.</p></div>
+<div><h3 data-en="Monetisation" data-sk="Monetizácia">Monetizácia</h3><p data-en="Display advertising, direct ad sales, affiliate links, subscriptions, credits and print-on-demand." data-sk="Bannerová reklama, priamy predaj reklamy, affiliate odkazy, predplatné, kredity a tlač na objednávku.">Bannerová reklama, priamy predaj reklamy, affiliate odkazy, predplatné, kredity a tlač na objednávku.</p></div>
+<div><h3 data-en="Local markets" data-sk="Miestne trhy">Miestne trhy</h3><p data-en="Products in Slovak, Czech, English and German, written for how people in each market search and read." data-sk="Weby v slovenčine, češtine, angličtine a nemčine, písané tak, ako ľudia na danom trhu hľadajú a čítajú.">Weby v slovenčine, češtine, angličtine a nemčine, písané tak, ako ľudia na danom trhu hľadajú a čítajú.</p></div>
+</div>
+</section>
+<section class="contact" id="contact">
+<h2 data-en="Let's talk" data-sk="Ozvite sa">Ozvite sa</h2>
+<p class="lede" data-en="Need a new website or better rankings for the one you have? Write to me with a few lines about your project and I'll reply with a proposal." data-sk="Potrebujete nový web alebo lepšie pozície pre ten, ktorý už máte? Napíšte mi pár viet o vašom projekte a pošlem vám ponuku.">Potrebujete nový web alebo lepšie pozície pre ten, ktorý už máte? Napíšte mi pár viet o vašom projekte a pošlem vám ponuku.</p>
+<div class="mail">
+<code id="email">bocak.sk@gmail.com</code>
+<button class="btn" id="copy" type="button">Copy address</button>
+</div>
+<div class="foot"><span data-en="MaBo Digital · Marian Boledovic · Luka, Slovakia" data-sk="MaBo Digital · Marian Boledovic · Luka, Slovensko">MaBo Digital · Marian Boledovic · Luka, Slovensko</span><span>© 2026</span></div>
+</section>
+</div>
+<button aria-label="Back to top" class="totop l" hidden="" type="button"><svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="22"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button>
+<button aria-label="Back to top" class="totop r" hidden="" type="button"><svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="22"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button>
+<script>
+(function(){
+  /* Search Console snapshot: data read on 7 Oct 2026, last reported day 4 Oct 2026 */
+  var SITES = [
+    {d:'animeslovakia', t:'.sk', start:'2026-09-26', ctr:3.5, pos:8.2,
+     imp:[0,2,106,295,304,315,326,411,373], clk:[0,0,3,8,17,11,7,14,14],
+     q:[['naruto',392,6.7],['anime cz',32,7.1],['animefest 2027',21,6.0],['naruto cz',16,5.2],['crunchyroll cz titulky',8,8.9]]},
+    {d:'slangovnik', t:'.sk', start:'2026-09-27', ctr:1.5, pos:7.8,
+     imp:[0,13,11,37,161,360,335,314], clk:[0,0,1,0,2,9,2,5],
+     q:[['slangove slova',28,5.8],['chillovat význam',25,4.7],['ksicht',18,8.1],['chillovať',11,3.3],['hejtovať',9,5.4]]},
+    {d:'cryptogaway', t:'.com', start:'2026-09-23', ctr:11.8, pos:27.3,
+     imp:[0,0,6,132,41,24,19,29,14,15,11,22], clk:[0,0,1,17,5,4,2,1,1,3,1,2],
+     q:[['crypto giveaway',19,5.9],['free crypto giveaway',10,8.4],['claim free crypto',6,10.3],['cga ads',4,3.0],['usdt giveaway free',3,5.3]]},
+    {d:'bocak', t:'.sk', start:'2026-09-14', ctr:2.6, pos:17,
+     imp:[0,0,2,4,4,7,11,12,14,9,22,16,29,23,23,17,13,27,36,25,16], clk:[0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,1,1,2,1,0],
+     q:[['bocak',40,5.8],['kryptomeny zadarmo',19,17.4],['nataris ai',14,8.4],['nataris',14,9.1],['miningperia',3,9.7]]},
+    {d:'depesa', t:'.eu', start:'2026-08-31', ctr:3.1, pos:17.4,
+     imp:[0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,2,0,1,2,3,6,16,20,19,15,25,37,12,16,25,15,19,25,17,9],
+     clk:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,0,1,0,0,0,1,2,1,0,0,0],
+     q:[['depeša',9,7.3],['spravodajske weby',8,30.8],['spravodajske portaly',7,18.1],['najlepsie slovenske weby',6,9.7],['slovenské spravodajské portály',2,12.5]]}
+  ];
+  var T = {
+    en:{imp:'Impressions',clk:'Clicks',pos:'Avg. position',q:'Query',p:'Pos.',i:'Impr.',days:'days',sites:'Sites',perday:'per day',loc:'en-US'},
+    sk:{imp:'Zobrazenia',clk:'Kliknutia',pos:'Priem. pozícia',q:'Dopyt',p:'Poz.',i:'Zobr.',days:'dní',sites:'Weby',perday:'za deň',loc:'sk-SK'}
+  };
+  var metric = 'imp';
+  function sum(a){ return a.reduce(function(x,y){return x+y;},0); }
+  function day(site,i,l){ var d=new Date(site.start+'T00:00:00Z'); d.setUTCDate(d.getUTCDate()+i);
+    return l==='sk' ? d.getUTCDate()+'. '+(d.getUTCMonth()+1)+'.' : d.getUTCDate()+' '+['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][d.getUTCMonth()]; }
+  function nice(m){ var k=Math.pow(10,Math.floor(Math.log10(Math.max(m,1)))), c=[2,4,6,8,10];
+    for(var j=0;j<c.length;j++){ if(c[j]*k>=m) return Math.max(2,c[j]*k); } return 10*k; }
+  function fmt(n,l,dec){ return n.toLocaleString(T[l].loc,{maximumFractionDigits:1,minimumFractionDigits:dec||0}); }
+  function drawChart(fig, site, l){
+    var W=520,H=190,L=40,R=12,Tp=12,B=26, data=site[metric], n=data.length, max=nice(Math.max.apply(null,data));
+    function x(i){ return L+i*(W-L-R)/(n-1); } function y(v){ return Tp+(1-v/max)*(H-Tp-B); }
+    var pts=data.map(function(v,i){return x(i).toFixed(1)+','+y(v).toFixed(1);});
+    var g=[0,max/2,max].map(function(v){ return '<line class="grid" x1="'+L+'" x2="'+(W-R)+'" y1="'+y(v)+'" y2="'+y(v)+'"/><text x="'+(L-8)+'" y="'+(y(v)+4)+'" text-anchor="end">'+fmt(v,l)+'</text>'; }).join('');
+    var xl='<text x="'+L+'" y="'+(H-6)+'">'+day(site,0,l)+'</text><text x="'+(W-R)+'" y="'+(H-6)+'" text-anchor="end">'+day(site,n-1,l)+'</text>';
+    fig.innerHTML='<figcaption>'+T[l][metric]+' '+T[l].perday+'</figcaption><svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+site.d+site.t+': '+T[l][metric]+'">'+g+xl+
+      '<polygon class="ar" points="'+x(0)+','+y(0)+' '+pts.join(' ')+' '+x(n-1)+','+y(0)+'"/><polyline class="ln" points="'+pts.join(' ')+'"/>'+
+      '<line class="cross" y1="'+Tp+'" y2="'+y(0)+'" hidden/><circle class="dot" r="4.5" cx="'+x(n-1)+'" cy="'+y(data[n-1])+'"/>'+
+      '<rect x="'+L+'" y="0" width="'+(W-L-R)+'" height="'+H+'" fill="transparent"/></svg><div class="tip" hidden></div>';
+    var svg=fig.querySelector('svg'), tip=fig.querySelector('.tip'), cross=fig.querySelector('.cross'), dot=fig.querySelector('.dot');
+    function move(e){ var r=svg.getBoundingClientRect(), px=(e.clientX-r.left)/r.width*W, i=Math.max(0,Math.min(n-1,Math.round((px-L)/((W-L-R)/(n-1)))));
+      cross.removeAttribute('hidden'); cross.setAttribute('x1',x(i)); cross.setAttribute('x2',x(i)); dot.setAttribute('cx',x(i)); dot.setAttribute('cy',y(data[i]));
+      tip.innerHTML='<b>'+day(site,i,l)+'</b>'+T[l].imp+': '+fmt(site.imp[i],l)+'<br>'+T[l].clk+': '+fmt(site.clk[i],l); tip.hidden=false;
+      var tx=x(i)/W*r.width, tw=tip.offsetWidth; tip.style.transform='translate('+Math.max(0,Math.min(r.width-tw, tx<r.width/2?tx+12:tx-tw-12))+'px,'+(svg.offsetTop+4)+'px)'; }
+    function leave(){ tip.hidden=true; cross.setAttribute('hidden',''); dot.setAttribute('cx',x(n-1)); dot.setAttribute('cy',y(data[n-1])); }
+    svg.addEventListener('pointermove',move); svg.addEventListener('pointerdown',move); svg.addEventListener('pointerleave',leave);
+  }
+  function renderStats(l){
+    var box=document.getElementById('gsc'), tot=document.getElementById('totals'); if(!box) return;
+    var ti=sum(SITES.map(function(s){return sum(s.imp);})), tc=sum(SITES.map(function(s){return sum(s.clk);}));
+    tot.innerHTML='<div><b>'+fmt(ti,l)+'</b><span>'+T[l].imp+'</span></div><div><b>'+fmt(tc,l)+'</b><span>'+T[l].clk+'</span></div><div><b>'+SITES.length+'</b><span>'+T[l].sites+'</span></div>';
+    box.innerHTML=SITES.map(function(s){ var n=s.imp.length;
+      return '<article class="site"><div><header><span class="dom">'+s.d+'<i>'+s.t+'</i></span><span class="period">'+day(s,0,l)+' – '+day(s,n-1,l)+' 2026 · '+n+' '+T[l].days+'</span></header>'+
+        '<dl class="nums"><div><dt>'+T[l].imp+'</dt><dd>'+fmt(sum(s.imp),l)+'</dd></div><div><dt>'+T[l].clk+'</dt><dd>'+fmt(sum(s.clk),l)+'</dd></div>'+
+        '<div><dt>CTR</dt><dd>'+fmt(s.ctr,l)+(l==='sk'?' %':'%')+'</dd></div><div><dt>'+T[l].pos+'</dt><dd>'+fmt(s.pos,l)+'</dd></div></dl></div>'+
+        '<figure class="chart"></figure>'+
+        '<table class="q"><thead><tr><th>'+T[l].q+'</th><th>'+T[l].i+'</th><th>'+T[l].p+'</th></tr></thead><tbody>'+
+        s.q.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+fmt(r[1],l)+'</td><td>'+fmt(r[2],l,1)+'</td></tr>';}).join('')+'</tbody></table></article>'; }).join('');
+    Array.prototype.forEach.call(box.querySelectorAll('.chart'),function(f,i){ drawChart(f,SITES[i],l); });
+  }
+  document.querySelectorAll('.seg button').forEach(function(b){ b.addEventListener('click',function(){ metric=b.getAttribute('data-metric');
+    document.querySelectorAll('.seg button').forEach(function(x){ x.setAttribute('aria-pressed', x===b?'true':'false'); }); renderStats(lang); }); });
+
+  /* language switch: English is the markup, Slovak lives in data-sk */
+  var lang = 'en';
+  var copyLabels = { en:{copy:'Copy address', copied:'Copied', selected:'Selected'}, sk:{copy:'Kopírovať adresu', copied:'Skopírované', selected:'Označené'} };
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-sk]'));
+  nodes.forEach(function(el){ if (!el.hasAttribute('data-en')) el.setAttribute('data-en', el.innerHTML); });
+  var copyBtn = document.getElementById('copy');
+  function setLang(l, save){
+    lang = l === 'sk' ? 'sk' : 'en';
+    nodes.forEach(function(el){ el.innerHTML = el.getAttribute('data-' + lang); });
+    document.documentElement.lang = lang;
+    renderStats(lang);
+    copyBtn.textContent = copyLabels[lang].copy;
+    document.getElementById('lang-sk').setAttribute('aria-pressed', lang === 'sk' ? 'true' : 'false');
+    document.getElementById('lang-en').setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+    if (save) { try { localStorage.setItem('lang', lang); } catch(e){} }
+  }
+  setLang(document.documentElement.lang === 'sk' ? 'sk' : 'en', false);
+
+  /* copy email */
+  copyBtn.addEventListener('click', function(){
+    var el = document.getElementById('email');
+    function done(key){ copyBtn.textContent = copyLabels[lang][key]; setTimeout(function(){ copyBtn.textContent = copyLabels[lang].copy; }, 1800); }
+    function select(){ var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); done('selected'); }
+    try { navigator.clipboard.writeText(el.textContent).then(function(){ done('copied'); }, select); } catch(e){ select(); }
+  });
+
+  /* back to top */
+  var tops = document.querySelectorAll('.totop');
+  function showTop(){ var on = (window.scrollY || document.documentElement.scrollTop) > 500; tops.forEach(function(b){ b.hidden = !on; }); }
+  window.addEventListener('scroll', showTop, {passive:true}); showTop();
+  tops.forEach(function(b){ b.addEventListener('click', function(){
+    var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({top:0, behavior: calm ? 'auto' : 'smooth'}); }); });
+
+  /* service tabs */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  function pick(t, focus){
+    tabs.forEach(function(x){
+      var on = x === t;
+      x.setAttribute('aria-selected', on ? 'true' : 'false');
+      x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) t.focus();
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ pick(t); });
+    t.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+        e.preventDefault();
+        pick(tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length], true);
+      }
+    });
+  });
+  if (location.hash === '#seo') pick(document.getElementById('tab-seo'));
+})();
+</script>
+
+</body>
+</html>
