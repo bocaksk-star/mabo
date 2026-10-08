@@ -1,0 +1,147 @@
+# Content for MaBo Digital's service pages, case studies and privacy policy (EN + SK).
+# Facts only: features and figures come from the live sites and Google Search Console (data to 4 Oct 2026).
+
+SERVICES = {
+ 'web': {
+  'en': dict(path='/web-design/',
+   title='Web Design and Website Development | MaBo Digital',
+   desc='Custom web design and website development from Slovakia: fast, responsive websites ready for Google from day one. Company sites, portals and online shops.',
+   eyebrow='Service · Web design and development',
+   h1='Web design and website development',
+   lede='I design and build websites that load fast, work on every phone and are ready for Google from the first day. You deal with the person who builds the site, from the first call to launch and after.',
+   sections=[
+    ('What I build', 'list', ['Company websites and personal portfolios','Landing pages for a product, a service or a campaign','Blogs, magazines and news portals that publish on a schedule','Community portals with sign-in, voting, quizzes and leaderboards','Online shops and payments','Websites in Slovak, Czech, English and German']),
+    ('Included in every website', 'list', ['Responsive design for phone, tablet and desktop','Fast hosting on Cloudflare’s global network, with HTTPS','SEO foundations: page titles, descriptions, structured data, sitemap and language versions','Google Search Console set up and your sitemap submitted','Visitor analytics without cookies, so no cookie banner is needed','A contact form that delivers enquiries to your inbox','Favicon, app icons and link previews for social networks and chat apps']),
+    ('How a project runs', 'steps', [('Call','We talk about what the site should do, who it is for and your budget.'),('Plan','I propose the pages, features and structure, with a fixed quote.'),('Design and build','You see a working version early and give feedback while it is built.'),('Launch','Domain, hosting, email on your domain, Search Console and analytics are set up.'),('Support','Updates, new pages and fixes after launch, when you need them.')]),
+   ],
+   faq=[('How much does a website cost?','It depends on the number of pages and features. After a short call you get a fixed quote with no hidden fees.'),
+        ('How long does it take?','That depends on the scope too. The quote includes a timeline, and you see progress throughout.'),
+        ('Do you also handle the domain, hosting and email?','Yes. I can register the domain, set up hosting, email on your own domain and analytics, or work with what you already have.'),
+        ('Do you work with clients outside Slovakia?','Yes. I work in English, Slovak and Czech, and everything can be done remotely.')],
+   cta='Ask for a quote', proof='Every project in my portfolio is a website I designed, built and still run myself.'),
+  'sk': dict(path='/sk/tvorba-webov/',
+   title='Tvorba webových stránok na mieru | MaBo Digital',
+   desc='Tvorba webových stránok na mieru zo Slovenska: rýchle, responzívne weby pripravené pre Google od prvého dňa. Firemné weby, landing pages, portály aj e-shopy.',
+   eyebrow='Služba · Tvorba webov',
+   h1='Tvorba webových stránok na mieru',
+   lede='Navrhujem a staviam weby, ktoré sa rýchlo načítajú, fungujú na každom mobile a sú od prvého dňa pripravené pre Google. Komunikujete priamo s človekom, ktorý web stavia, od prvého hovoru až po spustenie a ďalej.',
+   sections=[
+    ('Čo tvorím', 'list', ['Firemné weby a osobné portfóliá','Landing pages pre produkt, službu alebo kampaň','Blogy, magazíny a spravodajské portály s pravidelným publikovaním','Komunitné portály s prihlásením, hlasovaním, kvízmi a rebríčkami','E-shopy a platby','Weby v slovenčine, češtine, angličtine a nemčine']),
+    ('Súčasť každého webu', 'list', ['Responzívny dizajn pre mobil, tablet aj počítač','Rýchly hosting na globálnej sieti Cloudflare s HTTPS','Základy SEO: titulky stránok, popisy, štruktúrované dáta, sitemap a jazykové verzie','Nastavená Google Search Console a odoslaná sitemap','Štatistiky návštevnosti bez cookies, takže netreba cookie lištu','Kontaktný formulár, ktorý doručí dopyty do vašej schránky','Favicon, ikony aplikácie a náhľady odkazov pre sociálne siete a chaty']),
+    ('Ako prebieha projekt', 'steps', [('Hovor','Prejdeme si, čo má web robiť, pre koho je a aký je rozpočet.'),('Plán','Navrhnem stránky, funkcie a štruktúru a pošlem pevnú cenovú ponuku.'),('Dizajn a vývoj','Fungujúcu verziu vidíte skoro a počas tvorby dávate spätnú väzbu.'),('Spustenie','Nastavím doménu, hosting, e-mail na vašej doméne, Search Console a štatistiky.'),('Podpora','Aktualizácie, nové stránky a opravy po spustení, keď ich potrebujete.')]),
+   ],
+   faq=[('Koľko stojí web?','Závisí to od počtu stránok a funkcií. Po krátkom hovore dostanete pevnú cenovú ponuku bez skrytých poplatkov.'),
+        ('Ako dlho tvorba trvá?','Aj to závisí od rozsahu. Ponuka obsahuje harmonogram a priebeh vidíte celý čas.'),
+        ('Postaráte sa aj o doménu, hosting a e-mail?','Áno. Zaregistrujem doménu, nastavím hosting, e-mail na vašej doméne a štatistiky, alebo nadviažem na to, čo už máte.'),
+        ('Pracujete aj s klientmi zo zahraničia?','Áno. Pracujem po slovensky, česky aj anglicky a všetko sa dá vybaviť na diaľku.')],
+   cta='Vyžiadať cenovú ponuku', proof='Každý projekt v mojom portfóliu je web, ktorý som sám navrhol, postavil a stále prevádzkujem.'),
+ },
+ 'seo': {
+  'en': dict(path='/seo/',
+   title='SEO Services, SEO Audit and Keyword Research | MaBo Digital',
+   desc='SEO services for Slovak, Czech and international websites: technical SEO audit, keyword research, on-page SEO and rank tracking, using our own SEO tools.',
+   eyebrow='Service · SEO',
+   h1='SEO services',
+   lede='I find out why your website is not getting traffic from Google and fix it. I work with real search data for Slovak, Czech and international markets, using Doménový Miner, the SEO tool I built myself.',
+   sections=[
+    ('What is included', 'list', ['Technical SEO audit: indexing, speed, titles, descriptions, broken pages, sitemap and robots.txt','Keyword research with search volume, trend and difficulty','Competitor analysis: the phrases your competitors rank for and you do not','On-page SEO: titles, headings, internal links and structured data','A content plan for new pages that people actually search for','Google Search Console set up and reviewed','Rank tracking and regular reports in plain language']),
+    ('My own SEO tool', 'text', 'Doménový Miner is the SEO tool I built for Slovak and Czech Google. It covers keyword research with search volume and difficulty, rank tracking, competitor content gap, domain keyword reports, a site audit crawler and 17 bulk reports. Client work uses the same data, so recommendations are based on real numbers.'),
+    ('How the work runs', 'steps', [('Audit','I crawl the site and review Search Console to find what holds it back.'),('Plan','You get a prioritised list of fixes and keyword opportunities.'),('Fix','I make the changes, or hand clear instructions to your developer.'),('Track','Positions and traffic are tracked, and you get regular reports.')]),
+   ],
+   faq=[('How fast will I see results?','Technical fixes can show within weeks. Rankings for competitive phrases usually take months. Regular reports let you see the progress.'),
+        ('Do you work on websites you did not build?','Yes. Most SEO work is on existing websites, whatever they are built with.'),
+        ('Can you guarantee first place on Google?','No. Nobody can honestly guarantee rankings. I can guarantee careful work and transparent reporting.'),
+        ('Which markets do you cover?','Slovak and Czech Google in depth, and English-language markets for international sites.')],
+   cta='Ask for an SEO audit', proof='Two of my own new sites, Anime Slovakia and Slangovník, reached an average position on page one of Google within their first ten days.'),
+  'sk': dict(path='/sk/seo/',
+   title='SEO optimalizácia a SEO audit | MaBo Digital',
+   desc='SEO optimalizácia pre slovenské, české aj zahraničné weby: technický SEO audit, analýza kľúčových slov, on-page SEO a sledovanie pozícií.',
+   eyebrow='Služba · SEO',
+   h1='SEO optimalizácia',
+   lede='Zistím, prečo váš web nemá návštevnosť z Googlu, a opravím to. Pracujem so skutočnými dátami o vyhľadávaní na slovenskom, českom aj zahraničnom trhu a s Doménovým Minerom, SEO nástrojom, ktorý som sám vytvoril.',
+   sections=[
+    ('Čo zahŕňa', 'list', ['Technický SEO audit: indexácia, rýchlosť, titulky, popisy, nefunkčné stránky, sitemap a robots.txt','Analýza kľúčových slov s hľadanosťou, trendom a obtiažnosťou','Analýza konkurencie: frázy, na ktoré sa umiestňujú oni a vy nie','On-page SEO: titulky, nadpisy, interné odkazy a štruktúrované dáta','Plán obsahu pre nové stránky, ktoré ľudia naozaj hľadajú','Nastavenie a kontrola Google Search Console','Sledovanie pozícií a pravidelné reporty zrozumiteľnou rečou']),
+    ('Vlastný SEO nástroj', 'text', 'Doménový Miner je SEO nástroj, ktorý som vytvoril pre slovenský a český Google. Pokrýva analýzu kľúčových slov s hľadanosťou a obtiažnosťou, sledovanie pozícií, content gap konkurencie, kľúčové slová domény, crawler na audit webu a 17 hromadných reportov. Práca pre klientov stojí na rovnakých dátach, takže odporúčania vychádzajú zo skutočných čísel.'),
+    ('Ako prebieha spolupráca', 'steps', [('Audit','Prejdem web crawlerom a skontrolujem Search Console, aby som našiel, čo ho brzdí.'),('Plán','Dostanete zoradený zoznam opráv a príležitostí v kľúčových slovách.'),('Opravy','Zmeny urobím sám alebo pošlem jasné pokyny vášmu vývojárovi.'),('Sledovanie','Pozície a návštevnosť sledujem a pravidelne posielam reporty.')]),
+   ],
+   faq=[('Kedy uvidím výsledky?','Technické opravy sa môžu prejaviť v priebehu týždňov. Pozície na konkurenčné frázy zvyčajne trvajú mesiace. Z pravidelných reportov vidíte pokrok.'),
+        ('Robíte SEO aj pre weby, ktoré ste nestavali?','Áno. Väčšina SEO práce je na existujúcich weboch, nech sú postavené na čomkoľvek.'),
+        ('Garantujete prvé miesto na Googli?','Nie. Pozície nikto nemôže úprimne garantovať. Garantujem dôkladnú prácu a transparentné reporty.'),
+        ('Na ktoré trhy sa zameriavate?','Do hĺbky na slovenský a český Google, pri medzinárodných weboch aj na anglicky hovoriace trhy.')],
+   cta='Vyžiadať SEO audit', proof='Dva moje nové weby, Anime Slovakia a Slangovník, dosiahli priemernú pozíciu na prvej strane Googlu do desiatich dní.'),
+ },
+}
+
+# Search Console snapshot (same data as the stats section on the home page)
+CASES = [
+ dict(slug='animeslovakia', art='animeslovakia', name='Anime Slovakia', url='https://animeslovakia.sk', logo='animeslovakia',
+      start='2026-09-26', days=9, imp=2132, clk=74, ctr='3.5', pos='8.2', series=[0,2,106,295,304,315,326,411,373],
+      q=[('naruto',392,'6.7'),('anime cz',32,'7.1'),('animefest 2027',21,'6.0'),('naruto cz',16,'5.2'),('crunchyroll cz titulky',8,'8.9')]),
+ dict(slug='slangovnik', art='slangovnik', name='Slangovník', url='https://slangovnik.sk', logo='slangovnik',
+      start='2026-09-27', days=8, imp=1231, clk=19, ctr='1.5', pos='7.8', series=[0,13,11,37,161,360,335,314],
+      q=[('slangove slova',28,'5.8'),('chillovat význam',25,'4.7'),('ksicht',18,'8.1'),('chillovať',11,'3.3'),('hejtovať',9,'5.4')]),
+ dict(slug='cryptogaway', art='cga', name='CGA, Crypto GiveAway', url='https://cryptogaway.com', logo='cryptogaway',
+      start='2026-09-23', days=12, imp=313, clk=37, ctr='11.8', pos='27.3', series=[0,0,6,132,41,24,19,29,14,15,11,22],
+      q=[('crypto giveaway',19,'5.9'),('free crypto giveaway',10,'8.4'),('claim free crypto',6,'10.3'),('cga ads',4,'3.0'),('usdt giveaway free',3,'5.3')]),
+ dict(slug='bocak', art='bocak', name='Bocak', url='https://bocak.sk', logo='bocak',
+      start='2026-09-14', days=21, imp=310, clk=8, ctr='2.6', pos='17', series=[0,0,2,4,4,7,11,12,14,9,22,16,29,23,23,17,13,27,36,25,16],
+      q=[('bocak',40,'5.8'),('kryptomeny zadarmo',19,'17.4'),('nataris ai',14,'8.4'),('nataris',14,'9.1'),('miningperia',3,'9.7')]),
+ dict(slug='depesa', art='depesa', name='depeša', url='https://depesa.eu', logo='depesa',
+      start='2026-08-31', days=35, imp=286, clk=9, ctr='3.1', pos='17.4', series=[0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,2,0,1,2,3,6,16,20,19,15,25,37,12,16,25,15,19,25,17,9],
+      q=[('depeša',9,'7.3'),('spravodajske weby',8,'30.8'),('spravodajske portaly',7,'18.1'),('najlepsie slovenske weby',6,'9.7'),('slovenské spravodajské portály',2,'12.5')]),
+]
+
+UI = {
+ 'en': dict(nav=[('/#work','Work'),('/web-design/','Web design'),('/seo/','SEO'),('/#contact','Contact')], home='/', other='/sk/', other_label='SVK', this_label='ENG',
+   faq='Questions clients ask', results='Results in Google Search', built='What was built', visit='Visit', case_eyebrow='Case study',
+   period='Period', imp='Impressions', clk='Clicks', ctr='CTR', pos='Avg. position', query='Query', perday='Impressions per day',
+   src='Source: Google Search Console, snapshot with data to 4 October 2026. Position is the average rank in Google results; 1 to 10 means page one.',
+   similar='Want results like these for your website?', similar_p='Tell me about your project and I will reply with a proposal.', contact_cta='Get in touch',
+   more='More case studies', footer_priv='Privacy', footer_line='MaBo Digital · Marian Boledovic · Luka, Slovakia', days='days', case_link='Read the case study',
+   services_more=[('/web-design/','More about web design'),('/seo/','More about SEO services')], priv_path='/privacy/', back='All projects'),
+ 'sk': dict(nav=[('/sk/#work','Práce'),('/sk/tvorba-webov/','Tvorba webov'),('/sk/seo/','SEO'),('/sk/#contact','Kontakt')], home='/sk/', other='/', other_label='ENG', this_label='SVK',
+   faq='Časté otázky', results='Výsledky vo vyhľadávaní Google', built='Čo som postavil', visit='Otvoriť', case_eyebrow='Prípadová štúdia',
+   period='Obdobie', imp='Zobrazenia', clk='Kliknutia', ctr='CTR', pos='Priem. pozícia', query='Dopyt', perday='Zobrazenia za deň',
+   src='Zdroj: Google Search Console, stav s dátami k 4. 10. 2026. Pozícia je priemerné umiestnenie vo výsledkoch Google; 1 až 10 znamená prvú stranu.',
+   similar='Chcete podobné výsledky pre svoj web?', similar_p='Napíšte mi pár viet o projekte a pošlem vám ponuku.', contact_cta='Ozvite sa',
+   more='Ďalšie prípadové štúdie', footer_priv='Ochrana súkromia', footer_line='MaBo Digital · Marian Boledovic · Luka, Slovensko', days='dní', case_link='Prečítať prípadovú štúdiu',
+   services_more=[('/sk/tvorba-webov/','Viac o tvorbe webov'),('/sk/seo/','Viac o SEO optimalizácii')], priv_path='/sk/ochrana-sukromia/', back='Všetky projekty'),
+}
+
+CASE_TEXT = {
+ 'en': {
+  'animeslovakia': ('Anime Slovakia: from launch to page one in nine days', 'An anime portal for Slovak and Czech fans, built and launched as a complete product: news, an anime database, legal streaming guides and a game layer that brings people back every day.', 'In its first nine days in Google, the site collected over 2,000 impressions with an average position of 8.2, which is page one. Its biggest query, "naruto", ranks at 6.7.'),
+  'slangovnik': ('Slangovník: a community dictionary that ranks in its first week', 'A dictionary of Slovak slang and dialect where anyone can add a word, a moderator approves it and votes decide which meaning comes first.', 'Within eight days the site reached an average position of 7.8 and over 1,200 impressions, with slang terms such as "chillovať" ranking at 3.3.'),
+  'cryptogaway': ('CGA, Crypto GiveAway: an English-language rewards platform', 'A global rewards platform with four crypto faucets, daily missions, a jackpot, levels, a mining game and a self-serve advertising platform for other sites.', 'In its first twelve days the site earned a click-through rate of 11.8%, with "crypto giveaway" ranking at 5.9 and "cga ads" at 3.0.'),
+  'bocak': ('Bocak: a crypto earning catalogue written without hype', 'A catalogue of around a hundred apps, DePIN projects, websites and games that pay in crypto, each reviewed plainly with costs and risks stated.', 'Impressions grew steadily over its first three weeks, and the brand query "bocak" ranks at 5.8.'),
+  'depesa': ('depeša: an automated Slovak news service', 'A Slovak news service that condenses the day’s stories into short summaries in three languages, refreshed by an automated pipeline without a newsroom.', 'Search visibility started after about three weeks and grew to 286 impressions over the 35 days shown in Search Console, with the brand query "depeša" ranking at 7.3.'),
+ },
+ 'sk': {
+  'animeslovakia': ('Anime Slovakia: od spustenia na prvú stranu za deväť dní', 'Anime portál pre slovenských a českých fanúšikov, postavený a spustený ako hotový produkt: novinky, databáza anime, prehľad legálneho streamovania a herné prvky, vďaka ktorým sa ľudia vracajú každý deň.', 'Za prvých deväť dní v Googli web zozbieral vyše 2 000 zobrazení s priemernou pozíciou 8,2, teda na prvej strane. Najsilnejší dopyt „naruto“ je na pozícii 6,7.'),
+  'slangovnik': ('Slangovník: komunitný slovník, ktorý sa umiestňuje hneď v prvom týždni', 'Slovník slovenského slangu a nárečí, kde môže slovo pridať ktokoľvek, moderátor ho schváli a o poradí významov rozhodujú hlasy.', 'Za osem dní web dosiahol priemernú pozíciu 7,8 a vyše 1 200 zobrazení, slangové výrazy ako „chillovať“ sú na pozícii 3,3.'),
+  'cryptogaway': ('CGA, Crypto GiveAway: platforma s odmenami v angličtine', 'Celosvetová platforma s odmenami: štyri krypto faucety, denné misie, jackpot, levely, ťažobná hra a samoobslužná reklamná platforma pre iné weby.', 'Za prvých dvanásť dní web dosiahol mieru prekliknutia 11,8 %, „crypto giveaway“ je na pozícii 5,9 a „cga ads“ na 3,0.'),
+  'bocak': ('Bocak: katalóg zarábania krypta bez hype', 'Katalóg približne sto appiek, DePIN projektov, webov a hier, ktoré platia v krypte, každý zhodnotený zrozumiteľne aj s nákladmi a rizikami.', 'Zobrazenia počas prvých troch týždňov stabilne rástli a značkový dopyt „bocak“ je na pozícii 5,8.'),
+  'depesa': ('depeša: automatizovaný slovenský spravodajský web', 'Slovenský spravodajský web, ktorý zhŕňa správy dňa do krátkych textov v troch jazykoch, obnovovaný automatizovaným procesom bez redakcie.', 'Viditeľnosť vo vyhľadávaní sa rozbehla asi po troch týždňoch a za 35 dní zobrazených v Search Console narástla na 286 zobrazení, značkový dopyt „depeša“ je na pozícii 7,3.'),
+ },
+}
+
+PRIVACY = {
+ 'en': dict(path='/privacy/', title='Privacy policy | MaBo Digital', desc='How MaBo Digital handles personal data on mabodigital.dev: the contact form, email, analytics and hosting.', h1='Privacy policy', updated='Last updated: 8 October 2026', sections=[
+  ('Who is responsible', ['The controller of personal data on this website is Marian Boledovic, trading as MaBo Digital, Luka, Slovakia. Contact: hello@mabodigital.dev.']),
+  ('Contact form and email', ['When you send the contact form or write to hello@mabodigital.dev, I receive your name, email address, the topic you chose and your message. I use them only to answer your enquiry and, if we work together, to prepare and carry out the project.',
+     'The legal basis is the steps taken at your request before entering into a contract (Article 6(1)(b) GDPR). Messages are delivered through Cloudflare and stored in my email inbox provided by Google. A copy of each form message is also kept in a Cloudflare database so that no enquiry gets lost. I keep them as long as needed to handle the enquiry and any project that follows, and then delete them.']),
+  ('Visitor statistics', ['The site uses Cloudflare Web Analytics to count visits. It sets no cookies, does not use your IP address to identify you and builds no profile of you. The legal basis is my legitimate interest in knowing how the site is used (Article 6(1)(f) GDPR).']),
+  ('Hosting and fonts', ['The website is hosted by Cloudflare, which processes technical data such as your IP address to deliver the pages and protect the site from attacks. The fonts are loaded from Google Fonts, so your browser connects to Google servers when you open the page.']),
+  ('Cookies', ['This website sets no cookies.']),
+  ('Your rights', ['You have the right to access your data, to have it corrected or deleted, to restrict or object to its processing and to data portability. Write to hello@mabodigital.dev to use any of these rights.',
+     'You can also lodge a complaint with the Office for Personal Data Protection of the Slovak Republic (Úrad na ochranu osobných údajov Slovenskej republiky, dataprotection.gov.sk).'])]),
+ 'sk': dict(path='/sk/ochrana-sukromia/', title='Ochrana osobných údajov | MaBo Digital', desc='Ako MaBo Digital spracúva osobné údaje na mabodigital.dev: kontaktný formulár, e-mail, štatistiky a hosting.', h1='Ochrana osobných údajov', updated='Posledná aktualizácia: 8. októbra 2026', sections=[
+  ('Kto je zodpovedný', ['Prevádzkovateľom osobných údajov na tomto webe je Marian Boledovic, MaBo Digital, Luka, Slovensko. Kontakt: hello@mabodigital.dev.']),
+  ('Kontaktný formulár a e-mail', ['Keď odošlete kontaktný formulár alebo napíšete na hello@mabodigital.dev, dostanem vaše meno, e-mailovú adresu, zvolenú tému a správu. Používam ich len na odpoveď na váš dopyt a v prípade spolupráce na prípravu a realizáciu projektu.',
+     'Právnym základom sú opatrenia pred uzavretím zmluvy na vašu žiadosť (článok 6 ods. 1 písm. b) GDPR). Správy sú doručované cez Cloudflare a uložené v mojej e-mailovej schránke od spoločnosti Google. Kópia každej správy z formulára sa ukladá aj v databáze u Cloudflare, aby sa žiadny dopyt nestratil. Uchovávam ich, kým je to potrebné na vybavenie dopytu a prípadného projektu, potom ich vymažem.']),
+  ('Štatistiky návštevnosti', ['Web používa Cloudflare Web Analytics na počítanie návštev. Nenastavuje žiadne cookies, nepoužíva vašu IP adresu na vašu identifikáciu a nevytvára o vás profil. Právnym základom je môj oprávnený záujem vedieť, ako sa web používa (článok 6 ods. 1 písm. f) GDPR).']),
+  ('Hosting a písma', ['Web je hostovaný u spoločnosti Cloudflare, ktorá spracúva technické údaje, napríklad vašu IP adresu, aby mohla stránky doručiť a chrániť web pred útokmi. Písma sa načítavajú z Google Fonts, takže sa váš prehliadač pri otvorení stránky pripojí k serverom Google.']),
+  ('Cookies', ['Tento web nenastavuje žiadne cookies.']),
+  ('Vaše práva', ['Máte právo na prístup k svojim údajom, na ich opravu alebo vymazanie, na obmedzenie spracúvania, právo namietať a právo na prenosnosť údajov. Ak chcete niektoré z nich uplatniť, napíšte na hello@mabodigital.dev.',
+     'Sťažnosť môžete podať aj na Úrad na ochranu osobných údajov Slovenskej republiky (dataprotection.gov.sk).'])]),
+}

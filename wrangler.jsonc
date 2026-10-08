@@ -1,8 +1,23 @@
 {
-  // Static site served by Cloudflare Workers. Everything in ./site is published as is.
+  // MaBo Digital: the site in ./site plus the contact form endpoint in worker/index.js.
+  // The site itself is served on mabodigital.dev by Cloudflare Pages (project "mabodigital").
+  // This Worker answers mabodigital.dev/api/* and sends form enquiries by email.
   "name": "mabo",
+  "main": "worker/index.js",
   "compatibility_date": "2026-06-01",
   "assets": {
-    "directory": "./site"
-  }
+    "directory": "./site",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "mabodigital.dev/api/*", "zone_name": "mabodigital.dev" }
+  ],
+  "d1_databases": [
+    { "binding": "DB", "database_name": "mabo-contact", "database_id": "9c59659e-f698-41e9-92e6-4e4aee97ce92" }
+  ],
+  "send_email": [
+    { "name": "CONTACT", "destination_address": "bocak.sk@gmail.com" }
+  ],
+  "observability": { "enabled": true }
 }

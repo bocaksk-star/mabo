@@ -176,6 +176,26 @@ figure{margin:0}
 .contact{border-top:2px solid var(--ink);padding-top:36px;display:flex;flex-direction:column;gap:22px}
 .mail{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
 .mail code{font-family:var(--mono);font-size:clamp(1.1rem,4.4vw,2rem);font-weight:700;overflow-wrap:anywhere;user-select:all}
+.cform{display:flex;flex-direction:column;gap:18px;max-width:760px}
+.frow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.fld{display:flex;flex-direction:column;gap:6px;min-width:0;border:0;padding:0;margin:0}
+.fld>span,.fld legend{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:0}
+.fld input,.fld textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:6px;padding:11px 12px;width:100%}
+.fld textarea{resize:vertical;min-height:130px}
+.fld input:focus,.fld textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.fld input[aria-invalid="true"],.fld textarea[aria-invalid="true"]{border-color:var(--soon)}
+.topics{flex-direction:row;flex-wrap:wrap;gap:8px 18px}
+.topics legend{width:100%;margin-bottom:6px}
+.topics label{display:inline-flex;align-items:center;gap:7px;font-size:15.5px;cursor:pointer}
+.topics input{accent-color:var(--accent);width:16px;height:16px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fsend{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.fstatus{margin:0;font-size:15px;min-height:1.4em}
+.fstatus.ok{color:var(--live)}.fstatus.err{color:var(--soon)}
+.fnote{margin:0;font-size:13px;color:var(--muted)}
+.fnote:empty{display:none}
+.mail-or{color:var(--muted);font-size:15px;width:100%}
+@media (max-width:720px){.frow{grid-template-columns:minmax(0,1fr)}}
 .foot{font-family:var(--mono);font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between}
 
 @media (max-width:720px){
@@ -187,9 +207,12 @@ figure{margin:0}
   .skills{grid-template-columns:minmax(0,1fr)}
 }
 @media (prefers-reduced-motion:reduce){.btn:hover,.totop:hover{transform:none}}
+.foot a{color:var(--muted)}
+.bar a.case{font-weight:500;white-space:nowrap}
+.more{margin:0;font-family:var(--mono);font-size:13.5px}
 </style>
 <style>.lang a{display:inline-block;font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:6px 11px;color:var(--ink);text-decoration:none}.lang a[aria-current="page"]{background:var(--ink);color:var(--bg)}</style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://mabodigital.dev/#business", "name": "MaBo Digital", "url": "https://mabodigital.dev/", "logo": "https://mabodigital.dev/icon-512.png", "image": "https://mabodigital.dev/og-image.png", "description": "Website creation and SEO for businesses in Slovakia, Czechia and abroad.", "email": "bocak.sk@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Luka", "addressCountry": "SK"}, "areaServed": [{"@type": "Country", "name": "Slovakia"}, {"@type": "Country", "name": "Czechia"}], "founder": {"@id": "https://mabodigital.dev/#marian"}, "knowsAbout": ["Web design", "Website development", "Search engine optimization", "SEO audit", "Keyword research", "Technical SEO", "SEO tools"], "knowsLanguage": ["sk", "cs", "en", "de"], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Services", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web design and website development", "serviceType": "Web design", "description": "Custom web design, website development, launch and maintenance of fast, responsive websites."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO services", "serviceType": "Search engine optimization", "description": "SEO audits, keyword research, on-page and technical SEO and rank tracking, using our own SEO tools."}}]}}, {"@type": "Person", "@id": "https://mabodigital.dev/#marian", "name": "Marian Boledovic", "jobTitle": "Web developer and SEO specialist", "worksFor": {"@id": "https://mabodigital.dev/#business"}, "sameAs": ["https://depesa.eu", "https://animeslovakia.sk", "https://bocak.sk", "https://slangovnik.sk", "https://gramabot.sk", "https://cryptogaway.com"]}, {"@type": "WebSite", "@id": "https://mabodigital.dev/#website", "url": "https://mabodigital.dev/", "name": "MaBo Digital", "publisher": {"@id": "https://mabodigital.dev/#business"}, "inLanguage": ["en", "sk"]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://mabodigital.dev/#business", "name": "MaBo Digital", "url": "https://mabodigital.dev/", "logo": "https://mabodigital.dev/icon-512.png", "image": "https://mabodigital.dev/og-image.png", "description": "Website creation and SEO for businesses in Slovakia, Czechia and abroad.", "email": "hello@mabodigital.dev", "address": {"@type": "PostalAddress", "addressLocality": "Luka", "addressCountry": "SK"}, "areaServed": [{"@type": "Country", "name": "Slovakia"}, {"@type": "Country", "name": "Czechia"}], "founder": {"@id": "https://mabodigital.dev/#marian"}, "knowsAbout": ["Web design", "Website development", "Search engine optimization", "SEO audit", "Keyword research", "Technical SEO", "SEO tools"], "knowsLanguage": ["sk", "cs", "en", "de"], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Services", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web design and website development", "serviceType": "Web design", "description": "Custom web design, website development, launch and maintenance of fast, responsive websites."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO services", "serviceType": "Search engine optimization", "description": "SEO audits, keyword research, on-page and technical SEO and rank tracking, using our own SEO tools."}}]}}, {"@type": "Person", "@id": "https://mabodigital.dev/#marian", "name": "Marian Boledovic", "jobTitle": "Web developer and SEO specialist", "worksFor": {"@id": "https://mabodigital.dev/#business"}, "sameAs": ["https://depesa.eu", "https://animeslovakia.sk", "https://bocak.sk", "https://slangovnik.sk", "https://gramabot.sk", "https://cryptogaway.com"]}, {"@type": "WebSite", "@id": "https://mabodigital.dev/#website", "url": "https://mabodigital.dev/", "name": "MaBo Digital", "publisher": {"@id": "https://mabodigital.dev/#business"}, "inLanguage": ["en", "sk"]}]}</script>
 </head>
 <body>
 
@@ -232,7 +255,7 @@ figure{margin:0}
 <h2 data-en="Selected work" data-sk="Vybrané práce">Vybrané práce</h2>
 <div class="projects">
 <article class="project" id="depesa">
-<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/depesa.png" width="26"/><span class="url"><span>https://</span>depesa.eu</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://depesa.eu" rel="noopener" target="_blank">Otvoriť web</a></div>
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/depesa.png" width="26"/><span class="url"><span>https://</span>depesa.eu</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://depesa.eu" rel="noopener" target="_blank">Otvoriť web</a><a class="case" data-en="Case study" data-sk="Prípadová štúdia" data-sk-href="/sk/projekty/depesa/" href="/sk/projekty/depesa/">Prípadová štúdia</a></div>
 <h3 data-en="depeša: the day's news, short and fast" data-sk="depeša: správy dňa, krátko a rýchlo">depeša: správy dňa, krátko a rýchlo</h3>
 <div class="cols">
 <p data-en="A Slovak news service that condenses the day's stories from home and abroad into short summaries. An automated pipeline refreshes the site through the day, so it stays current without a newsroom." data-sk="Slovenský spravodajský web, ktorý zhŕňa správy dňa z domova a zo sveta do krátkych textov. Obsah počas dňa obnovuje automatizovaný proces, takže web je aktuálny aj bez redakcie.">Slovenský spravodajský web, ktorý zhŕňa správy dňa z domova a zo sveta do krátkych textov. Obsah počas dňa obnovuje automatizovaný proces, takže web je aktuálny aj bez redakcie.</p>
@@ -246,7 +269,7 @@ figure{margin:0}
 <ul class="tags"><li data-en="news" data-sk="správy">správy</li><li data-en="automation" data-sk="automatizácia">automatizácia</li><li data-en="multilingual" data-sk="viac jazykov">viac jazykov</li><li>android</li></ul>
 </article>
 <article class="project" id="animeslovakia">
-<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/animeslovakia.png" width="26"/><span class="url"><span>https://</span>animeslovakia.sk</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://animeslovakia.sk" rel="noopener" target="_blank">Otvoriť web</a></div>
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/animeslovakia.png" width="26"/><span class="url"><span>https://</span>animeslovakia.sk</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://animeslovakia.sk" rel="noopener" target="_blank">Otvoriť web</a><a class="case" data-en="Case study" data-sk="Prípadová štúdia" data-sk-href="/sk/projekty/animeslovakia/" href="/sk/projekty/animeslovakia/">Prípadová štúdia</a></div>
 <h3 data-en="Anime Slovakia: a home for fans in two languages" data-sk="Anime Slovakia: domov pre fanúšikov v dvoch jazykoch">Anime Slovakia: domov pre fanúšikov v dvoch jazykoch</h3>
 <div class="cols">
 <p data-en="A Slovak and Czech portal for anime, manga and Japanese pop culture. It combines editorial news with a searchable anime database and a game layer that gives fans a reason to come back every day." data-sk="Slovensko-český portál o anime, mange a japonskej popkultúre. Spája redakčné novinky s databázou anime a hernými prvkami, vďaka ktorým sa fanúšikovia vracajú každý deň.">Slovensko-český portál o anime, mange a japonskej popkultúre. Spája redakčné novinky s databázou anime a hernými prvkami, vďaka ktorým sa fanúšikovia vracajú každý deň.</p>
@@ -260,7 +283,7 @@ figure{margin:0}
 <ul class="tags"><li data-en="community" data-sk="komunita">komunita</li><li data-en="gamification" data-sk="gamifikácia">gamifikácia</li><li data-en="database" data-sk="databáza">databáza</li><li>sk + cz</li></ul>
 </article>
 <article class="project" id="bocak">
-<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/bocak.png" width="26"/><span class="url"><span>https://</span>bocak.sk</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://bocak.sk" rel="noopener" target="_blank">Otvoriť web</a></div>
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/bocak.png" width="26"/><span class="url"><span>https://</span>bocak.sk</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://bocak.sk" rel="noopener" target="_blank">Otvoriť web</a><a class="case" data-en="Case study" data-sk="Prípadová štúdia" data-sk-href="/sk/projekty/bocak/" href="/sk/projekty/bocak/">Prípadová štúdia</a></div>
 <h3 data-en="Bocak: crypto earning, reviewed without the hype" data-sk="Bocak: zarábanie krypta, zhodnotené bez hype">Bocak: zarábanie krypta, zhodnotené bez hype</h3>
 <div class="cols">
 <p data-en="A catalogue of apps, DePIN projects, websites and games that pay in crypto. Every entry is written up plainly, including what it costs to start and where the catch is." data-sk="Katalóg appiek, DePIN projektov, webov a hier, ktoré platia v krypte. Každý projekt je opísaný zrozumiteľne, vrátane toho, koľko stojí začať a kde je háčik.">Katalóg appiek, DePIN projektov, webov a hier, ktoré platia v krypte. Každý projekt je opísaný zrozumiteľne, vrátane toho, koľko stojí začať a kde je háčik.</p>
@@ -274,7 +297,7 @@ figure{margin:0}
 <ul class="tags"><li data-en="catalogue" data-sk="katalóg">katalóg</li><li data-en="reviews" data-sk="recenzie">recenzie</li><li data-en="crypto" data-sk="krypto">krypto</li><li>sk + en</li></ul>
 </article>
 <article class="project" id="cga">
-<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/cryptogaway.png" width="26"/><span class="url"><span>https://</span>cryptogaway.com</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://cryptogaway.com" rel="noopener" target="_blank">Otvoriť web</a></div>
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/cryptogaway.png" width="26"/><span class="url"><span>https://</span>cryptogaway.com</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://cryptogaway.com" rel="noopener" target="_blank">Otvoriť web</a><a class="case" data-en="Case study" data-sk="Prípadová štúdia" data-sk-href="/sk/projekty/cryptogaway/" href="/sk/projekty/cryptogaway/">Prípadová štúdia</a></div>
 <h3 data-en="CGA, Crypto GiveAway: a faucet platform with a game loop" data-sk="CGA, Crypto GiveAway: faucet platforma s hernou slučkou">CGA, Crypto GiveAway: faucet platforma s hernou slučkou</h3>
 <div class="cols">
 <p data-en="An English-language rewards platform for a global audience. Users claim small amounts of crypto on a timer and are paid instantly to their FaucetPay wallet, with missions and levels that reward regular use." data-sk="Platforma v angličtine pre používateľov z celého sveta. Používatelia si v pravidelných intervaloch vyberajú malé sumy krypta, ktoré im okamžite prídu do peňaženky FaucetPay. Misie a levely odmeňujú pravidelné používanie.">Platforma v angličtine pre používateľov z celého sveta. Používatelia si v pravidelných intervaloch vyberajú malé sumy krypta, ktoré im okamžite prídu do peňaženky FaucetPay. Misie a levely odmeňujú pravidelné používanie.</p>
@@ -288,7 +311,7 @@ figure{margin:0}
 <ul class="tags"><li data-en="rewards" data-sk="odmeny">odmeny</li><li data-en="payments" data-sk="platby">platby</li><li data-en="game design" data-sk="herný dizajn">herný dizajn</li><li data-en="ad platform" data-sk="reklamná platforma">reklamná platforma</li></ul>
 </article>
 <article class="project" id="slangovnik">
-<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/slangovnik.png" width="26"/><span class="url"><span>https://</span>slangovnik.sk</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://slangovnik.sk" rel="noopener" target="_blank">Otvoriť web</a></div>
+<div class="bar"><img alt="" class="logo sm" height="26" src="/logos/slangovnik.png" width="26"/><span class="url"><span>https://</span>slangovnik.sk</span><span class="status live" data-en="Live" data-sk="Online">Online</span><a data-en="Visit site" data-sk="Otvoriť web" href="https://slangovnik.sk" rel="noopener" target="_blank">Otvoriť web</a><a class="case" data-en="Case study" data-sk="Prípadová štúdia" data-sk-href="/sk/projekty/slangovnik/" href="/sk/projekty/slangovnik/">Prípadová štúdia</a></div>
 <h3 data-en="Slangovník: the words you won't find in the official rules" data-sk="Slangovník: slová, ktoré v Pravidlách nenájdete">Slangovník: slová, ktoré v Pravidlách nenájdete</h3>
 <div class="cols">
 <p data-en="A community dictionary of Slovak slang and dialect. Anyone can add a word without registering, each submission passes an automatic check and a moderator, and votes decide which meaning comes first." data-sk="Komunitný slovník slovenského slangu a nárečových slov. Slovo môže pridať ktokoľvek bez registrácie, každý príspevok prejde automatickou kontrolou a moderátorom a o poradí významov rozhodujú hlasy.">Komunitný slovník slovenského slangu a nárečových slov. Slovo môže pridať ktokoľvek bez registrácie, každý príspevok prejde automatickou kontrolou a moderátorom a o poradí významov rozhodujú hlasy.</p>
@@ -377,6 +400,7 @@ figure{margin:0}
 </ul>
 </div>
 <ul class="tags"><li data-en="web design" data-sk="tvorba webu">tvorba webu</li><li data-en="website development" data-sk="vývoj webu">vývoj webu</li><li data-en="responsive websites" data-sk="responzívny web">responzívny web</li><li>landing pages</li><li data-en="online shops" data-sk="e-shop">e-shop</li><li data-en="website maintenance" data-sk="správa webu">správa webu</li></ul>
+<p class="more"><a data-en="More about web design →" data-sk="Viac o tvorbe webov →" data-sk-href="/sk/tvorba-webov/" href="/sk/tvorba-webov/">Viac o tvorbe webov →</a></p>
 </div>
 <div aria-labelledby="tab-seo" class="panel" hidden="" id="panel-seo" role="tabpanel">
 <h3 data-en="SEO services that get your website found on Google" data-sk="SEO optimalizácia, vďaka ktorej váš web nájdu na Googli">SEO optimalizácia, vďaka ktorej váš web nájdu na Googli</h3>
@@ -392,6 +416,7 @@ figure{margin:0}
 </ul>
 </div>
 <ul class="tags"><li>SEO audit</li><li data-en="keyword research" data-sk="analýza kľúčových slov">analýza kľúčových slov</li><li>on-page SEO</li><li data-en="technical SEO" data-sk="technické SEO">technické SEO</li><li data-en="rank tracking" data-sk="sledovanie pozícií">sledovanie pozícií</li><li data-en="SEO tools" data-sk="SEO nástroje">SEO nástroje</li></ul>
+<p class="more"><a data-en="More about SEO services →" data-sk="Viac o SEO optimalizácii →" data-sk-href="/sk/seo/" href="/sk/seo/">Viac o SEO optimalizácii →</a></p>
 </div>
 <div class="actions"><a class="btn primary" data-en="Ask for a quote" data-sk="Vyžiadať cenovú ponuku" href="#contact">Vyžiadať cenovú ponuku</a></div>
 </section>
@@ -409,11 +434,32 @@ figure{margin:0}
 <section class="contact" id="contact">
 <h2 data-en="Let's talk" data-sk="Ozvite sa">Ozvite sa</h2>
 <p class="lede" data-en="Need a new website or better rankings for the one you have? Write to me with a few lines about your project and I'll reply with a proposal." data-sk="Potrebujete nový web alebo lepšie pozície pre ten, ktorý už máte? Napíšte mi pár viet o vašom projekte a pošlem vám ponuku.">Potrebujete nový web alebo lepšie pozície pre ten, ktorý už máte? Napíšte mi pár viet o vašom projekte a pošlem vám ponuku.</p>
+<form class="cform" id="cform" novalidate="">
+<div class="frow">
+<label class="fld"><span data-en="Name" data-sk="Meno">Meno</span><input autocomplete="name" id="f-name" maxlength="100" name="name" required="" type="text"/></label>
+<label class="fld"><span>E-mail</span><input autocomplete="email" id="f-email" maxlength="200" name="email" required="" type="email"/></label>
+</div>
+<fieldset class="fld topics">
+<legend data-en="What do you need?" data-sk="O čo máte záujem">O čo máte záujem</legend>
+<label><input checked="" id="f-t-web" name="topic" type="radio" value="web"/> <span data-en="A new website" data-sk="Nový web">Nový web</span></label>
+<label><input id="f-t-seo" name="topic" type="radio" value="seo"/> <span>SEO</span></label>
+<label><input id="f-t-both" name="topic" type="radio" value="both"/> <span data-en="Website and SEO" data-sk="Web aj SEO">Web aj SEO</span></label>
+<label><input id="f-t-other" name="topic" type="radio" value="other"/> <span data-en="Something else" data-sk="Niečo iné">Niečo iné</span></label>
+</fieldset>
+<label class="fld"><span data-en="Message" data-sk="Správa">Správa</span><textarea data-ph-sk="Pár viet o projekte: čo má web robiť, pre koho je a do kedy ho potrebujete." id="f-msg" maxlength="5000" minlength="10" name="message" placeholder="A few lines about the project: what the site should do, who it is for and when you need it." required="" rows="5"></textarea></label>
+<label aria-hidden="true" class="hp">Website <input autocomplete="off" id="f-web" name="website" tabindex="-1" type="text"/></label>
+<div class="fsend">
+<button class="btn primary" data-en="Send message" data-sk="Odoslať správu" id="f-send" type="submit">Odoslať správu</button>
+<p aria-live="polite" class="fstatus" id="f-status" role="status"></p>
+</div>
+<p class="fnote" data-en='I use the details only to reply to you. See the &lt;a href="/privacy/"&gt;privacy policy&lt;/a&gt;.' data-sk='Údaje z formulára použijem len na odpoveď. Viac v &lt;a href="/sk/ochrana-sukromia/"&gt;ochrane súkromia&lt;/a&gt;.' id="f-note">Údaje z formulára použijem len na odpoveď. Viac v <a href="/sk/ochrana-sukromia/">ochrane súkromia</a>.</p>
+</form>
 <div class="mail">
-<code id="email">bocak.sk@gmail.com</code>
+<span class="mail-or" data-en="Or write directly to" data-sk="Alebo napíšte priamo na">Alebo napíšte priamo na</span>
+<code id="email">hello@mabodigital.dev</code>
 <button class="btn" id="copy" type="button">Copy address</button>
 </div>
-<div class="foot"><span data-en="MaBo Digital · Marian Boledovic · Luka, Slovakia" data-sk="MaBo Digital · Marian Boledovic · Luka, Slovensko">MaBo Digital · Marian Boledovic · Luka, Slovensko</span><span>© 2026</span></div>
+<div class="foot"><span data-en="MaBo Digital · Marian Boledovic · Luka, Slovakia" data-sk="MaBo Digital · Marian Boledovic · Luka, Slovensko">MaBo Digital · Marian Boledovic · Luka, Slovensko</span><span><a data-en="Privacy" data-sk="Ochrana súkromia" data-sk-href="/sk/ochrana-sukromia/" href="/sk/ochrana-sukromia/">Ochrana súkromia</a> · © 2026</span></div>
 </section>
 </div>
 <button aria-label="Back to top" class="totop l" hidden="" type="button"><svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="22"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button>
@@ -495,12 +541,41 @@ figure{margin:0}
     nodes.forEach(function(el){ el.innerHTML = el.getAttribute('data-' + lang); });
     document.documentElement.lang = lang;
     renderStats(lang);
+    var ta = document.getElementById('f-msg'); if (ta){ if (!ta.hasAttribute('data-ph-en')) ta.setAttribute('data-ph-en', ta.placeholder); ta.placeholder = ta.getAttribute('data-ph-' + lang); }
     copyBtn.textContent = copyLabels[lang].copy;
     document.getElementById('lang-sk').setAttribute('aria-pressed', lang === 'sk' ? 'true' : 'false');
     document.getElementById('lang-en').setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
     if (save) { try { localStorage.setItem('lang', lang); } catch(e){} }
   }
   setLang(document.documentElement.lang === 'sk' ? 'sk' : 'en', false);
+
+  /* contact form */
+  var form = document.getElementById('cform');
+  var started = Date.now();
+  var FT = {
+    en:{sending:'Sending…', ok:'Thank you. Your message is on its way and I will reply within two working days.', err:'The message could not be sent. Please email hello@mabodigital.dev instead.', name:'Please enter your name.', email:'Please enter a valid email address.', msg:'Please write a few words about your project.'},
+    sk:{sending:'Odosielam…', ok:'Ďakujem. Správa je na ceste a ozvem sa do dvoch pracovných dní.', err:'Správu sa nepodarilo odoslať. Napíšte mi prosím na hello@mabodigital.dev.', name:'Zadajte prosím svoje meno.', email:'Zadajte prosím platnú e-mailovú adresu.', msg:'Napíšte prosím pár slov o projekte.'}
+  };
+  function fstatus(text, cls){ var el=document.getElementById('f-status'); el.textContent=text; el.className='fstatus'+(cls?' '+cls:''); }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var t = FT[lang], name = document.getElementById('f-name'), email = document.getElementById('f-email'), msg = document.getElementById('f-msg');
+    [name,email,msg].forEach(function(x){ x.removeAttribute('aria-invalid'); });
+    var bad = null;
+    if (!name.value.trim()) bad = [name, t.name];
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) bad = [email, t.email];
+    else if (msg.value.trim().length < 10) bad = [msg, t.msg];
+    if (bad){ bad[0].setAttribute('aria-invalid','true'); bad[0].focus(); fstatus(bad[1],'err'); return; }
+    var btn = document.getElementById('f-send'); btn.disabled = true; fstatus(t.sending,'');
+    var topic = (form.querySelector('input[name="topic"]:checked')||{}).value || 'other';
+    fetch('/api/contact', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
+      name:name.value.trim(), email:email.value.trim(), topic:topic, message:msg.value.trim(),
+      website:document.getElementById('f-web').value, elapsed: Date.now()-started, lang: lang, page: location.pathname
+    })}).then(function(r){ return r.json().catch(function(){ return {ok:false}; }).then(function(j){ return r.ok && j.ok; }); })
+      .then(function(ok){ if (ok){ form.reset(); fstatus(FT[lang].ok,'ok'); } else { fstatus(FT[lang].err,'err'); } })
+      .catch(function(){ fstatus(FT[lang].err,'err'); })
+      .then(function(){ btn.disabled = false; });
+  });
 
   /* copy email */
   copyBtn.addEventListener('click', function(){
