@@ -30,7 +30,7 @@ for c in CASES:
     body=body[:j]+f'<a class="case" href="/work/{c["slug"]}/" data-sk-href="/sk/projekty/{c["slug"]}/" data-sk="Prípadová štúdia">Case study</a>'+body[j:]
 # footer: privacy link; form: consent note
 a_='<span>© 2026</span></div>\n  </section>'; assert a_ in body
-body=body.replace(a_,'<span><a href="/privacy/" data-sk-href="/sk/ochrana-sukromia/" data-sk="Ochrana súkromia">Privacy</a> · © 2026</span></div>\n  </section>')
+body=body.replace(a_,'<span><a href="/privacy/" data-sk-href="/sk/ochrana-sukromia/" data-sk="Ochrana súkromia">Privacy</a> · <a href="/terms/" data-sk-href="/sk/obchodne-podmienky/" data-sk="Obchodné podmienky">Terms</a> · © 2026</span></div>\n  </section>')
 a_='<p class="fnote" id="f-note"></p>'; assert a_ in body
 body=body.replace(a_,'<p class="fnote" id="f-note" data-sk="Údaje z formulára použijem len na odpoveď. Viac v &lt;a href=&quot;/sk/ochrana-sukromia/&quot;&gt;ochrane súkromia&lt;/a&gt;.">I use the details only to reply to you. See the <a href="/privacy/">privacy policy</a>.</p>')
 style=style.replace('</style>','.foot a{color:var(--muted)}\n.bar a.case{font-weight:500;white-space:nowrap}\n.more{margin:0;font-family:var(--mono);font-size:13.5px}\n</style>',1)

@@ -1,7 +1,7 @@
 # Builds the extra pages of mabodigital.dev: service pages, case studies and privacy policy, in EN and SK.
 import os, json, datetime, html
 from bs4 import BeautifulSoup
-from content import SERVICES, CASES, CASE_TEXT, PRIVACY, UI
+from content import SERVICES, CASES, CASE_TEXT, PRIVACY, TERMS, UI
 
 SITE = 'https://mabodigital.dev'
 E = html.escape
@@ -106,7 +106,7 @@ def shell(lang, alt_path, inner):
     <nav aria-label="{'Sekcie' if lang=='sk' else 'Sections'}">{nav}<span class="lang" role="group" aria-label="Language / Jazyk">{sw}</span></nav>
   </header>
 {inner}
-  <footer class="sitefoot"><span>{E(u['footer_line'])} · <a href="mailto:hello@mabodigital.dev">hello@mabodigital.dev</a></span><span><a href="{u['priv_path']}">{E(u['footer_priv'])}</a> · © 2026</span></footer>
+  <footer class="sitefoot"><span>{E(u['footer_line'])} · <a href="mailto:hello@mabodigital.dev">hello@mabodigital.dev</a></span><span><a href="{u['priv_path']}">{E(u['footer_priv'])}</a> · <a href="{u['terms_path']}">{E(u['footer_terms'])}</a> · © 2026</span></footer>
 </div>
 </body>
 </html>
@@ -210,8 +210,9 @@ def case_page(c, lang, soup_en, soup_sk, font, style):
         bc_ld(lang, [(u['back'], SITE + u['home'] + '#work'), (c['name'], SITE + path)])]}
     return path, head(lang, path, alt, f'{c["name"]}: {"prípadová štúdia" if lang=="sk" else "case study"} | MaBo Digital', result, font, style, ld) + shell(lang, alt, inner)
 
-def privacy_page(lang, font, style):
-    d = PRIVACY[lang]; alt = PRIVACY['sk' if lang == 'en' else 'en']['path']
+def privacy_page(lang, font, style, DOC=None):
+    DOC = DOC or PRIVACY
+    d = DOC[lang]; alt = DOC['sk' if lang == 'en' else 'en']['path']
     secs = ''.join(f'  <section class="blk"><h2>{E(t)}</h2>' + ''.join(f'<p>{E(p)}</p>' for p in ps) + '</section>\n' for t, ps in d['sections'])
     inner = f'''  {crumbs(lang, [(None, d['h1'])])}
   <section class="hero"><h1>{E(d['h1'])}</h1><p class="period" style="font-family:var(--mono);font-size:13px;color:var(--muted);margin:0">{E(d['updated'])}</p></section>
@@ -234,6 +235,9 @@ def build_all(root, font, style, soup_en, soup_sk):
     for lang in ('en', 'sk'):
         out.append(privacy_page(lang, font, style))
     pairs.append((PRIVACY['en']['path'], PRIVACY['sk']['path']))
+    for lang in ('en', 'sk'):
+        out.append(privacy_page(lang, font, style, TERMS))
+    pairs.append((TERMS['en']['path'], TERMS['sk']['path']))
     for path, doc in out:
         d = os.path.join(root, path.strip('/'))
         os.makedirs(d, exist_ok=True)
