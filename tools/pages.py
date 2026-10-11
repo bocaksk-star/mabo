@@ -1,7 +1,7 @@
 # Builds the extra pages of mabodigital.dev: service pages, case studies and privacy policy, in EN and SK.
 import os, json, datetime, html
 from bs4 import BeautifulSoup
-from content import SERVICES, CASES, CASE_TEXT, PRIVACY, TERMS, UI
+from content import SERVICES, CASES, CASE_TEXT, PRIVACY, TERMS, UI, HUMAN, PROFILES
 
 SITE = 'https://mabodigital.dev'
 E = html.escape
@@ -236,8 +236,88 @@ def build_all(root, font, style, soup_en, soup_sk):
     for lang in ('en', 'sk'):
         out.append(privacy_page(lang, font, style, TERMS))
     pairs.append((TERMS['en']['path'], TERMS['sk']['path']))
+    for lang in ('en', 'sk'):
+        out.append(human_page(lang, font, style))
+    pairs.append((HUMAN['en']['path'], HUMAN['sk']['path']))
     for path, doc in out:
         d = os.path.join(root, path.strip('/'))
         os.makedirs(d, exist_ok=True)
         open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(doc)
     return pairs
+
+
+HUMAN_CSS = """
+.captcha{display:flex;align-items:center;gap:16px;align-self:flex-start;border:1.5px solid var(--line);border-radius:8px;background:var(--surface);padding:14px 22px 14px 16px;max-width:100%}
+.captcha button{width:30px;height:30px;flex:none;border:2px solid var(--muted);border-radius:4px;background:var(--bg);cursor:pointer;display:grid;place-items:center;padding:0}
+.captcha button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.captcha .lbl{font-size:16px}
+.captcha .spin{width:26px;height:26px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--accent);animation:spin .8s linear infinite}
+.captcha .tick{width:30px;height:30px}
+.captcha .tick path{fill:none;stroke:var(--live);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40;animation:draw .4s ease-out forwards}
+.captcha .mark{margin-left:auto;padding-left:24px;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--mono);font-size:10px;color:var(--muted)}
+.captcha .mark svg{width:28px;height:28px}
+.verified{margin:0;font-family:var(--mono);font-size:14px;color:var(--live)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.captcha .spin{animation:none}.captcha .tick path{animation:none;stroke-dashoffset:0}}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 32px;margin:0;border-top:2px solid var(--ink);padding-top:22px}
+.facts dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:4px 0 0;font-size:17px;font-weight:600;overflow-wrap:anywhere}
+.profiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.pcard{position:relative;display:flex;flex-direction:column;border:1.5px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);text-decoration:none;color:var(--ink);transition:transform .15s ease,border-color .15s ease}
+.pcard:hover{transform:translateY(-3px);border-color:var(--pc)}
+.pcard:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.pcard .band{height:72px;background:var(--pc);position:relative}
+.pcard .glyph{position:absolute;right:14px;top:12px;font-family:var(--display);font-weight:800;font-size:22px;color:#FFFFFF;line-height:1}
+.pcard .ava{width:76px;height:76px;border-radius:50%;margin:-38px 0 0 20px;border:4px solid var(--surface);background:var(--bg);display:grid;place-items:center;overflow:hidden;position:relative}
+.pcard .ava img{width:100%;height:100%;object-fit:cover}
+.pcard .ava svg{width:52px;height:52px}
+.pcard .body{display:flex;flex-direction:column;gap:6px;padding:12px 20px 20px}
+.pcard .net{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pcard b{font-family:var(--display);font-size:1.3rem}
+.pcard .handle{font-family:var(--mono);font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.pcard .line{margin:4px 0 8px;font-size:15.5px}
+.pcard .go{margin-top:auto;align-self:flex-start;font-family:var(--mono);font-size:13px;font-weight:700;padding:9px 13px;border-radius:6px;background:var(--pc);color:#FFFFFF}
+.soon{margin:0;font-family:var(--mono);font-size:13px;color:var(--muted)}
+@media (max-width:720px){.facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.pcard,.pcard:hover{transition:none;transform:none}}
+"""
+
+def human_page(lang, font, style):
+    d = HUMAN[lang]; alt = HUMAN['sk' if lang == 'en' else 'en']['path']
+    facts = ''.join(f'<div><dt>{E(k)}</dt><dd>{E(v)}</dd></div>' for k, v in d['facts'])
+    big = MARK.replace('width="32" height="32"', 'width="52" height="52"')
+    cards = ''
+    for pr in PROFILES:
+        ava = f'<img src="{pr["photo"]}" alt="Marian Boledovic" width="76" height="76">' if pr.get('photo') else big
+        cards += (f'<a class="pcard" href="{pr["url"]}" target="_blank" rel="noopener me" style="--pc:{pr["color"]}">'
+                  f'<span class="band"><span class="glyph" aria-hidden="true">{pr["glyph"]}</span></span><span class="ava">{ava}</span>'
+                  f'<span class="body"><span class="net">{E(pr["name"])}</span><b>Marian Boledovic</b><span class="handle">{E(pr["handle"])}</span>'
+                  f'<span class="line">{E(pr["line"][lang])}</span><span class="go">{E(d["open"])} ↗</span></span></a>')
+    inner = f'''  {crumbs(lang, [(None, d['h1'])])}
+  <section class="hero">
+    <p class="eyebrow">{E(d['eyebrow'])}</p>
+    <h1>{E(d['h1'])}</h1>
+    <p class="lede">{E(d['lede'])}</p>
+    <div class="captcha"><button type="button" id="cap" aria-label="{E(d['check'])}" aria-pressed="false"></button><span class="lbl">{E(d['check'])}</span><span class="mark" aria-hidden="true">{MARK}MaBo</span></div>
+    <p class="verified" id="cap-out" role="status" aria-live="polite" hidden>{E(d['verified'])}</p>
+  </section>
+  <section class="blk" style="max-width:none"><h2>{E(d['basics'])}</h2><dl class="facts">{facts}</dl></section>
+  <section class="blk" style="max-width:none"><h2>{E(d['find'])}</h2><div class="profiles">{cards}</div><p class="soon">{E(d['soon'])}</p></section>
+{callout(lang, d['cta_t'], d['cta_p'])}
+<style>{HUMAN_CSS}</style>
+<script>
+(function(){{
+  var b=document.getElementById('cap'), out=document.getElementById('cap-out'), done=false;
+  var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  b.addEventListener('click',function(){{
+    if(done) return; done=true; b.setAttribute('aria-pressed','true');
+    b.innerHTML='<span class="spin" aria-hidden="true"></span>'; b.title={json.dumps(d['checking'])};
+    setTimeout(function(){{ b.innerHTML='<svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><path d="M6 16l6 6L24 9"/></svg>'; b.style.borderColor='transparent'; out.hidden=false; }}, calm?0:1100);
+  }});
+}})();
+</script>'''
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "ProfilePage", "url": SITE + d['path'], "inLanguage": lang, "name": d['h1'], "mainEntity": {"@id": SITE + "/#marian"}},
+        bc_ld(lang, [(d['h1'], SITE + d['path'])])]}
+    return d['path'], head(lang, d['path'], alt, d['title'], d['desc'], font, style, ld) + shell(lang, alt, inner)

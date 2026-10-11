@@ -19,6 +19,9 @@ body=body.replace(old_init,"  setLang(document.documentElement.lang === 'sk' ? '
 a="nodes.forEach(function(el){ el.setAttribute('data-en', el.innerHTML); });"; assert a in body
 body=body.replace(a,"nodes.forEach(function(el){ if (!el.hasAttribute('data-en')) el.setAttribute('data-en', el.innerHTML); });")
 body=body.replace('src="logos/','src="/logos/')
+_nav='      <a href="#contact" data-sk="kontakt">contact</a>'
+assert _nav in body
+body=body.replace(_nav,'      <a href="/human/" data-sk-href="/sk/nie-som-robot/" data-sk="nie som robot">not a robot</a>\n'+_nav)
 from content import CASES, UI as _UI
 # links from service panels to the service pages
 for pid, en_href, sk_href, en_t, sk_t in [('panel-web','/web-design/','/sk/tvorba-webov/','More about web design','Viac o tvorbe webov'),('panel-seo','/seo/','/sk/seo/','More about SEO services','Viac o SEO optimalizácii')]:
@@ -46,7 +49,7 @@ ORG={"@context":"https://schema.org","@graph":[
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Web design and website development","serviceType":"Web design","description":"Custom web design, website development, launch and maintenance of fast, responsive websites."}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO services","serviceType":"Search engine optimization","description":"SEO audits, keyword research, on-page and technical SEO and rank tracking, using our own SEO tools."}}]}},
  {"@type":"Person","@id":SITE+"/#marian","name":"Marian Boledovic","jobTitle":"Web developer and SEO specialist","worksFor":{"@id":SITE+"/#business"},
-  "sameAs":["https://depesa.eu","https://animeslovakia.sk","https://bocak.sk","https://slangovnik.sk","https://gramabot.sk","https://cryptogaway.com"]},
+  "sameAs":["https://sk.linkedin.com/in/marian-boledovic-612b201a3","https://www.facebook.com/nairam.gatinaf/","https://depesa.eu","https://animeslovakia.sk","https://bocak.sk","https://slangovnik.sk","https://gramabot.sk","https://cryptogaway.com"]},
  {"@type":"WebSite","@id":SITE+"/#website","url":SITE+"/","name":"MaBo Digital","publisher":{"@id":SITE+"/#business"},"inLanguage":["en","sk"]}]}
 LD='<script type="application/ld+json">'+json.dumps(ORG,ensure_ascii=False)+'</script>'
 

@@ -87,14 +87,14 @@ CASES = [
 ]
 
 UI = {
- 'en': dict(nav=[('/#work','Work'),('/web-design/','Web design'),('/seo/','SEO'),('/#contact','Contact')], home='/', other='/sk/', other_label='SVK', this_label='ENG',
+ 'en': dict(nav=[('/#work','Work'),('/web-design/','Web design'),('/seo/','SEO'),('/human/','Not a robot'),('/#contact','Contact')], home='/', other='/sk/', other_label='SVK', this_label='ENG',
    faq='Questions clients ask', results='Results in Google Search', built='What was built', visit='Visit', case_eyebrow='Case study',
    period='Period', imp='Impressions', clk='Clicks', ctr='CTR', pos='Avg. position', query='Query', perday='Impressions per day',
    src='Source: Google Search Console, snapshot with data to 9 October 2026. Position is the average rank in Google results; 1 to 10 means page one.',
    similar='Want results like these for your website?', similar_p='Tell me about your project and I will reply with a proposal.', contact_cta='Get in touch',
    more='More case studies', footer_priv='Privacy', footer_line='MaBo Digital · Marian Boledovic · Luka, Slovakia', days='days', case_link='Read the case study',
    services_more=[('/web-design/','More about web design'),('/seo/','More about SEO services')], priv_path='/privacy/', terms_path='/terms/', footer_terms='Terms', back='All projects'),
- 'sk': dict(nav=[('/sk/#work','Práce'),('/sk/tvorba-webov/','Tvorba webov'),('/sk/seo/','SEO'),('/sk/#contact','Kontakt')], home='/sk/', other='/', other_label='ENG', this_label='SVK',
+ 'sk': dict(nav=[('/sk/#work','Práce'),('/sk/tvorba-webov/','Tvorba webov'),('/sk/seo/','SEO'),('/sk/nie-som-robot/','Nie som robot'),('/sk/#contact','Kontakt')], home='/sk/', other='/', other_label='ENG', this_label='SVK',
    faq='Časté otázky', results='Výsledky vo vyhľadávaní Google', built='Čo som postavil', visit='Otvoriť', case_eyebrow='Prípadová štúdia',
    period='Obdobie', imp='Zobrazenia', clk='Kliknutia', ctr='CTR', pos='Priem. pozícia', query='Dopyt', perday='Zobrazenia za deň',
    src='Zdroj: Google Search Console, stav s dátami k 9. 10. 2026. Pozícia je priemerné umiestnenie vo výsledkoch Google; 1 až 10 znamená prvú stranu.',
@@ -170,4 +170,26 @@ TERMS = {
   ('Reklamácie', ['Ak nie ste s prácou spokojní, napíšte na hello@mabodigital.dev s popisom problému. Oprávnené chyby opravím bezplatne v primeranej lehote, spravidla do 30 dní.']),
   ('Zodpovednosť', ['MaBo Digital zodpovedá za škodu spôsobenú porušením týchto podmienok do výšky ceny zaplatenej za danú službu, okrem prípadov, keď zákon takéto obmedzenie nepovoľuje. Nezodpovedá za výpadky alebo zmeny služieb tretích strán, napríklad hostingu alebo vyhľadávačov.']),
   ('Rozhodné právo a spory', ['Tieto podmienky sa riadia právom Slovenskej republiky. Spotrebitelia môžu využiť aj alternatívne riešenie sporov prostredníctvom Slovenskej obchodnej inšpekcie (SOI) alebo platformy EÚ na riešenie sporov online.'])]),
+}
+
+# Profiles shown on the "I'm not a robot" page. Add more entries here; photo is a path under /img/ or None.
+PROFILES = [
+ dict(key='linkedin', name='LinkedIn', color='#0A66C2', glyph='in', url='https://sk.linkedin.com/in/marian-boledovic-612b201a3', handle='in/marian-boledovic', photo=None,
+      line={'en':'Professional profile and work history.','sk':'Pracovný profil a doterajšia prax.'}),
+ dict(key='facebook', name='Facebook', color='#1877F2', glyph='f', url='https://www.facebook.com/nairam.gatinaf/', handle='nairam.gatinaf', photo=None,
+      line={'en':'Personal profile, the less formal side.','sk':'Osobný profil, tá menej formálna stránka.'}),
+]
+HUMAN = {
+ 'en': dict(path='/human/', title='I\'m not a robot | Marian Boledovic, MaBo Digital', desc='MaBo Digital is one real person: Marian Boledovic from Luka, Slovakia. Basic info and links to his Facebook and LinkedIn profiles.',
+   eyebrow='Human verification', h1="I'm not a robot",
+   lede='MaBo Digital is one person: me, Marian Boledovic. I build with AI tools, but every website is checked by me and every email is answered by me. Not convinced? Tick the box.',
+   check="I'm not a robot", checking='Checking…', verified='Verified. Marian is a real person from Luka, Slovakia. Probably fixing a website right now.',
+   basics='The basics', facts=[('Name','Marian Boledovic'),('Based in','Luka, Slovakia'),('Company','MaBo Digital, founder'),('Work','Web design, website development and SEO'),('Built so far','8 web products of my own'),('Email','hello@mabodigital.dev')],
+   find='Find me online', open='Open profile', soon='More profiles coming soon.', cta_t="Now you know I'm real. Let's talk.", cta_p='Tell me about your project and I will reply to you myself.'),
+ 'sk': dict(path='/sk/nie-som-robot/', title='Nie som robot | Marian Boledovic, MaBo Digital', desc='MaBo Digital je jeden skutočný človek: Marian Boledovic z Luky. Základné informácie a odkazy na jeho Facebook a LinkedIn.',
+   eyebrow='Overenie človeka', h1='Nie som robot',
+   lede='MaBo Digital je jeden človek: ja, Marian Boledovic. Pracujem s AI nástrojmi, ale každý web kontrolujem ja a na každý e-mail odpovedám ja. Neveríte? Zaškrtnite políčko.',
+   check='Nie som robot', checking='Overujem…', verified='Overené. Marian je skutočný človek z Luky. Práve asi opravuje nejaký web.',
+   basics='Základné info', facts=[('Meno','Marian Boledovic'),('Odkiaľ','Luka, Slovensko'),('Firma','MaBo Digital, zakladateľ'),('Práca','Tvorba webov a SEO'),('Doteraz','8 vlastných webových projektov'),('E-mail','hello@mabodigital.dev')],
+   find='Nájdete ma aj tu', open='Otvoriť profil', soon='Ďalšie profily čoskoro.', cta_t='Teraz už viete, že som skutočný. Ozvite sa.', cta_p='Napíšte mi pár viet o projekte a odpoviem vám osobne.'),
 }
