@@ -139,7 +139,7 @@ def service_page(key, lang, font, style):
         elif kind == 'steps':
             inner = '<ol class="steps">' + ''.join(f'<li><b>{E(a)}</b><span>{E(b)}</span></li>' for a, b in body) + '</ol>'
         else:
-            link = 'https://domainer.bocak-sk.workers.dev'
+            link = 'https://dominer.sk'
             inner = f'<p>{E(body)}</p><p class="more"><a href="{link}" target="_blank" rel="noopener">{"Otvoriť Doménový Miner" if lang=="sk" else "Open Doménový Miner"} ↗</a></p>'
         secs.append(f'  <section class="blk"><h2>{E(title)}</h2>{inner}</section>')
     # proof: links to case studies

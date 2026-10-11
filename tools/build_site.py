@@ -49,7 +49,7 @@ ORG={"@context":"https://schema.org","@graph":[
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Web design and website development","serviceType":"Web design","description":"Custom web design, website development, launch and maintenance of fast, responsive websites."}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO services","serviceType":"Search engine optimization","description":"SEO audits, keyword research, on-page and technical SEO and rank tracking, using our own SEO tools."}}]}},
  {"@type":"Person","@id":SITE+"/#marian","name":"Marian Boledovic","jobTitle":"Web developer and SEO specialist","worksFor":{"@id":SITE+"/#business"},
-  "sameAs":["https://sk.linkedin.com/in/marian-boledovic-612b201a3","https://www.facebook.com/nairam.gatinaf/","https://depesa.eu","https://animeslovakia.sk","https://bocak.sk","https://slangovnik.sk","https://gramabot.sk","https://cryptogaway.com"]},
+  "sameAs":["https://sk.linkedin.com/in/marian-boledovic-612b201a3","https://www.facebook.com/nairam.gatinaf/","https://depesa.eu","https://animeslovakia.sk","https://bocak.sk","https://slangovnik.sk","https://gramabot.sk","https://cryptogaway.com","https://dominer.sk"]},
  {"@type":"WebSite","@id":SITE+"/#website","url":SITE+"/","name":"MaBo Digital","publisher":{"@id":SITE+"/#business"},"inLanguage":["en","sk"]}]}
 LD='<script type="application/ld+json">'+json.dumps(ORG,ensure_ascii=False)+'</script>'
 
