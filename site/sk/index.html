@@ -133,7 +133,7 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem)
 .seg button{font-family:var(--mono);font-size:13px;font-weight:700;padding:8px 14px;border:0;background:transparent;color:var(--ink);cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .gsc{display:flex;flex-direction:column;border-top:2px solid var(--ink)}
-.site{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr) minmax(0,1.1fr);gap:20px 32px;padding-block:28px;border-bottom:1px solid var(--line);align-items:start}
+.site{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2fr);gap:20px 32px;padding-block:28px;border-bottom:1px solid var(--line);align-items:start}
 .site header{display:flex;flex-direction:column;gap:4px;margin-bottom:16px}
 .period{font-family:var(--mono);font-size:12px;color:var(--muted)}
 .nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;margin:0}
@@ -372,7 +372,7 @@ figure{margin:0}
 </section>
 <section class="sec" id="stats">
 <h2 data-en="Results in Google Search" data-sk="Výsledky vo vyhľadávaní Google">Výsledky vo vyhľadávaní Google</h2>
-<p data-en="Daily figures from Google Search Console for five of my sites. All of them are new, so each chart starts on the first day Google reported data for that site. Snapshot as of 4 Oct 2026." data-sk="Denné čísla z Google Search Console pre päť mojich webov. Všetky sú nové, preto každý graf začína prvým dňom, za ktorý Google pre daný web eviduje dáta. Stav k 4. 10. 2026.">Denné čísla z Google Search Console pre päť mojich webov. Všetky sú nové, preto každý graf začína prvým dňom, za ktorý Google pre daný web eviduje dáta. Stav k 4. 10. 2026.</p>
+<p data-en="Daily figures from Google Search Console for five of my sites. All of them are new, so each chart starts on the first day Google reported data for that site. Snapshot as of 9 Oct 2026." data-sk="Denné čísla z Google Search Console pre päť mojich webov. Všetky sú nové, preto každý graf začína prvým dňom, za ktorý Google pre daný web eviduje dáta. Stav k 9. 10. 2026.">Denné čísla z Google Search Console pre päť mojich webov. Všetky sú nové, preto každý graf začína prvým dňom, za ktorý Google pre daný web eviduje dáta. Stav k 9. 10. 2026.</p>
 <div class="totals" id="totals"></div>
 <div aria-label="Metric" class="seg" role="group">
 <button aria-pressed="true" data-en="Impressions" data-metric="imp" data-sk="Zobrazenia" type="button">Zobrazenia</button>
@@ -469,24 +469,18 @@ figure{margin:0}
 <button aria-label="Back to top" class="totop r" hidden="" type="button"><svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="22"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button>
 <script>
 (function(){
-  /* Search Console snapshot: data read on 7 Oct 2026, last reported day 4 Oct 2026 */
+  /* Search Console snapshot: data read on 11 Oct 2026, last reported day 9 Oct 2026 */
   var SITES = [
-    {d:'animeslovakia', t:'.sk', start:'2026-09-26', ctr:3.5, pos:8.2,
-     imp:[0,2,106,295,304,315,326,411,373], clk:[0,0,3,8,17,11,7,14,14],
-     q:[['naruto',392,6.7],['anime cz',32,7.1],['animefest 2027',21,6.0],['naruto cz',16,5.2],['crunchyroll cz titulky',8,8.9]]},
-    {d:'slangovnik', t:'.sk', start:'2026-09-27', ctr:1.5, pos:7.8,
-     imp:[0,13,11,37,161,360,335,314], clk:[0,0,1,0,2,9,2,5],
-     q:[['slangove slova',28,5.8],['chillovat význam',25,4.7],['ksicht',18,8.1],['chillovať',11,3.3],['hejtovať',9,5.4]]},
-    {d:'cryptogaway', t:'.com', start:'2026-09-23', ctr:11.8, pos:27.3,
-     imp:[0,0,6,132,41,24,19,29,14,15,11,22], clk:[0,0,1,17,5,4,2,1,1,3,1,2],
-     q:[['crypto giveaway',19,5.9],['free crypto giveaway',10,8.4],['claim free crypto',6,10.3],['cga ads',4,3.0],['usdt giveaway free',3,5.3]]},
-    {d:'bocak', t:'.sk', start:'2026-09-14', ctr:2.6, pos:17,
-     imp:[0,0,2,4,4,7,11,12,14,9,22,16,29,23,23,17,13,27,36,25,16], clk:[0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,1,1,2,1,0],
-     q:[['bocak',40,5.8],['kryptomeny zadarmo',19,17.4],['nataris ai',14,8.4],['nataris',14,9.1],['miningperia',3,9.7]]},
-    {d:'depesa', t:'.eu', start:'2026-08-31', ctr:3.1, pos:17.4,
-     imp:[0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,2,0,1,2,3,6,16,20,19,15,25,37,12,16,25,15,19,25,17,9],
-     clk:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,0,1,0,0,0,1,2,1,0,0,0],
-     q:[['depeša',9,7.3],['spravodajske weby',8,30.8],['spravodajske portaly',7,18.1],['najlepsie slovenske weby',6,9.7],['slovenské spravodajské portály',2,12.5]]}
+    {d:'animeslovakia', t:'.sk', start:'2026-09-26', ctr:3.8, pos:8.3,
+     imp:[0,2,106,295,304,315,326,411,373,263,265,263,276,308], clk:[0,0,3,8,17,11,7,14,14,12,12,12,15,10]},
+    {d:'slangovnik', t:'.sk', start:'2026-09-27', ctr:1.2, pos:7.4,
+     imp:[0,13,11,37,161,360,335,314,377,386,386,411,321], clk:[0,0,1,0,2,9,2,5,1,3,3,6,4]},
+    {d:'cryptogaway', t:'.com', start:'2026-09-23', ctr:11.4, pos:24.9,
+     imp:[0,0,6,132,41,24,19,29,14,15,11,22,11,15,14,17,7], clk:[0,0,1,17,5,4,2,1,1,3,1,2,2,0,2,2,0]},
+    {d:'bocak', t:'.sk', start:'2026-09-14', ctr:2.3, pos:17.9,
+     imp:[0,0,2,4,4,7,11,12,14,9,22,16,29,23,23,17,13,27,36,25,16,22,11,13,17,20], clk:[0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,1,1,2,1,0,0,0,1,0,0]},
+    {d:'depesa', t:'.eu', start:'2026-08-31', ctr:2.7, pos:17.5,
+     imp:[0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,2,0,1,2,3,6,16,20,19,15,25,37,12,16,25,15,19,25,17,9,13,12,8,12,8], clk:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,0,1,0,0,0,1,2,1,0,0,0,0,0,0,0,0]}
   ];
   var T = {
     en:{imp:'Impressions',clk:'Clicks',pos:'Avg. position',q:'Query',p:'Pos.',i:'Impr.',days:'days',sites:'Sites',perday:'per day',loc:'en-US'},
@@ -525,9 +519,7 @@ figure{margin:0}
       return '<article class="site"><div><header><span class="dom">'+s.d+'<i>'+s.t+'</i></span><span class="period">'+day(s,0,l)+' – '+day(s,n-1,l)+' 2026 · '+n+' '+T[l].days+'</span></header>'+
         '<dl class="nums"><div><dt>'+T[l].imp+'</dt><dd>'+fmt(sum(s.imp),l)+'</dd></div><div><dt>'+T[l].clk+'</dt><dd>'+fmt(sum(s.clk),l)+'</dd></div>'+
         '<div><dt>CTR</dt><dd>'+fmt(s.ctr,l)+(l==='sk'?' %':'%')+'</dd></div><div><dt>'+T[l].pos+'</dt><dd>'+fmt(s.pos,l)+'</dd></div></dl></div>'+
-        '<figure class="chart"></figure>'+
-        '<table class="q"><thead><tr><th>'+T[l].q+'</th><th>'+T[l].i+'</th><th>'+T[l].p+'</th></tr></thead><tbody>'+
-        s.q.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+fmt(r[1],l)+'</td><td>'+fmt(r[2],l,1)+'</td></tr>';}).join('')+'</tbody></table></article>'; }).join('');
+        '<figure class="chart"></figure></article>'; }).join('');
     Array.prototype.forEach.call(box.querySelectorAll('.chart'),function(f,i){ drawChart(f,SITES[i],l); });
   }
   document.querySelectorAll('.seg button').forEach(function(b){ b.addEventListener('click',function(){ metric=b.getAttribute('data-metric');

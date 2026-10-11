@@ -1,5 +1,5 @@
 # Content for MaBo Digital's service pages, case studies and privacy policy (EN + SK).
-# Facts only: features and figures come from the live sites and Google Search Console (data to 4 Oct 2026).
+# Facts only: features and figures come from the live sites and Google Search Console (data to 9 Oct 2026).
 
 SERVICES = {
  'web': {
@@ -75,34 +75,29 @@ SERVICES = {
 # Search Console snapshot (same data as the stats section on the home page)
 CASES = [
  dict(slug='animeslovakia', art='animeslovakia', name='Anime Slovakia', url='https://animeslovakia.sk', logo='animeslovakia',
-      start='2026-09-26', days=9, imp=2132, clk=74, ctr='3.5', pos='8.2', series=[0,2,106,295,304,315,326,411,373],
-      q=[('naruto',392,'6.7'),('anime cz',32,'7.1'),('animefest 2027',21,'6.0'),('naruto cz',16,'5.2'),('crunchyroll cz titulky',8,'8.9')]),
+      start='2026-09-26', days=14, imp=3507, clk=135, ctr='3.8', pos='8.3', series=[0,2,106,295,304,315,326,411,373,263,265,263,276,308], clicks=[0,0,3,8,17,11,7,14,14,12,12,12,15,10]),
  dict(slug='slangovnik', art='slangovnik', name='Slangovník', url='https://slangovnik.sk', logo='slangovnik',
-      start='2026-09-27', days=8, imp=1231, clk=19, ctr='1.5', pos='7.8', series=[0,13,11,37,161,360,335,314],
-      q=[('slangove slova',28,'5.8'),('chillovat význam',25,'4.7'),('ksicht',18,'8.1'),('chillovať',11,'3.3'),('hejtovať',9,'5.4')]),
+      start='2026-09-27', days=13, imp=3112, clk=36, ctr='1.2', pos='7.4', series=[0,13,11,37,161,360,335,314,377,386,386,411,321], clicks=[0,0,1,0,2,9,2,5,1,3,3,6,4]),
  dict(slug='cryptogaway', art='cga', name='CGA, Crypto GiveAway', url='https://cryptogaway.com', logo='cryptogaway',
-      start='2026-09-23', days=12, imp=313, clk=37, ctr='11.8', pos='27.3', series=[0,0,6,132,41,24,19,29,14,15,11,22],
-      q=[('crypto giveaway',19,'5.9'),('free crypto giveaway',10,'8.4'),('claim free crypto',6,'10.3'),('cga ads',4,'3.0'),('usdt giveaway free',3,'5.3')]),
+      start='2026-09-23', days=17, imp=377, clk=43, ctr='11.4', pos='24.9', series=[0,0,6,132,41,24,19,29,14,15,11,22,11,15,14,17,7], clicks=[0,0,1,17,5,4,2,1,1,3,1,2,2,0,2,2,0]),
  dict(slug='bocak', art='bocak', name='Bocak', url='https://bocak.sk', logo='bocak',
-      start='2026-09-14', days=21, imp=310, clk=8, ctr='2.6', pos='17', series=[0,0,2,4,4,7,11,12,14,9,22,16,29,23,23,17,13,27,36,25,16],
-      q=[('bocak',40,'5.8'),('kryptomeny zadarmo',19,'17.4'),('nataris ai',14,'8.4'),('nataris',14,'9.1'),('miningperia',3,'9.7')]),
+      start='2026-09-14', days=26, imp=393, clk=9, ctr='2.3', pos='17.9', series=[0,0,2,4,4,7,11,12,14,9,22,16,29,23,23,17,13,27,36,25,16,22,11,13,17,20], clicks=[0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,1,1,2,1,0,0,0,1,0,0]),
  dict(slug='depesa', art='depesa', name='depeša', url='https://depesa.eu', logo='depesa',
-      start='2026-08-31', days=35, imp=286, clk=9, ctr='3.1', pos='17.4', series=[0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,2,0,1,2,3,6,16,20,19,15,25,37,12,16,25,15,19,25,17,9],
-      q=[('depeša',9,'7.3'),('spravodajske weby',8,'30.8'),('spravodajske portaly',7,'18.1'),('najlepsie slovenske weby',6,'9.7'),('slovenské spravodajské portály',2,'12.5')]),
+      start='2026-08-31', days=40, imp=339, clk=9, ctr='2.7', pos='17.5', series=[0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,2,0,1,2,3,6,16,20,19,15,25,37,12,16,25,15,19,25,17,9,13,12,8,12,8], clicks=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,0,1,0,0,0,1,2,1,0,0,0,0,0,0,0,0]),
 ]
 
 UI = {
  'en': dict(nav=[('/#work','Work'),('/web-design/','Web design'),('/seo/','SEO'),('/#contact','Contact')], home='/', other='/sk/', other_label='SVK', this_label='ENG',
    faq='Questions clients ask', results='Results in Google Search', built='What was built', visit='Visit', case_eyebrow='Case study',
    period='Period', imp='Impressions', clk='Clicks', ctr='CTR', pos='Avg. position', query='Query', perday='Impressions per day',
-   src='Source: Google Search Console, snapshot with data to 4 October 2026. Position is the average rank in Google results; 1 to 10 means page one.',
+   src='Source: Google Search Console, snapshot with data to 9 October 2026. Position is the average rank in Google results; 1 to 10 means page one.',
    similar='Want results like these for your website?', similar_p='Tell me about your project and I will reply with a proposal.', contact_cta='Get in touch',
    more='More case studies', footer_priv='Privacy', footer_line='MaBo Digital · Marian Boledovic · Luka, Slovakia', days='days', case_link='Read the case study',
    services_more=[('/web-design/','More about web design'),('/seo/','More about SEO services')], priv_path='/privacy/', terms_path='/terms/', footer_terms='Terms', back='All projects'),
  'sk': dict(nav=[('/sk/#work','Práce'),('/sk/tvorba-webov/','Tvorba webov'),('/sk/seo/','SEO'),('/sk/#contact','Kontakt')], home='/sk/', other='/', other_label='ENG', this_label='SVK',
    faq='Časté otázky', results='Výsledky vo vyhľadávaní Google', built='Čo som postavil', visit='Otvoriť', case_eyebrow='Prípadová štúdia',
    period='Obdobie', imp='Zobrazenia', clk='Kliknutia', ctr='CTR', pos='Priem. pozícia', query='Dopyt', perday='Zobrazenia za deň',
-   src='Zdroj: Google Search Console, stav s dátami k 4. 10. 2026. Pozícia je priemerné umiestnenie vo výsledkoch Google; 1 až 10 znamená prvú stranu.',
+   src='Zdroj: Google Search Console, stav s dátami k 9. 10. 2026. Pozícia je priemerné umiestnenie vo výsledkoch Google; 1 až 10 znamená prvú stranu.',
    similar='Chcete podobné výsledky pre svoj web?', similar_p='Napíšte mi pár viet o projekte a pošlem vám ponuku.', contact_cta='Ozvite sa',
    more='Ďalšie prípadové štúdie', footer_priv='Ochrana súkromia', footer_line='MaBo Digital · Marian Boledovic · Luka, Slovensko', days='dní', case_link='Prečítať prípadovú štúdiu',
    services_more=[('/sk/tvorba-webov/','Viac o tvorbe webov'),('/sk/seo/','Viac o SEO optimalizácii')], priv_path='/sk/ochrana-sukromia/', terms_path='/sk/obchodne-podmienky/', footer_terms='Obchodné podmienky', back='Všetky projekty'),
@@ -110,18 +105,18 @@ UI = {
 
 CASE_TEXT = {
  'en': {
-  'animeslovakia': ('Anime Slovakia: from launch to page one in nine days', 'An anime portal for Slovak and Czech fans, built and launched as a complete product: news, an anime database, legal streaming guides and a game layer that brings people back every day.', 'In its first nine days in Google, the site collected over 2,000 impressions with an average position of 8.2, which is page one. Its biggest query, "naruto", ranks at 6.7.'),
-  'slangovnik': ('Slangovník: a community dictionary that ranks in its first week', 'A dictionary of Slovak slang and dialect where anyone can add a word, a moderator approves it and votes decide which meaning comes first.', 'Within eight days the site reached an average position of 7.8 and over 1,200 impressions, with slang terms such as "chillovať" ranking at 3.3.'),
-  'cryptogaway': ('CGA, Crypto GiveAway: an English-language rewards platform', 'A global rewards platform with four crypto faucets, daily missions, a jackpot, levels, a mining game and a self-serve advertising platform for other sites.', 'In its first twelve days the site earned a click-through rate of 11.8%, with "crypto giveaway" ranking at 5.9 and "cga ads" at 3.0.'),
-  'bocak': ('Bocak: a crypto earning catalogue written without hype', 'A catalogue of around a hundred apps, DePIN projects, websites and games that pay in crypto, each reviewed plainly with costs and risks stated.', 'Impressions grew steadily over its first three weeks, and the brand query "bocak" ranks at 5.8.'),
-  'depesa': ('depeša: an automated Slovak news service', 'A Slovak news service that condenses the day’s stories into short summaries in three languages, refreshed by an automated pipeline without a newsroom.', 'Search visibility started after about three weeks and grew to 286 impressions over the 35 days shown in Search Console, with the brand query "depeša" ranking at 7.3.'),
+  'animeslovakia': ('Anime Slovakia: from launch to page one in nine days', 'An anime portal for Slovak and Czech fans, built and launched as a complete product: news, an anime database, legal streaming guides and a game layer that brings people back every day.', 'In its first two weeks in Google, the site collected over 3,500 impressions and 135 clicks, with an average position of 8.3, which is page one.'),
+  'slangovnik': ('Slangovník: a community dictionary that ranks in its first week', 'A dictionary of Slovak slang and dialect where anyone can add a word, a moderator approves it and votes decide which meaning comes first.', 'In its first two weeks the site passed 3,100 impressions with an average position of 7.4, on page one of Google.'),
+  'cryptogaway': ('CGA, Crypto GiveAway: an English-language rewards platform', 'A global rewards platform with four crypto faucets, daily missions, a jackpot, levels, a mining game and a self-serve advertising platform for other sites.', 'In its first 17 days the site earned a click-through rate of 11.4%: 43 clicks from 377 impressions.'),
+  'bocak': ('Bocak: a crypto earning catalogue written without hype', 'A catalogue of around a hundred apps, DePIN projects, websites and games that pay in crypto, each reviewed plainly with costs and risks stated.', 'Impressions grew steadily over its first weeks in Google, to 393 in 26 days.'),
+  'depesa': ('depeša: an automated Slovak news service', 'A Slovak news service that condenses the day’s stories into short summaries in three languages, refreshed by an automated pipeline without a newsroom.', 'Search visibility started after about three weeks and grew to 339 impressions over the 40 days shown in Search Console.'),
  },
  'sk': {
-  'animeslovakia': ('Anime Slovakia: od spustenia na prvú stranu za deväť dní', 'Anime portál pre slovenských a českých fanúšikov, postavený a spustený ako hotový produkt: novinky, databáza anime, prehľad legálneho streamovania a herné prvky, vďaka ktorým sa ľudia vracajú každý deň.', 'Za prvých deväť dní v Googli web zozbieral vyše 2 000 zobrazení s priemernou pozíciou 8,2, teda na prvej strane. Najsilnejší dopyt „naruto“ je na pozícii 6,7.'),
-  'slangovnik': ('Slangovník: komunitný slovník, ktorý sa umiestňuje hneď v prvom týždni', 'Slovník slovenského slangu a nárečí, kde môže slovo pridať ktokoľvek, moderátor ho schváli a o poradí významov rozhodujú hlasy.', 'Za osem dní web dosiahol priemernú pozíciu 7,8 a vyše 1 200 zobrazení, slangové výrazy ako „chillovať“ sú na pozícii 3,3.'),
-  'cryptogaway': ('CGA, Crypto GiveAway: platforma s odmenami v angličtine', 'Celosvetová platforma s odmenami: štyri krypto faucety, denné misie, jackpot, levely, ťažobná hra a samoobslužná reklamná platforma pre iné weby.', 'Za prvých dvanásť dní web dosiahol mieru prekliknutia 11,8 %, „crypto giveaway“ je na pozícii 5,9 a „cga ads“ na 3,0.'),
-  'bocak': ('Bocak: katalóg zarábania krypta bez hype', 'Katalóg približne sto appiek, DePIN projektov, webov a hier, ktoré platia v krypte, každý zhodnotený zrozumiteľne aj s nákladmi a rizikami.', 'Zobrazenia počas prvých troch týždňov stabilne rástli a značkový dopyt „bocak“ je na pozícii 5,8.'),
-  'depesa': ('depeša: automatizovaný slovenský spravodajský web', 'Slovenský spravodajský web, ktorý zhŕňa správy dňa do krátkych textov v troch jazykoch, obnovovaný automatizovaným procesom bez redakcie.', 'Viditeľnosť vo vyhľadávaní sa rozbehla asi po troch týždňoch a za 35 dní zobrazených v Search Console narástla na 286 zobrazení, značkový dopyt „depeša“ je na pozícii 7,3.'),
+  'animeslovakia': ('Anime Slovakia: od spustenia na prvú stranu za deväť dní', 'Anime portál pre slovenských a českých fanúšikov, postavený a spustený ako hotový produkt: novinky, databáza anime, prehľad legálneho streamovania a herné prvky, vďaka ktorým sa ľudia vracajú každý deň.', 'Za prvé dva týždne v Googli web zozbieral vyše 3 500 zobrazení a 135 kliknutí s priemernou pozíciou 8,3, teda na prvej strane.'),
+  'slangovnik': ('Slangovník: komunitný slovník, ktorý sa umiestňuje hneď v prvom týždni', 'Slovník slovenského slangu a nárečí, kde môže slovo pridať ktokoľvek, moderátor ho schváli a o poradí významov rozhodujú hlasy.', 'Za prvé dva týždne web prekročil 3 100 zobrazení s priemernou pozíciou 7,4, na prvej strane Googlu.'),
+  'cryptogaway': ('CGA, Crypto GiveAway: platforma s odmenami v angličtine', 'Celosvetová platforma s odmenami: štyri krypto faucety, denné misie, jackpot, levely, ťažobná hra a samoobslužná reklamná platforma pre iné weby.', 'Za prvých 17 dní web dosiahol mieru prekliknutia 11,4 %: 43 kliknutí z 377 zobrazení.'),
+  'bocak': ('Bocak: katalóg zarábania krypta bez hype', 'Katalóg približne sto appiek, DePIN projektov, webov a hier, ktoré platia v krypte, každý zhodnotený zrozumiteľne aj s nákladmi a rizikami.', 'Zobrazenia počas prvých týždňov v Googli stabilne rástli, za 26 dní na 393.'),
+  'depesa': ('depeša: automatizovaný slovenský spravodajský web', 'Slovenský spravodajský web, ktorý zhŕňa správy dňa do krátkych textov v troch jazykoch, obnovovaný automatizovaným procesom bez redakcie.', 'Viditeľnosť vo vyhľadávaní sa rozbehla asi po troch týždňoch a za 40 dní zobrazených v Search Console narástla na 339 zobrazení.'),
  },
 }
 

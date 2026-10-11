@@ -190,8 +190,6 @@ def case_page(c, lang, soup_en, soup_sk, font, style):
     pct = ' %' if lang == 'sk' else '%'
     kpis = (f'<dl class="kpis"><div><dt>{u["imp"]}</dt><dd>{num(c["imp"], lang)}</dd></div><div><dt>{u["clk"]}</dt><dd>{num(c["clk"], lang)}</dd></div>'
             f'<div><dt>{u["ctr"]}</dt><dd>{num(c["ctr"], lang)}{pct}</dd></div><div><dt>{u["pos"]}</dt><dd>{num(c["pos"], lang)}</dd></div></dl>')
-    qrows = ''.join(f'<tr><td>{E(q)}</td><td>{num(i, lang)}</td><td>{num(p, lang)}</td></tr>' for q, i, p in c['q'])
-    qtable = f'<table class="q"><thead><tr><th>{u["query"]}</th><th>{u["imp"]}</th><th>{u["pos"]}</th></tr></thead><tbody>{qrows}</tbody></table>'
     others = ''.join(f'<a href="{case_path(o, lang)}"><img src="/logos/{o["logo"]}.png" alt="" width="22" height="22">{E(o["name"])}</a>' for o in CASES if o is not c)
     inner = f'''  {crumbs(lang, [(u['home'] + '#work', u['back']), (None, c['name'])])}
   <section class="hero">
@@ -201,7 +199,7 @@ def case_page(c, lang, soup_en, soup_sk, font, style):
     <div class="actions"><a class="btn" href="{c['url']}" target="_blank" rel="noopener">{E(u['visit'])} {E(c['url'].replace('https://', ''))} ↗</a></div>
   </section>
   <section class="blk"><h2>{E(u['built'])}</h2><p>{E(desc_p)}</p><ul class="ticks">{''.join(f'<li>{E(f)}</li>' for f in feats)}</ul><ul class="tags">{''.join(f'<li>{E(t)}</li>' for t in tags)}</ul></section>
-  <section class="blk"><h2>{E(u['results'])}</h2><p>{E(result)}</p><p class="period">{E(u['period'])}: {fmt_date(start, lang)} – {fmt_date(end, lang)} · {c['days']} {u['days']}</p>{kpis}{chart_svg(c, lang)}{qtable}<p class="src" style="font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:0">{E(u['src'])}</p></section>
+  <section class="blk"><h2>{E(u['results'])}</h2><p>{E(result)}</p><p class="period">{E(u['period'])}: {fmt_date(start, lang)} – {fmt_date(end, lang)} · {c['days']} {u['days']}</p>{kpis}{chart_svg(c, lang)}<p class="src" style="font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:0">{E(u['src'])}</p></section>
 {callout(lang)}
   <section class="blk"><h2>{E(u['more'])}</h2><div class="morelist">{others}</div></section>'''
     ld = {"@context": "https://schema.org", "@graph": [
