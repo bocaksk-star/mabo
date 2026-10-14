@@ -105,7 +105,7 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem)
 /* project entries */
 .projects{display:flex;flex-direction:column;gap:56px}
 .project{display:flex;flex-direction:column;gap:18px;scroll-margin-top:24px}
-.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-family:var(--mono);font-size:14px}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:10px 18px;font-family:var(--mono);font-size:14px}
 .bar .url{flex:1 1 200px;min-width:0;overflow-wrap:anywhere}
 .bar .url span{color:var(--muted)}
 .bar a{font-weight:500;white-space:nowrap}
@@ -201,6 +201,8 @@ figure{margin:0}
   .registry .what{grid-column:2 / -1;grid-row:2}
   .cols{grid-template-columns:minmax(0,1fr)}
   .skills{grid-template-columns:minmax(0,1fr)}
+  .bar{border-radius:14px}
+  .bar .url span{display:none}
 }
 @media (prefers-reduced-motion:reduce){.btn:hover,.totop:hover{transform:none}}
 .foot a{color:var(--muted)}
@@ -265,7 +267,7 @@ figure{margin:0}
     <div class="captcha"><button type="button" id="cap" aria-label="Nie som robot" aria-pressed="false"></button><span class="lbl">Nie som robot</span><span class="mark" aria-hidden="true"><svg viewBox="0 0 64 64" width="32" height="32" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#1B3FD0"/><polyline points="13,45 13,20 26,34 39,20 39,45" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="44.5" r="4" fill="#FFB020"/></svg>MaBo</span></div>
     <p class="verified" id="cap-out" role="status" aria-live="polite" hidden>Overené. Marian je skutočný človek z Luky. Práve asi opravuje nejaký web.</p>
   </section>
-  <section class="blk" style="max-width:none"><h2>Základné info</h2><dl class="facts"><div><dt>Meno</dt><dd>Marian Boledovic</dd></div><div><dt>Odkiaľ</dt><dd>Luka, Slovensko</dd></div><div><dt>Firma</dt><dd>MaBo Digital, zakladateľ</dd></div><div><dt>Práca</dt><dd>Tvorba webov a SEO</dd></div><div><dt>Doteraz</dt><dd>8 vlastných webových projektov</dd></div><div><dt>E-mail</dt><dd>hello@mabodigital.dev</dd></div></dl></section>
+  <section class="blk" style="max-width:none"><h2>Základné info</h2><dl class="facts"><div><dt>Meno</dt><dd>Marian Boledovic</dd></div><div><dt>Odkiaľ</dt><dd>Luka, Slovensko</dd></div><div><dt>Firma</dt><dd>MaBo Digital, zakladateľ</dd></div><div><dt>Práca</dt><dd>Tvorba webov, Android/Apple aplikácie a SEO</dd></div><div><dt>Doteraz</dt><dd>8 vlastných webových projektov a jedna Android aplikácia</dd></div><div><dt>E-mail</dt><dd>hello@mabodigital.dev</dd></div></dl></section>
   <section class="blk" style="max-width:none"><h2>Nájdete ma aj tu</h2><div class="profiles"><a class="pcard" href="https://sk.linkedin.com/in/marian-boledovic-612b201a3" target="_blank" rel="noopener me" style="--pc:#0A66C2"><span class="band"><span class="glyph" aria-hidden="true">in</span></span><span class="ava"><svg viewBox="0 0 64 64" width="52" height="52" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#1B3FD0"/><polyline points="13,45 13,20 26,34 39,20 39,45" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="44.5" r="4" fill="#FFB020"/></svg></span><span class="body"><span class="net">LinkedIn</span><b>Marian Boledovic</b><span class="handle">in/marian-boledovic</span><span class="line">Pracovný profil a doterajšia prax.</span><span class="go">Otvoriť profil ↗</span></span></a><a class="pcard" href="https://www.facebook.com/nairam.gatinaf/" target="_blank" rel="noopener me" style="--pc:#1877F2"><span class="band"><span class="glyph" aria-hidden="true">f</span></span><span class="ava"><svg viewBox="0 0 64 64" width="52" height="52" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#1B3FD0"/><polyline points="13,45 13,20 26,34 39,20 39,45" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="44.5" r="4" fill="#FFB020"/></svg></span><span class="body"><span class="net">Facebook</span><b>Marian Boledovic</b><span class="handle">nairam.gatinaf</span><span class="line">Osobný profil, tá menej formálna stránka.</span><span class="go">Otvoriť profil ↗</span></span></a></div><p class="soon">Ďalšie profily čoskoro.</p></section>
   <section class="callout">
     <h2>Teraz už viete, že som skutočný. Ozvite sa.</h2>
