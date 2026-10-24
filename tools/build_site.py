@@ -56,11 +56,11 @@ LD='<script type="application/ld+json">'+json.dumps(ORG,ensure_ascii=False)+'</s
 META={
  'en':dict(kw='web design, website development, web developer Slovakia, website creation, responsive websites, landing pages, SEO services, SEO audit, keyword research, technical SEO, rank tracking, SEO tools',path='/',locale='en_US',alt='sk_SK',
    title='MaBo Digital | Web Design, Website Development & SEO',
-   desc='Web design, website development and SEO services from Slovakia: fast websites, SEO audits, keyword research and our own SEO tools. 8 live web projects and one Android app.',
+   desc='Web design, website development and SEO services from Slovakia: fast websites, SEO audits, keyword research and our own SEO tools. 10 live web projects and one Android app.',
    ogt='MaBo Digital | Web Design and SEO',ogd='Websites and SEO, built and run from Slovakia.'),
  'sk':dict(kw='tvorba webových stránok, tvorba webu, webdizajn, web na mieru, responzívny web, SEO optimalizácia, SEO audit, analýza kľúčových slov, sledovanie pozícií, SEO nástroje',path='/sk/',locale='sk_SK',alt='en_US',
    title='MaBo Digital | Tvorba webových stránok a SEO optimalizácia',
-   desc='Tvorba webových stránok na mieru a SEO optimalizácia: rýchle weby, SEO audit, analýza kľúčových slov a vlastné SEO nástroje. 8 živých webových projektov a jedna Android aplikácia.',
+   desc='Tvorba webových stránok na mieru a SEO optimalizácia: rýchle weby, SEO audit, analýza kľúčových slov a vlastné SEO nástroje. 10 živých webových projektov a jedna Android aplikácia.',
    ogt='MaBo Digital | Tvorba webov a SEO',ogd='Weby a SEO, postavené a prevádzkované na Slovensku.')}
 
 def head(l):
