@@ -193,3 +193,41 @@ HUMAN = {
    basics='Základné info', facts=[('Meno','Marian Boledovic'),('Odkiaľ','Luka, Slovensko'),('Firma','MaBo Digital, zakladateľ'),('Práca','Tvorba webov, Android/Apple aplikácie a SEO'),('Doteraz','8 vlastných webových projektov a jedna Android aplikácia'),('E-mail','hello@mabodigital.dev')],
    find='Nájdete ma aj tu', open='Otvoriť profil', soon='Ďalšie profily čoskoro.', cta_t='Teraz už viete, že som skutočný. Ozvite sa.', cta_p='Napíšte mi pár viet o projekte a odpoviem vám osobne.'),
 }
+
+PLAYSTORE_URL = 'https://play.google.com/store/apps/details?id=com.cryptogaway.faucet'
+APP = {
+ 'en': dict(path='/app/cga-digital-game/', title='CGA Digital Game | Android App | MaBo Digital',
+   desc='CGA Digital Game: a free Android companion app to CGA, Crypto GiveAway. Hill Rider and Neon Blocks, daily missions, idle mining and a step counter. Now live on Google Play.',
+   eyebrow='Android app · app.cryptogaway.com', h1='CGA Digital Game',
+   lede="A free Android companion app to CGA, Crypto GiveAway. Two new mini-games, Hill Rider and Neon Blocks, plus daily missions, idle mining, a step counter and an offerwall — all building one shared points balance.",
+   cta='Get it on Google Play', visit_label='app.cryptogaway.com',
+   features_h='What is inside', features=[
+     ('Hill Rider','Jump across hills, collect coins and keep riding with optional rewarded ads.'),
+     ('Neon Blocks','Place glowing blocks, clear lines and unlock extra lives and tools.'),
+     ('Idle mining','Run a four-hour mining session and use optional speed, value and point boosts.'),
+     ('Daily missions','Complete daily, weekly and monthly goals for game tickets.'),
+     ('Step goals','An optional step counter for walking challenges and milestones.'),
+     ('Offers and surveys','Explore optional game offers and online surveys from partners.'),
+   ],
+   shots_h='Screenshots',
+   info_h='App info', info=[('Developer','MaBo Digital'),('Platform','Android 8+'),('Category','Casual'),('Price','Free, with ads'),('Content rating','Everyone'),('Sign-in','Google, to save progress')],
+   note_h='Good to know', note='In-game points and prize-draw values have no monetary or cryptocurrency value and cannot be transferred, exchanged or redeemed. The app is for casual entertainment and does not give financial or medical advice.',
+   cta_t='Ready to play?', cta_p='Free on Google Play, with a masked leaderboard and daily rewards.'),
+ 'sk': dict(path='/sk/aplikacia/cga-digital-game/', title='CGA Digital Game | Android aplikácia | MaBo Digital',
+   desc='CGA Digital Game: bezplatná androidová aplikácia ku CGA, Crypto GiveAway. Hill Rider a Neon Blocks, denné misie, ťažba a krokomer. Teraz živo na Google Play.',
+   eyebrow='Android aplikácia · app.cryptogaway.com', h1='CGA Digital Game',
+   lede='Bezplatná androidová aplikácia ku CGA, Crypto GiveAway. Dve nové mini-hry, Hill Rider a Neon Blocks, plus denné misie, ťažba, krokomer a offerwall — všetko do jedného spoločného zostatku bodov.',
+   cta='Získať na Google Play', visit_label='app.cryptogaway.com',
+   features_h='Čo v nej nájdete', features=[
+     ('Hill Rider','Preskakujte kopce, zbierajte mince a pokračujte v jazde s voliteľnými reklamami za odmenu.'),
+     ('Neon Blocks','Ukladajte žiariace bloky, čistite riadky a odomykajte ďalšie životy a nástroje.'),
+     ('Ťažba (Mining)','Spustite štvorhodinovú ťažobnú reláciu a využite voliteľné bonusy rýchlosti, hodnoty a bodov.'),
+     ('Denné misie','Plňte denné, týždenné a mesačné ciele za herné lístky.'),
+     ('Krokové ciele','Voliteľný krokomer pre prechádzkové výzvy a míľniky.'),
+     ('Ponuky a prieskumy','Voliteľné herné ponuky a online prieskumy od partnerov.'),
+   ],
+   shots_h='Snímky obrazovky',
+   info_h='Info o aplikácii', info=[('Vývojár','MaBo Digital'),('Platforma','Android 8+'),('Kategória','Bežná hra'),('Cena','Zadarmo, s reklamami'),('Hodnotenie obsahu','Pre všetkých'),('Prihlásenie','Google, na uloženie postupu')],
+   note_h='Dobré vedieť', note='Herné body a hodnoty v žrebovaniach nemajú peňažnú ani kryptomenovú hodnotu a nedajú sa previesť, vymeniť ani preplatiť. Aplikácia slúži na bežnú zábavu a neposkytuje finančné ani zdravotné rady.',
+   cta_t='Pripravení hrať?', cta_p='Zadarmo na Google Play, s maskovaným rebríčkom a dennými odmenami.'),
+}

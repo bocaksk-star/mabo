@@ -108,6 +108,27 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem)
 .status::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
 .status.live{color:var(--live)} .status.soon{color:var(--soon)} .status.wip{color:var(--wip)}
 
+/* app hero banner */
+.apphero{position:relative;overflow:hidden;border-radius:22px;text-decoration:none;color:#fff;min-height:300px;display:flex;align-items:flex-end;background:#0a1120;margin-bottom:8px}
+.apphero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 50%}
+.apphero .scrim{position:absolute;inset:0;background:linear-gradient(100deg,rgba(5,8,17,.99) 0%,rgba(5,8,17,.96) 34%,rgba(5,8,17,.72) 48%,rgba(5,8,17,.18) 64%,rgba(5,8,17,0) 72%)}
+.apphero .content{position:relative;z-index:1;padding:32px 34px;display:flex;flex-direction:column;gap:13px;max-width:400px}
+.apphero .brandrow{display:flex;align-items:center;gap:11px}
+.apphero img.icon{width:42px;height:42px;border-radius:11px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.apphero .appname{font-family:var(--display);font-weight:700;font-size:15px;color:#D4DAEE}
+.apphero .eyebrow{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7FE8C4;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.apphero .title{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.6vw,32px);letter-spacing:-.015em;line-height:1.08;text-shadow:0 3px 20px rgba(0,0,0,.65)}
+.apphero .title b{color:#FFD166;font-weight:800}
+.apphero .sub{font-family:var(--body);font-size:14.5px;color:#C9D1EA;line-height:1.55;max-width:34ch;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.apphero .badge{margin-top:8px;display:block;width:150px;filter:drop-shadow(0 6px 16px rgba(0,0,0,.4))}
+.apphero .badge img{width:100%;display:block}
+@media (max-width:640px){
+  .apphero{min-height:280px}
+  .apphero img.bg{object-position:78% 50%}
+  .apphero .scrim{background:linear-gradient(105deg,rgba(5,8,17,.99) 0%,rgba(5,8,17,.97) 48%,rgba(5,8,17,.75) 62%,rgba(5,8,17,.25) 78%,rgba(5,8,17,0) 92%)}
+  .apphero .content{max-width:100%;padding:26px 22px}
+}
+
 /* project entries */
 .projects{display:flex;flex-direction:column;gap:56px}
 .project{display:flex;flex-direction:column;gap:18px;scroll-margin-top:24px}
@@ -264,17 +285,29 @@ figure{margin:0}
 
   <section class="sec" id="apps">
     <h2 data-sk="Android a Apple aplikácie">Android &amp; Apple apps</h2>
+    <a class="apphero" href="https://play.google.com/store/apps/details?id=com.cryptogaway.faucet" target="_blank" rel="noopener">
+      <img class="bg" src="/logos/cga-hero-banner.jpg" alt="">
+      <span class="scrim"></span>
+      <span class="content">
+        <span class="brandrow"><img class="icon" src="/logos/cga-game-icon.png" alt=""><span class="appname">CGA Digital Game</span></span>
+        <span class="eyebrow" data-sk="Dve nové hry, teraz živo">Two new games, now live</span>
+        <span class="title">Hill Rider <b>&amp;</b> <span data-sk="Neon Blocks">Neon Blocks</span></span>
+        <span class="sub" data-sk="Plus denné misie, ťažba a krokomer — zadarmo, s maskovaným rebríčkom.">Plus daily missions, idle mining and a step counter — free, with a masked leaderboard.</span>
+        <span class="badge"><img src="/logos/google-play-badge.png" alt="Get it on Google Play"></span>
+      </span>
+    </a>
     <div class="projects">
       <article class="project" id="cgagame">
-        <div class="bar"><img class="logo sm" src="/logos/cryptogaway.png" alt="" width="26" height="26"><span class="url"><span>https://</span>app.cryptogaway.com</span><span class="status live" data-sk="Online">Live</span><a href="https://app.cryptogaway.com" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a></div>
+        <div class="bar"><img class="logo sm" src="/logos/cga-game-icon.png" alt="" width="26" height="26"><span class="url"><span>https://</span>app.cryptogaway.com</span><span class="status live" data-sk="Na Google Play">On Google Play</span><a href="https://app.cryptogaway.com" target="_blank" rel="noopener" data-sk="Otvoriť web">Visit site</a><a href="/app/cga-digital-game/" data-sk-href="/sk/aplikacia/cga-digital-game/" data-sk="Viac info">More info</a></div>
         <h3 data-sk="CGA Digital Game: denná androidová hra so skutočnými odmenami">CGA Digital Game: a daily Android game with real rewards</h3>
         <div class="cols">
           <p data-sk="Sprievodná androidová aplikácia ku CGA, Crypto GiveAway. Hráči sa denne prihlasujú, udržujú si sériu dní a pár minút hry premenia na spoločný zostatok bodov uložený na ich konte cez prihlásenie Googlom.">An Android companion app to CGA, Crypto GiveAway. Players check in daily, keep a streak going and turn a few minutes of play into one shared points balance, saved to their account via Google sign-in.</p>
           <ul>
-            <li data-sk="Denné výzvy, séria dní a koleso šťastia">Daily challenges, streaks and a lucky wheel</li>
+            <li data-sk="Dve nové mini-hry: Hill Rider a Neon Blocks">Two new mini-games: Hill Rider and Neon Blocks</li>
+            <li data-sk="Denné, týždenné a mesačné misie a koleso šťastia">Daily, weekly and monthly missions and a lucky wheel</li>
             <li data-sk="Sledovanie krokov, ktoré mení pohyb na postup v hre">Step tracking that turns everyday movement into game progress</li>
             <li data-sk="Virtuálna ťažba a offerwall s partnerskými aktivitami">Virtual mining session and an offerwall with partner activities</li>
-            <li data-sk="Zadarmo na stiahnutie ako APK, verzia na Google Play je v uzavretom testovaní">Free to download as an APK, with a Google Play listing in closed testing</li>
+            <li data-sk="Zadarmo na Google Play, s reklamami">Free on Google Play, with ads</li>
           </ul>
         </div>
         <ul class="tags"><li data-sk="android">android</li><li data-sk="hra">game</li><li data-sk="odmeny">rewards</li><li data-sk="offerwall">offerwall</li></ul>

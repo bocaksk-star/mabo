@@ -1,7 +1,7 @@
 # Builds the extra pages of mabodigital.dev: service pages, case studies and privacy policy, in EN and SK.
 import os, json, datetime, html
 from bs4 import BeautifulSoup
-from content import SERVICES, CASES, CASE_TEXT, PRIVACY, TERMS, UI, HUMAN, PROFILES
+from content import SERVICES, CASES, CASE_TEXT, PRIVACY, TERMS, UI, HUMAN, PROFILES, APP, PLAYSTORE_URL
 
 SITE = 'https://mabodigital.dev'
 E = html.escape
@@ -239,6 +239,9 @@ def build_all(root, font, style, soup_en, soup_sk):
     for lang in ('en', 'sk'):
         out.append(human_page(lang, font, style))
     pairs.append((HUMAN['en']['path'], HUMAN['sk']['path']))
+    for lang in ('en', 'sk'):
+        out.append(app_page(lang, font, style))
+    pairs.append((APP['en']['path'], APP['sk']['path']))
     for path, doc in out:
         d = os.path.join(root, path.strip('/'))
         os.makedirs(d, exist_ok=True)
@@ -319,5 +322,67 @@ def human_page(lang, font, style):
 </script>'''
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "ProfilePage", "url": SITE + d['path'], "inLanguage": lang, "name": d['h1'], "mainEntity": {"@id": SITE + "/#marian"}},
+        bc_ld(lang, [(d['h1'], SITE + d['path'])])]}
+    return d['path'], head(lang, d['path'], alt, d['title'], d['desc'], font, style, ld) + shell(lang, alt, inner)
+
+APP_CSS = """
+.apphero{position:relative;overflow:hidden;border-radius:22px;text-decoration:none;color:#fff;min-height:300px;display:flex;align-items:flex-end;background:#0a1120}
+.apphero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 50%}
+.apphero .scrim{position:absolute;inset:0;background:linear-gradient(100deg,rgba(5,8,17,.99) 0%,rgba(5,8,17,.96) 34%,rgba(5,8,17,.72) 48%,rgba(5,8,17,.18) 64%,rgba(5,8,17,0) 72%)}
+.apphero .content{position:relative;z-index:1;padding:32px 34px;display:flex;flex-direction:column;gap:13px;max-width:400px}
+.apphero .brandrow{display:flex;align-items:center;gap:11px}
+.apphero img.icon{width:42px;height:42px;border-radius:11px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.apphero .appname{font-family:var(--display);font-weight:700;font-size:15px;color:#D4DAEE}
+.apphero .eyebrow{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7FE8C4;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.apphero .title{font-family:var(--display);font-weight:800;font-size:clamp(26px,4.4vw,38px);letter-spacing:-.015em;line-height:1.06;text-shadow:0 3px 20px rgba(0,0,0,.65)}
+.apphero .sub{font-family:var(--body);font-size:14.5px;color:#C9D1EA;line-height:1.55;max-width:36ch;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.apphero .badge{margin-top:8px;display:block;width:150px;filter:drop-shadow(0 6px 16px rgba(0,0,0,.4))}
+.apphero .badge img{width:100%;display:block}
+@media (max-width:640px){
+  .apphero{min-height:280px}
+  .apphero img.bg{object-position:78% 50%}
+  .apphero .scrim{background:linear-gradient(105deg,rgba(5,8,17,.99) 0%,rgba(5,8,17,.97) 48%,rgba(5,8,17,.75) 62%,rgba(5,8,17,.25) 78%,rgba(5,8,17,0) 92%)}
+  .apphero .content{max-width:100%;padding:26px 22px}
+}
+.featgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin:0;border-top:2px solid var(--ink);padding-top:20px}
+.featgrid > div{display:flex;flex-direction:column;gap:6px}
+.featgrid b{font-family:var(--display);font-size:1.1rem}
+.featgrid span{color:var(--muted);font-size:15px}
+.shots{display:flex;gap:14px;overflow-x:auto;padding-bottom:4px;scroll-snap-type:x proximity}
+.shots img{flex:none;width:168px;border-radius:16px;border:1px solid var(--line);scroll-snap-align:start}
+.appinfo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 32px;margin:0;border-top:2px solid var(--ink);padding-top:20px}
+.appinfo dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.appinfo dd{margin:2px 0 0;font-size:16px;font-weight:600}
+.note{font-size:14px;color:var(--muted);border-left:3px solid var(--line);padding-left:16px;margin:0}
+@media (max-width:720px){.appinfo{grid-template-columns:minmax(0,1fr)}}
+"""
+
+def app_page(lang, font, style):
+    d = APP[lang]; alt = APP['sk' if lang == 'en' else 'en']['path']; u = UI[lang]
+    feats = ''.join(f'<div><b>{E(t)}</b><span>{E(x)}</span></div>' for t, x in d['features'])
+    shots = ''.join(f'<img src="/logos/cga-shot-{i}.jpg" alt="" width="168" loading="lazy">' for i in (1, 2, 3))
+    info = ''.join(f'<div><dt>{E(k)}</dt><dd>{E(v)}</dd></div>' for k, v in d['info'])
+    badge = f'<span class="badge"><img src="/logos/google-play-badge.png" alt="Get it on Google Play"></span>'
+    inner = f'''  {crumbs(lang, [(None, d['h1'])])}
+  <a class="apphero" href="{PLAYSTORE_URL}" target="_blank" rel="noopener">
+    <img class="bg" src="/logos/cga-hero-banner.jpg" alt="">
+    <span class="scrim"></span>
+    <span class="content">
+      <span class="brandrow"><img class="icon" src="/logos/cga-game-icon.png" alt="">
+        <span class="appname">{E(d['h1'])}</span></span>
+      <span class="eyebrow">{E(d['eyebrow'])}</span>
+      <span class="title">{E(d['h1'])}</span>
+      <span class="sub">{E(d['lede'])}</span>
+      {badge}
+    </span>
+  </a>
+  <section class="blk" style="max-width:none"><h2>{E(d['features_h'])}</h2><div class="featgrid">{feats}</div></section>
+  <section class="blk" style="max-width:none"><h2>{E(d['shots_h'])}</h2><div class="shots">{shots}</div></section>
+  <section class="blk" style="max-width:none"><h2>{E(d['info_h'])}</h2><dl class="appinfo">{info}</dl><p class="note">{E(d['note_h'])}: {E(d['note'])}</p></section>
+{callout(lang, d['cta_t'], d['cta_p'])}
+<style>{APP_CSS}</style>'''
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "MobileApplication", "name": d['h1'], "description": d['desc'], "operatingSystem": "ANDROID", "applicationCategory": "GameApplication",
+         "url": SITE + d['path'], "installUrl": PLAYSTORE_URL, "author": {"@id": SITE + "/#business"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}},
         bc_ld(lang, [(d['h1'], SITE + d['path'])])]}
     return d['path'], head(lang, d['path'], alt, d['title'], d['desc'], font, style, ld) + shell(lang, alt, inner)

@@ -102,6 +102,27 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem)
 .status::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
 .status.live{color:var(--live)} .status.soon{color:var(--soon)} .status.wip{color:var(--wip)}
 
+/* app hero banner */
+.apphero{position:relative;overflow:hidden;border-radius:22px;text-decoration:none;color:#fff;min-height:300px;display:flex;align-items:flex-end;background:#0a1120;margin-bottom:8px}
+.apphero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 50%}
+.apphero .scrim{position:absolute;inset:0;background:linear-gradient(100deg,rgba(5,8,17,.99) 0%,rgba(5,8,17,.96) 34%,rgba(5,8,17,.72) 48%,rgba(5,8,17,.18) 64%,rgba(5,8,17,0) 72%)}
+.apphero .content{position:relative;z-index:1;padding:32px 34px;display:flex;flex-direction:column;gap:13px;max-width:400px}
+.apphero .brandrow{display:flex;align-items:center;gap:11px}
+.apphero img.icon{width:42px;height:42px;border-radius:11px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.apphero .appname{font-family:var(--display);font-weight:700;font-size:15px;color:#D4DAEE}
+.apphero .eyebrow{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7FE8C4;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.apphero .title{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.6vw,32px);letter-spacing:-.015em;line-height:1.08;text-shadow:0 3px 20px rgba(0,0,0,.65)}
+.apphero .title b{color:#FFD166;font-weight:800}
+.apphero .sub{font-family:var(--body);font-size:14.5px;color:#C9D1EA;line-height:1.55;max-width:34ch;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.apphero .badge{margin-top:8px;display:block;width:150px;filter:drop-shadow(0 6px 16px rgba(0,0,0,.4))}
+.apphero .badge img{width:100%;display:block}
+@media (max-width:640px){
+  .apphero{min-height:280px}
+  .apphero img.bg{object-position:78% 50%}
+  .apphero .scrim{background:linear-gradient(105deg,rgba(5,8,17,.99) 0%,rgba(5,8,17,.97) 48%,rgba(5,8,17,.75) 62%,rgba(5,8,17,.25) 78%,rgba(5,8,17,0) 92%)}
+  .apphero .content{max-width:100%;padding:26px 22px}
+}
+
 /* project entries */
 .projects{display:flex;flex-direction:column;gap:56px}
 .project{display:flex;flex-direction:column;gap:18px;scroll-margin-top:24px}
