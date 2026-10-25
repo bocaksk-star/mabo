@@ -281,6 +281,9 @@ HUMAN_CSS = """
 .pcard .handle{font-family:var(--mono);font-size:13px;color:var(--muted);overflow-wrap:anywhere}
 .pcard .line{margin:4px 0 8px;font-size:15.5px}
 .pcard .go{margin-top:auto;align-self:flex-start;font-family:var(--mono);font-size:13px;font-weight:700;padding:9px 13px;border-radius:6px;background:var(--pc);color:#FFFFFF}
+.pcard.soon{opacity:.55;border-style:dashed;cursor:default}
+.pcard.soon:hover{transform:none;border-color:var(--line)}
+.pcard.soon .line{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:0}
 .soon{margin:0;font-family:var(--mono);font-size:13px;color:var(--muted)}
 @media (max-width:720px){.facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 @media (prefers-reduced-motion:reduce){.pcard,.pcard:hover{transition:none;transform:none}}
@@ -291,8 +294,16 @@ def human_page(lang, font, style):
     facts = ''.join(f'<div><dt>{E(k)}</dt><dd>{E(v)}</dd></div>' for k, v in d['facts'])
     big = MARK.replace('width="32" height="32"', 'width="52" height="52"')
     cards = ''
+    has_soon = False
     for pr in PROFILES:
-        ava = f'<img src="{pr["photo"]}" alt="Marian Boledovic" width="76" height="76">' if pr.get('photo') else big
+        if pr.get('soon'):
+            has_soon = True
+            cards += (f'<div class="pcard soon" style="--pc:{pr["color"]}">'
+                      f'<span class="band"><span class="glyph" aria-hidden="true">{pr["glyph"]}</span></span><span class="ava">{big}</span>'
+                      f'<span class="body"><span class="net">{E(pr["name"])}</span><b>Marian Boledovic</b>'
+                      f'<span class="line">{E(pr["line"][lang])}</span></span></div>')
+            continue
+        ava = f'<img src="/{pr["photo"]}" alt="Marian Boledovic" width="76" height="76">' if pr.get('photo') else big
         cards += (f'<a class="pcard" href="{pr["url"]}" target="_blank" rel="noopener me" style="--pc:{pr["color"]}">'
                   f'<span class="band"><span class="glyph" aria-hidden="true">{pr["glyph"]}</span></span><span class="ava">{ava}</span>'
                   f'<span class="body"><span class="net">{E(pr["name"])}</span><b>Marian Boledovic</b><span class="handle">{E(pr["handle"])}</span>'
@@ -306,7 +317,7 @@ def human_page(lang, font, style):
     <p class="verified" id="cap-out" role="status" aria-live="polite" hidden>{E(d['verified'])}</p>
   </section>
   <section class="blk" style="max-width:none"><h2>{E(d['basics'])}</h2><dl class="facts">{facts}</dl></section>
-  <section class="blk" style="max-width:none"><h2>{E(d['find'])}</h2><div class="profiles">{cards}</div><p class="soon">{E(d['soon'])}</p></section>
+  <section class="blk" style="max-width:none"><h2>{E(d['find'])}</h2><div class="profiles">{cards}</div>{'' if has_soon else f'<p class="soon">{E(d["soon"])}</p>'}</section>
 {callout(lang, d['cta_t'], d['cta_p'])}
 <style>{HUMAN_CSS}</style>
 <script>

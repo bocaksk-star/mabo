@@ -172,12 +172,19 @@ TERMS = {
   ('Rozhodné právo a spory', ['Tieto podmienky sa riadia právom Slovenskej republiky. Spotrebitelia môžu využiť aj alternatívne riešenie sporov prostredníctvom Slovenskej obchodnej inšpekcie (SOI) alebo platformy EÚ na riešenie sporov online.'])]),
 }
 
-# Profiles shown on the "I'm not a robot" page. Add more entries here; photo is a path under /img/ or None.
+# Profiles shown on the "I'm not a robot" page. Add more entries here; photo is a path under /logos/ or None.
+# soon=True renders a disabled placeholder card (no link, no photo) for a profile that's coming later.
 PROFILES = [
  dict(key='linkedin', name='LinkedIn', color='#0A66C2', glyph='in', url='https://sk.linkedin.com/in/marian-boledovic-612b201a3', handle='in/marian-boledovic', photo=None,
       line={'en':'Professional profile and work history.','sk':'Pracovný profil a doterajšia prax.'}),
  dict(key='facebook', name='Facebook', color='#1877F2', glyph='f', url='https://www.facebook.com/nairam.gatinaf/', handle='nairam.gatinaf', photo=None,
-      line={'en':'Personal profile, the less formal side.','sk':'Osobný profil, tá menej formálna stránka.'}),
+      line={'en':'Personal profile — the less work-mode Marian, the real person behind MaBo Digital.','sk':'Osobný profil – ten menej pracovný Marian, skutočný človek za MaBo Digital.'}),
+ dict(key='instagram', name='Instagram', color='#E1306C', glyph='IG', url=None, handle=None, photo=None, soon=True,
+      line={'en':'Coming soon.','sk':'Čoskoro.'}),
+ dict(key='twitter', name='X / Twitter', color='#000000', glyph='X', url=None, handle=None, photo=None, soon=True,
+      line={'en':'Coming soon.','sk':'Čoskoro.'}),
+ dict(key='threads', name='Threads', color='#000000', glyph='@', url=None, handle=None, photo=None, soon=True,
+      line={'en':'Coming soon.','sk':'Čoskoro.'}),
 ]
 HUMAN = {
  'en': dict(path='/human/', title='I\'m not a robot | Marian Boledovic, MaBo Digital', desc='MaBo Digital is one real person: Marian Boledovic from Luka, Slovakia. Basic info and links to his Facebook and LinkedIn profiles.',
