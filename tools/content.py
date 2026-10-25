@@ -175,9 +175,9 @@ TERMS = {
 # Profiles shown on the "I'm not a robot" page. Add more entries here; photo is a path under /logos/ or None.
 # soon=True renders a disabled placeholder card (no link, no photo) for a profile that's coming later.
 PROFILES = [
- dict(key='linkedin', name='LinkedIn', color='#0A66C2', glyph='in', url='https://sk.linkedin.com/in/marian-boledovic-612b201a3', handle='in/marian-boledovic', photo='logos/marian-profile.jpg',
+ dict(key='linkedin', name='LinkedIn', color='#0A66C2', glyph='in', url='https://sk.linkedin.com/in/marian-boledovic-612b201a3', handle='in/marian-boledovic', photo='logos/marian-full.jpg',
       line={'en':'Professional profile and work history.','sk':'Pracovný profil a doterajšia prax.'}),
- dict(key='facebook', name='Facebook', color='#1877F2', glyph='f', url='https://www.facebook.com/nairam.gatinaf/', handle='nairam.gatinaf', photo='logos/marian-profile.jpg',
+ dict(key='facebook', name='Facebook', color='#1877F2', glyph='f', url='https://www.facebook.com/nairam.gatinaf/', handle='nairam.gatinaf', photo='logos/marian-full.jpg',
       line={'en':'Personal profile — the less work-mode Marian, the real person behind MaBo Digital.','sk':'Osobný profil – ten menej pracovný Marian, skutočný človek za MaBo Digital.'}),
  dict(key='instagram', name='Instagram', color='#E1306C', glyph='IG', url=None, handle=None, photo=None, soon=True,
       line={'en':'Coming soon.','sk':'Čoskoro.'}),
@@ -192,13 +192,15 @@ HUMAN = {
    lede='MaBo Digital is one person: me, Marian Boledovic. I build with AI tools, but every website is checked by me and every email is answered by me. Not convinced? Tick the box.',
    check="I'm not a robot", checking='Checking…', verified='Verified. Marian is a real person from Luka, Slovakia. Probably fixing a website right now.',
    basics='The basics', facts=[('Name','Marian Boledovic'),('Based in','Luka, Slovakia'),('Company','MaBo Digital, founder'),('Work','Web design, website development, Android/Apple apps and SEO'),('Built so far','10 web projects and one Android app of my own'),('Email','hello@mabodigital.dev')],
-   find='Find me online', open='Open profile', soon='More profiles coming soon.', cta_t="Now you know I'm real. Let's talk.", cta_p='Tell me about your project and I will reply to you myself.'),
+   find='Find me online', open='Open profile', soon='More profiles coming soon.', cta_t="Now you know I'm real. Let's talk.", cta_p='Tell me about your project and I will reply to you myself.',
+   photo_open='See full photo', photo_close='Close'),
  'sk': dict(path='/sk/nie-som-robot/', title='Nie som robot | Marian Boledovic, MaBo Digital', desc='MaBo Digital je jeden skutočný človek: Marian Boledovic z Luky. Základné informácie a odkazy na jeho Facebook a LinkedIn.',
    eyebrow='Overenie človeka', h1='Nie som robot',
    lede='MaBo Digital je jeden človek: ja, Marian Boledovic. Pracujem s AI nástrojmi, ale každý web kontrolujem ja a na každý e-mail odpovedám ja. Neveríte? Zaškrtnite políčko.',
    check='Nie som robot', checking='Overujem…', verified='Overené. Marian je skutočný človek z Luky. Práve asi opravuje nejaký web.',
    basics='Základné info', facts=[('Meno','Marian Boledovic'),('Odkiaľ','Luka, Slovensko'),('Firma','MaBo Digital, zakladateľ'),('Práca','Tvorba webov, Android/Apple aplikácie a SEO'),('Doteraz','10 vlastných webových projektov a jedna Android aplikácia'),('E-mail','hello@mabodigital.dev')],
-   find='Nájdete ma aj tu', open='Otvoriť profil', soon='Ďalšie profily čoskoro.', cta_t='Teraz už viete, že som skutočný. Ozvite sa.', cta_p='Napíšte mi pár viet o projekte a odpoviem vám osobne.'),
+   find='Nájdete ma aj tu', open='Otvoriť profil', soon='Ďalšie profily čoskoro.', cta_t='Teraz už viete, že som skutočný. Ozvite sa.', cta_p='Napíšte mi pár viet o projekte a odpoviem vám osobne.',
+   photo_open='Zobraziť celú fotku', photo_close='Zavrieť'),
 }
 
 PLAYSTORE_URL = 'https://play.google.com/store/apps/details?id=com.cryptogaway.faucet'

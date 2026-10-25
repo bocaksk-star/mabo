@@ -285,6 +285,13 @@ HUMAN_CSS = """
 .pcard.soon:hover{transform:none;border-color:var(--line)}
 .pcard.soon .line{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:0}
 .soon{margin:0;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.ava-zoom{position:absolute;right:-2px;bottom:-2px;width:24px;height:24px;border-radius:50%;background:var(--pc);border:2px solid var(--surface);display:grid;place-items:center;color:#FFFFFF;cursor:pointer;padding:0;z-index:2}
+.ava-zoom svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.ava-zoom:hover{filter:brightness(1.1)}
+.lightbox{position:fixed;inset:0;background:rgba(6,9,16,.86);display:grid;place-items:center;z-index:200;padding:40px 20px}
+.lightbox img{max-width:min(90vw,480px);max-height:80vh;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb-close{position:absolute;top:18px;right:22px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);color:#FFFFFF;border:1px solid rgba(255,255,255,.3);font-size:24px;line-height:1;cursor:pointer}
+.lb-close:hover{background:rgba(255,255,255,.22)}
 @media (max-width:720px){.facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 @media (prefers-reduced-motion:reduce){.pcard,.pcard:hover{transition:none;transform:none}}
 """
@@ -295,6 +302,7 @@ def human_page(lang, font, style):
     big = MARK.replace('width="32" height="32"', 'width="52" height="52"')
     cards = ''
     has_soon = False
+    has_photo = False
     for pr in PROFILES:
         if pr.get('soon'):
             has_soon = True
@@ -303,11 +311,19 @@ def human_page(lang, font, style):
                       f'<span class="body"><span class="net">{E(pr["name"])}</span><b>Marian Boledovic</b>'
                       f'<span class="line">{E(pr["line"][lang])}</span></span></div>')
             continue
-        ava = f'<img src="/{pr["photo"]}" alt="Marian Boledovic" width="76" height="76">' if pr.get('photo') else big
+        if pr.get('photo'):
+            has_photo = True
+            ava = (f'<img src="/{pr["photo"]}" alt="Marian Boledovic" width="76" height="76">'
+                   f'<button type="button" class="ava-zoom" data-full="/{pr["photo"]}" aria-label="{E(d["photo_open"])}">'
+                   f'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></button>')
+        else:
+            ava = big
         cards += (f'<a class="pcard" href="{pr["url"]}" target="_blank" rel="noopener me" style="--pc:{pr["color"]}">'
                   f'<span class="band"><span class="glyph" aria-hidden="true">{pr["glyph"]}</span></span><span class="ava">{ava}</span>'
                   f'<span class="body"><span class="net">{E(pr["name"])}</span><b>Marian Boledovic</b><span class="handle">{E(pr["handle"])}</span>'
                   f'<span class="line">{E(pr["line"][lang])}</span><span class="go">{E(d["open"])} ↗</span></span></a>')
+    lightbox = (f'<div class="lightbox" id="photobox" hidden><button type="button" class="lb-close" id="lb-close" aria-label="{E(d["photo_close"])}">&times;</button>'
+                f'<img id="lb-img" src="" alt="Marian Boledovic"></div>') if has_photo else ''
     inner = f'''  {crumbs(lang, [(None, d['h1'])])}
   <section class="hero">
     <p class="eyebrow">{E(d['eyebrow'])}</p>
@@ -319,6 +335,7 @@ def human_page(lang, font, style):
   <section class="blk" style="max-width:none"><h2>{E(d['basics'])}</h2><dl class="facts">{facts}</dl></section>
   <section class="blk" style="max-width:none"><h2>{E(d['find'])}</h2><div class="profiles">{cards}</div>{'' if has_soon else f'<p class="soon">{E(d["soon"])}</p>'}</section>
 {callout(lang, d['cta_t'], d['cta_p'])}
+{lightbox}
 <style>{HUMAN_CSS}</style>
 <script>
 (function(){{
@@ -329,6 +346,18 @@ def human_page(lang, font, style):
     b.innerHTML='<span class="spin" aria-hidden="true"></span>'; b.title={json.dumps(d['checking'])};
     setTimeout(function(){{ b.innerHTML='<svg class="tick" viewBox="0 0 30 30" aria-hidden="true"><path d="M6 16l6 6L24 9"/></svg>'; b.style.borderColor='transparent'; out.hidden=false; }}, calm?0:1100);
   }});
+  var box=document.getElementById('photobox');
+  if(box){{
+    var lbImg=document.getElementById('lb-img'), lbClose=document.getElementById('lb-close');
+    var openBox=function(src){{ lbImg.src=src; box.hidden=false; document.body.style.overflow='hidden'; lbClose.focus(); }};
+    var closeBox=function(){{ box.hidden=true; lbImg.src=''; document.body.style.overflow=''; }};
+    document.querySelectorAll('.ava-zoom').forEach(function(z){{
+      z.addEventListener('click',function(e){{ e.preventDefault(); e.stopPropagation(); openBox(z.getAttribute('data-full')); }});
+    }});
+    lbClose.addEventListener('click',closeBox);
+    box.addEventListener('click',function(e){{ if(e.target===box) closeBox(); }});
+    document.addEventListener('keydown',function(e){{ if(e.key==='Escape'&&!box.hidden) closeBox(); }});
+  }}
 }})();
 </script>'''
     ld = {"@context": "https://schema.org", "@graph": [
