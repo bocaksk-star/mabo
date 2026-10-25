@@ -318,9 +318,10 @@ def human_page(lang, font, style):
                    f'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></button>')
         else:
             ava = big
+        title = pr.get('title', 'Marian Boledovic')
         cards += (f'<a class="pcard" href="{pr["url"]}" target="_blank" rel="noopener me" style="--pc:{pr["color"]}">'
                   f'<span class="band"><span class="glyph" aria-hidden="true">{pr["glyph"]}</span></span><span class="ava">{ava}</span>'
-                  f'<span class="body"><span class="net">{E(pr["name"])}</span><b>Marian Boledovic</b><span class="handle">{E(pr["handle"])}</span>'
+                  f'<span class="body"><span class="net">{E(pr["name"])}</span><b>{E(title)}</b><span class="handle">{E(pr["handle"])}</span>'
                   f'<span class="line">{E(pr["line"][lang])}</span><span class="go">{E(d["open"])} ↗</span></span></a>')
     lightbox = (f'<div class="lightbox" id="photobox" hidden><button type="button" class="lb-close" id="lb-close" aria-label="{E(d["photo_close"])}">&times;</button>'
                 f'<img id="lb-img" src="" alt="Marian Boledovic"></div>') if has_photo else ''

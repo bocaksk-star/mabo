@@ -183,8 +183,8 @@ PROFILES = [
       line={'en':'Coming soon.','sk':'Čoskoro.'}),
  dict(key='twitter', name='X / Twitter', color='#000000', glyph='X', url='https://x.com/BocakSk', handle='@BocakSk', photo='logos/marian-full.jpg',
       line={'en':'Quick thoughts and updates on the projects.','sk':'Krátke myšlienky a novinky z projektov.'}),
- dict(key='threads', name='Threads', color='#000000', glyph='@', url=None, handle=None, photo=None, soon=True,
-      line={'en':'Coming soon.','sk':'Čoskoro.'}),
+ dict(key='threads', name='Threads', color='#000000', glyph='@', url='https://www.threads.com/@animeslovakia.sk', handle='@animeslovakia.sk', photo=None, title='Anime Slovakia',
+      line={'en':'The Anime Slovakia account on Threads: news, art and community posts.','sk':'Účet Anime Slovakia na Threads: novinky, art a komunitné príspevky.'}),
 ]
 HUMAN = {
  'en': dict(path='/human/', title='I\'m not a robot | Marian Boledovic, MaBo Digital', desc='MaBo Digital is one real person: Marian Boledovic from Luka, Slovakia. Basic info and links to his Facebook and LinkedIn profiles.',
