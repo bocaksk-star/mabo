@@ -181,8 +181,8 @@ PROFILES = [
       line={'en':'Personal profile — the less work-mode Marian, the real person behind MaBo Digital.','sk':'Osobný profil – ten menej pracovný Marian, skutočný človek za MaBo Digital.'}),
  dict(key='instagram', name='Instagram', color='#E1306C', glyph='IG', url=None, handle=None, photo=None, soon=True,
       line={'en':'Coming soon.','sk':'Čoskoro.'}),
- dict(key='twitter', name='X / Twitter', color='#000000', glyph='X', url=None, handle=None, photo=None, soon=True,
-      line={'en':'Coming soon.','sk':'Čoskoro.'}),
+ dict(key='twitter', name='X / Twitter', color='#000000', glyph='X', url='https://x.com/BocakSk', handle='@BocakSk', photo='logos/marian-full.jpg',
+      line={'en':'Quick thoughts and updates on the projects.','sk':'Krátke myšlienky a novinky z projektov.'}),
  dict(key='threads', name='Threads', color='#000000', glyph='@', url=None, handle=None, photo=None, soon=True,
       line={'en':'Coming soon.','sk':'Čoskoro.'}),
 ]
