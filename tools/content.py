@@ -175,9 +175,9 @@ TERMS = {
 # Profiles shown on the "I'm not a robot" page. Add more entries here; photo is a path under /logos/ or None.
 # soon=True renders a disabled placeholder card (no link, no photo) for a profile that's coming later.
 PROFILES = [
- dict(key='linkedin', name='LinkedIn', color='#0A66C2', glyph='in', url='https://sk.linkedin.com/in/marian-boledovic-612b201a3', handle='in/marian-boledovic', photo=None,
+ dict(key='linkedin', name='LinkedIn', color='#0A66C2', glyph='in', url='https://sk.linkedin.com/in/marian-boledovic-612b201a3', handle='in/marian-boledovic', photo='logos/marian-profile.jpg',
       line={'en':'Professional profile and work history.','sk':'Pracovný profil a doterajšia prax.'}),
- dict(key='facebook', name='Facebook', color='#1877F2', glyph='f', url='https://www.facebook.com/nairam.gatinaf/', handle='nairam.gatinaf', photo=None,
+ dict(key='facebook', name='Facebook', color='#1877F2', glyph='f', url='https://www.facebook.com/nairam.gatinaf/', handle='nairam.gatinaf', photo='logos/marian-profile.jpg',
       line={'en':'Personal profile — the less work-mode Marian, the real person behind MaBo Digital.','sk':'Osobný profil – ten menej pracovný Marian, skutočný človek za MaBo Digital.'}),
  dict(key='instagram', name='Instagram', color='#E1306C', glyph='IG', url=None, handle=None, photo=None, soon=True,
       line={'en':'Coming soon.','sk':'Čoskoro.'}),
